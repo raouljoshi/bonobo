@@ -577,7 +577,14 @@
           "price": "120 kr",
           "description": "För våra vänner som använder Bruce! Detta tillägg är till för när du har använt upp din vanliga kvot och vill delta i en annan klass. Praktiskt för dig som vill gå på extra klasser utan att uppgradera ditt medlemskap.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bruce-extra"
+        },
+        {
+          "title": "Plus Power",
+          "price": "799 kr",
+          "description": "Ett specialiserat månadsmedlemskap för individer från 65 år och uppåt, med fokus på att bibehålla och förbättra viktiga fysiska färdigheter som höjer livskvaliteten i vardagen genom funktionell styrka, balans och koordinationsträning.",
+          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
         }
+
       ]
     },
     "comparison_table": {
