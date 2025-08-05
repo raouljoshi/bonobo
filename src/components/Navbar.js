@@ -163,12 +163,24 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link to="/login" className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-800">{t('navbar.login')}</Link>
             <button onClick={handleOpenModal} className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700">{t('navbar.book_class')}</button>
           </div>
 
           {/* Mobile right-side icons */}
-          <div className="-mr-2 flex items-center md:hidden">
+          <div className="-mr-2 flex items-center space-x-2 md:hidden">
+            {/* Language selector for mobile */}
+            <div className="relative">
+              <button onClick={() => setLangDropdownOpen(!isLangDropdownOpen)} className="text-gray-600 hover:text-gray-800 p-2 rounded-md">
+                <FaGlobe className="h-5 w-5" />
+              </button>
+              {isLangDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
+                  <button onClick={() => { changeLanguage('en'); handleLinkClick(); }} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
+                  <button onClick={() => { changeLanguage('sv'); handleLinkClick(); }} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Svenska</button>
+                </div>
+              )}
+            </div>
+            
             <button
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
               type="button"
@@ -198,20 +210,6 @@ const Navbar = () => {
           <Link to="/contact" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.contact')}</Link>
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200">
-          <div className="flex items-center justify-between px-5">
-            <div className="relative">
-              <button onClick={() => setLangDropdownOpen(!isLangDropdownOpen)} className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">
-                <FaGlobe className="h-5 w-5" />
-              </button>
-              {isLangDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
-                  <button onClick={() => { changeLanguage('en'); handleLinkClick(); }} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
-                  <button onClick={() => { changeLanguage('sv'); handleLinkClick(); }} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Svenska</button>
-                </div>
-              )}
-            </div>
-            <Link to="/login" onClick={handleLinkClick} className="px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-800">{t('navbar.login')}</Link>
-          </div>
           <div className="mt-3 px-2 space-y-1">
             <button onClick={() => { handleOpenModal(); handleLinkClick(); }} className="block w-full text-center bg-gray-800 text-white px-4 py-2 rounded-md text-base font-medium hover:bg-gray-700">{t('navbar.book_class')}</button>
           </div>
