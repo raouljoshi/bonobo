@@ -1,52 +1,58 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { FaGlobe, FaBell } from 'react-icons/fa';
+import { FaGlobe, FaChevronDown, FaTimes } from 'react-icons/fa';
 import bonoboLogo from '../assets/images/bonobo logo.JPEG';
 import RedirectModal from './RedirectModal';
-import Announcements from './Announcements';
 import useOutsideClick from '../hooks/useOutsideClick';
 
 const Navbar = () => {
-  const desktopAnnouncementsRef = useRef(null);
-  const mobileAnnouncementsRef = useRef(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const { t, i18n } = useTranslation();
   const [isLangDropdownOpen, setLangDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isAnnouncementsOpen, setAnnouncementsOpen] = useState(false);
-  const [activeAnnouncementsCount, setActiveAnnouncementsCount] = useState(0);
+  const [isAnnouncementDropdownOpen, setAnnouncementDropdownOpen] = useState(false);
+  const [isAnnouncementBannerVisible, setAnnouncementBannerVisible] = useState(true);
+  const announcementDropdownRef = useRef(null);
 
-  useOutsideClick([desktopAnnouncementsRef, mobileAnnouncementsRef], () => {
-    if (isAnnouncementsOpen) {
-      setAnnouncementsOpen(false);
+
+
+  // Close announcement dropdown when clicking outside
+  useOutsideClick([announcementDropdownRef], () => {
+    if (isAnnouncementDropdownOpen) {
+      setAnnouncementDropdownOpen(false);
     }
   });
+
+  // Get announcements data
+  const announcements = t('announcements', { returnObjects: true });
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const activeAnnouncements = announcements.filter(announcement => {
+    const endDate = new Date(announcement.endDate);
+    return endDate >= today;
+  });
+
+  // Check if banner was previously dismissed
+  useEffect(() => {
+    const dismissed = localStorage.getItem('announcementBannerDismissed');
+    if (dismissed === 'true') {
+      setAnnouncementBannerVisible(false);
+    }
+  }, []);
 
   const externalBookingUrl = 'https://bonobogym.gymsystem.se';
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
-  React.useEffect(() => {
-    const announcements = t('announcements', { returnObjects: true });
-    if (!Array.isArray(announcements)) return;
+  const handleCloseAnnouncementBanner = () => {
+    setAnnouncementBannerVisible(false);
+    localStorage.setItem('announcementBannerDismissed', 'true');
+  };
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
 
-    const active = announcements.filter(announcement => {
-      const endDate = new Date(announcement.endDate);
-      return endDate >= today;
-    });
-    setActiveAnnouncementsCount(active.length);
-
-    if (active.length > 0 && !hasAnimated) {
-      const timer = setTimeout(() => setHasAnimated(true), 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [t, hasAnimated]);
 
   const handleConfirmRedirect = () => {
     window.open(externalBookingUrl, '_blank');
@@ -62,20 +68,79 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
-  const announcementIcon = (
-    <button
-      onClick={() => setAnnouncementsOpen(!isAnnouncementsOpen)}
-      className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium"
-    >
-      <FaBell className={`h-5 w-5 ${activeAnnouncementsCount > 0 && !hasAnimated ? 'animate-shake' : ''}`} />
-      {activeAnnouncementsCount > 0 && (
-        <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white"></span>
-      )}
-    </button>
-  );
+
+
+  const showAnnouncementBanner = isAnnouncementBannerVisible && activeAnnouncements.length > 0;
 
   return (
     <nav className="bg-white shadow-md fixed top-0 left-0 right-0 z-20">
+      {/* Announcement Banner */}
+      {showAnnouncementBanner && (
+        <div className="bg-gray-100 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between py-2">
+              <div className="flex items-center space-x-3 flex-1">
+                <div className="flex items-center space-x-2">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span className="text-sm text-gray-600">
+                    {activeAnnouncements.length === 1 
+                      ? t('announcement_banner.new_announcement_single')
+                      : t('announcement_banner.new_announcements_multiple', { count: activeAnnouncements.length })}
+                  </span>
+                </div>
+                
+                {/* Dropdown toggle */}
+                <div className="relative" ref={announcementDropdownRef}>
+                  <button
+                    onClick={() => setAnnouncementDropdownOpen(!isAnnouncementDropdownOpen)}
+                    className="flex items-center space-x-1 text-gray-500 hover:text-gray-700 transition-colors duration-200 text-sm"
+                  >
+                    <span>{t('announcement_banner.view_details')}</span>
+                    <FaChevronDown 
+                      className={`w-3 h-3 transition-transform duration-200 ${
+                        isAnnouncementDropdownOpen ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
+
+                  {/* Dropdown content */}
+                  {isAnnouncementDropdownOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-40">
+                      <div className="p-3 border-b border-gray-200">
+                        <h3 className="font-semibold text-gray-800">{t('announcement_banner.announcements_title')}</h3>
+                      </div>
+                      <div className="max-h-64 overflow-y-auto">
+                        {activeAnnouncements.map((announcement, index) => (
+                          <div key={announcement.id} className={`p-3 ${index !== activeAnnouncements.length - 1 ? 'border-b border-gray-100' : ''}`}>
+                            <Link
+                              to={announcement.link || '/membership'}
+                              className="block text-sm text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                              onClick={() => setAnnouncementDropdownOpen(false)}
+                            >
+                              {announcement.message}
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Close button */}
+              <button
+                onClick={handleCloseAnnouncementBanner}
+                className="text-gray-400 hover:text-gray-600 transition-colors duration-200 p-1"
+                aria-label="Close announcement banner"
+              >
+                <FaTimes className="w-3 h-3" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -105,20 +170,13 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <div className="relative" ref={desktopAnnouncementsRef}>
-              {announcementIcon}
-              <Announcements isOpen={isAnnouncementsOpen} />
-            </div>
+
             <Link to="/login" className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-800">{t('navbar.login')}</Link>
             <button onClick={handleOpenModal} className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700">{t('navbar.book_class')}</button>
           </div>
 
           {/* Mobile right-side icons */}
           <div className="-mr-2 flex items-center md:hidden">
-            <div className="relative" ref={mobileAnnouncementsRef}>
-              {announcementIcon}
-              <Announcements isOpen={isAnnouncementsOpen} />
-            </div>
             <button
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
               type="button"

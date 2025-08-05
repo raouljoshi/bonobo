@@ -203,6 +203,12 @@
 
     ]
   },
+  "announcement_banner": {
+    "new_announcement_single": "New announcement available",
+    "new_announcements_multiple": "{{count}} new announcements available",
+    "view_details": "View details",
+    "announcements_title": "Announcements"
+  },
   "announcements": [
     {
       "id": 1,

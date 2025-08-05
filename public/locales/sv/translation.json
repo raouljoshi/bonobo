@@ -206,22 +206,28 @@
 
     ]
   },
+  "announcement_banner": {
+    "new_announcement_single": "Nytt meddelande tillgängligt",
+    "new_announcements_multiple": "{{count}} nya meddelanden tillgängliga",
+    "view_details": "Visa detaljer",
+    "announcements_title": "Meddelanden"
+  },
   "announcements": [
     {
       "id": 1,
-      "message": "Funky Monkeys (3-5) startar 24/8. Se schema under 'Pass'",
+      "message": "Funky Monkeys (3-5) börjar 24/8. Se 'Klasser' för schema.",
       "link": "/membership",
       "endDate": "2025-10-31"
     },
     {
       "id": 2,
-      "message": "Ungdomsklass (10-14) startar 26/8. Se schema under 'Pass'",
+      "message": "Ungdomsklass (10-14) börjar 26/8. Se 'Klasser' för schema.",
       "link": "/membership",
       "endDate": "2025-10-31"
     },
     {
       "id": 3,
-      "message": "Plus Power (65+) startar 26/8. Se schema under 'Pass'",
+      "message": "Plus Power (65+) börjar 26/8. Se 'Klasser' för schema.",
       "link": "/membership",
       "endDate": "2026-12-31"
     }
