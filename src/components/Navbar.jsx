@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe, FaChevronDown, FaTimes } from 'react-icons/fa';
 import bonoboLogo from '../assets/images/bonobo logo.JPEG';
-import RedirectModal from './RedirectModal';
 import useOutsideClick from '../hooks/useOutsideClick';
+import { openBookingUrl } from '../utils/booking';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isLangDropdownOpen, setLangDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAnnouncementDropdownOpen, setAnnouncementDropdownOpen] = useState(false);
   const [isAnnouncementBannerVisible, setAnnouncementBannerVisible] = useState(true);
   const announcementDropdownRef = useRef(null);
@@ -42,26 +41,15 @@ const Navbar = () => {
     }
   }, []);
 
-  const externalBookingUrl = 'https://bonobogym.gymsystem.se';
-
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
-
   const handleCloseAnnouncementBanner = () => {
     setAnnouncementBannerVisible(false);
     localStorage.setItem('announcementBannerDismissed', 'true');
   };
 
-
-
-  const handleConfirmRedirect = () => {
-    window.open(externalBookingUrl, '_blank');
-    handleCloseModal();
-  };
-
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setLangDropdownOpen(false);
+    setMobileMenuOpen(false);
   };
 
   const handleLinkClick = () => {
@@ -73,7 +61,7 @@ const Navbar = () => {
   const showAnnouncementBanner = isAnnouncementBannerVisible && activeAnnouncements.length > 0;
 
   return (
-    <nav className="bg-white shadow-md fixed top-0 left-0 right-0 z-20">
+    <nav className="bg-white shadow-md sticky top-0 z-20">
       {/* Announcement Banner */}
       {showAnnouncementBanner && (
         <div className="bg-gray-100 border-b border-gray-200">
@@ -82,7 +70,8 @@ const Navbar = () => {
               <div className="flex items-center flex-1 relative" ref={announcementDropdownRef}>
                 <button
                   onClick={() => setAnnouncementDropdownOpen(!isAnnouncementDropdownOpen)}
-                  className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors duration-200 text-sm"
+                  className="flex min-h-10 items-center space-x-2 text-sm text-gray-600 transition-colors duration-200 hover:text-gray-800"
+                  aria-expanded={isAnnouncementDropdownOpen}
                 >
                   <FaChevronDown 
                     className={`w-4 h-4 transition-transform duration-200 text-blue-500 ${
@@ -122,7 +111,7 @@ const Navbar = () => {
               {/* Close button */}
               <button
                 onClick={handleCloseAnnouncementBanner}
-                className="text-gray-400 hover:text-gray-600 transition-colors duration-200 p-1"
+                className="min-h-10 min-w-10 p-2 text-gray-400 transition-colors duration-200 hover:text-gray-600"
                 aria-label="Close announcement banner"
               >
                 <FaTimes className="w-3 h-3" />
@@ -152,7 +141,12 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center space-x-2">
             <div className="relative">
-              <button onClick={() => setLangDropdownOpen(!isLangDropdownOpen)} className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">
+              <button
+                onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
+                className="min-h-11 min-w-11 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-800"
+                aria-label="Choose language"
+                aria-expanded={isLangDropdownOpen}
+              >
                 <FaGlobe className="h-5 w-5" />
               </button>
               {isLangDropdownOpen && (
@@ -163,14 +157,19 @@ const Navbar = () => {
               )}
             </div>
 
-            <button onClick={handleOpenModal} className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700">{t('navbar.book_class')}</button>
+            <button onClick={() => openBookingUrl()} className="min-h-11 rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">{t('navbar.book_class')}</button>
           </div>
 
           {/* Mobile right-side icons */}
           <div className="-mr-2 flex items-center space-x-2 md:hidden">
             {/* Language selector for mobile */}
             <div className="relative">
-              <button onClick={() => setLangDropdownOpen(!isLangDropdownOpen)} className="text-gray-600 hover:text-gray-800 p-2 rounded-md">
+              <button
+                onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
+                className="min-h-11 min-w-11 rounded-md p-2 text-gray-600 hover:text-gray-800"
+                aria-label="Choose language"
+                aria-expanded={isLangDropdownOpen}
+              >
                 <FaGlobe className="h-5 w-5" />
               </button>
               {isLangDropdownOpen && (
@@ -184,9 +183,9 @@ const Navbar = () => {
             <button
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
               type="button"
-              className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isMobileMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
               <svg className={`${isMobileMenuOpen ? 'hidden' : 'block'} h-6 w-6`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -211,11 +210,10 @@ const Navbar = () => {
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200">
           <div className="mt-3 px-2 space-y-1">
-            <button onClick={() => { handleOpenModal(); handleLinkClick(); }} className="block w-full text-center bg-gray-800 text-white px-4 py-2 rounded-md text-base font-medium hover:bg-gray-700">{t('navbar.book_class')}</button>
+            <button onClick={() => { openBookingUrl(); handleLinkClick(); }} className="block min-h-12 w-full rounded-md bg-gray-800 px-4 py-3 text-center text-base font-medium text-white hover:bg-gray-700">{t('navbar.book_class')}</button>
           </div>
         </div>
       </div>
-      <RedirectModal isOpen={isModalOpen} onClose={handleCloseModal} onConfirm={handleConfirmRedirect} />
     </nav>
   );
 };

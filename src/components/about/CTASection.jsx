@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { BOOKING_URL } from '../../utils/booking';
 
 const CTASection = () => {
   const { t } = useTranslation();
@@ -14,19 +15,21 @@ const CTASection = () => {
         <p className="mt-4 text-lg leading-6 text-gray-300">
           {t('about_cta.subtitle')}
         </p>
-        <div className="mt-8 flex justify-center space-x-4">
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
           <Link
             to="/classes"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-gray-100 hover:bg-gray-200"
+            className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-100 px-5 py-3 text-base font-medium text-gray-800 hover:bg-gray-200"
           >
             {t('about_cta.button_schedule')}
           </Link>
-          <Link
-            to="/membership"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-600 px-5 py-3 text-base font-medium text-white hover:bg-gray-700"
           >
             {t('about_cta.button_trial')}
-          </Link>
+          </a>
         </div>
       </div>
     </div>

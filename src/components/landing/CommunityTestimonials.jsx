@@ -37,7 +37,23 @@ const CommunityTestimonials = () => {
             {t('community_testimonials.subtitle')}
           </p>
         </div>
-        <div className="mt-12">
+        <div className="mt-10 space-y-4 md:hidden">
+          {testimonials.slice(0, 3).map((testimonial, index) => (
+            <article key={index} className="rounded-lg bg-white p-5 text-center shadow-md">
+              <div className="mb-3 flex justify-center text-gray-800">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+              <p className="text-base italic text-gray-600">"{testimonial.quote}"</p>
+              <div className="mt-4">
+                <p className="font-semibold text-gray-600">- {testimonial.name}</p>
+                <p className="text-sm text-gray-500">{testimonial.source}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-12 hidden md:block">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="p-4">
