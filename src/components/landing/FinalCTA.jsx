@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ctaImage from '../../assets/images/kettlebells 3.JPEG';
+import { BOOKING_URL } from '../../utils/booking';
 
 const FinalCTA = () => {
   const { t } = useTranslation();
@@ -19,13 +20,13 @@ const FinalCTA = () => {
         <p className="mt-4 text-lg leading-6 text-gray-200">
           {t('final_cta.subtitle')}
         </p>
-        <div className="mt-8 flex justify-center space-x-4">
-            <Link to="/membership" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900"> 
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+            <Link to="/membership" className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900">
               {t('final_cta.button_join')}
             </Link>
-            <Link to="/contact" className="ml-3 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-gray-200 hover:bg-gray-300"> 
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-200 px-5 py-3 text-base font-medium text-gray-800 hover:bg-gray-300">
               {t('final_cta.button_trial')}
-            </Link>
+            </a>
         </div>
       </div>
     </div>
