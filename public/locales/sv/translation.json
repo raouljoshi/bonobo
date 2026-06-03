@@ -6,7 +6,8 @@
     "about": "Om oss",
     "contact": "Kontakt",
     "login": "Logga in",
-    "book_class": "Boka ett pass"
+    "book_class": "Boka ett pass",
+    "labs": "Labs"
   },
   "hero": {
     "title": "Improvement by Movement",
@@ -203,7 +204,6 @@
         "imageUrl": "/images/carmatraining-logo.png",
         "url": "https://carmatraining.se"
       }
-
     ]
   },
   "announcement_banner": {
@@ -239,7 +239,8 @@
       "classes": "Pass",
       "memberships": "Medlemskap",
       "about": "Om Oss",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "labs": "Bonobo Labs"
     },
     "hours_title": "Öppettider",
     "hours_content": {
@@ -272,6 +273,10 @@
     "contact": {
       "title": "Kontakta Oss | Bonobo Gym Nacka",
       "description": "Ta kontakt med Bonobo Gym. Hitta vår adress på Kvarnholmen, Nacka, våra kontaktuppgifter och en karta för att planera ditt besök."
+    },
+    "labs": {
+      "title": "Bonobo Movement Lab | VALD HumanTrak-analys i Nacka",
+      "description": "Mät rörlighet, balans, symmetri och rörelsekontroll med Bonobo Movement Lab, byggt på VALD HumanTrak, och gör datan till smartare träningsprioriteringar."
     }
   },
   "instagram_feed": {
@@ -414,7 +419,15 @@
   "class_schedule": {
     "title": "Vårt veckoschema",
     "subtitle": "Hitta en tid som passar dig. Alla pass måste bokas i förväg.",
-    "days": ["Mån", "Tis", "Ons", "Tors", "Fre", "Lör", "Sön"],
+    "days": [
+      "Mån",
+      "Tis",
+      "Ons",
+      "Tors",
+      "Fre",
+      "Lör",
+      "Sön"
+    ],
     "class_names": {
       "Strength & Conditioning": "Strength & Conditioning",
       "Strength & Conditioning_short": "S&C",
@@ -590,18 +603,47 @@
           "description": "Ett specialiserat månadsmedlemskap för individer från 65 år och uppåt, med fokus på att bibehålla och förbättra viktiga fysiska färdigheter som höjer livskvaliteten i vardagen genom funktionell styrka, balans och koordinationsträning.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
         }
-
       ]
     },
     "comparison_table": {
       "title": "Jämför medlemskap",
-      "headers": ["Förmån", "Silver", "Guld", "Guld+Coach"],
+      "headers": [
+        "Förmån",
+        "Silver",
+        "Guld",
+        "Guld+Coach"
+      ],
       "rows": [
-        { "feature": "Bokningar", "silver": "9 / mån", "gold": "Obegränsat", "gold_coach": "Obegränsat" },
-        { "feature": "Kompis-fredagar", "silver": "—", "gold": "✓", "gold_coach": "✓" },
-        { "feature": "Frysning (veckor)", "silver": "2 / år", "gold": "4 / år", "gold_coach": "4 / år" },
-        { "feature": "PT-pass", "silver": "—", "gold": "—", "gold_coach": "1 / mån" },
-        { "feature": "Garanterad Plats", "silver": "—", "gold": "—", "gold_coach": "✓" }
+        {
+          "feature": "Bokningar",
+          "silver": "9 / mån",
+          "gold": "Obegränsat",
+          "gold_coach": "Obegränsat"
+        },
+        {
+          "feature": "Kompis-fredagar",
+          "silver": "—",
+          "gold": "✓",
+          "gold_coach": "✓"
+        },
+        {
+          "feature": "Frysning (veckor)",
+          "silver": "2 / år",
+          "gold": "4 / år",
+          "gold_coach": "4 / år"
+        },
+        {
+          "feature": "PT-pass",
+          "silver": "—",
+          "gold": "—",
+          "gold_coach": "1 / mån"
+        },
+        {
+          "feature": "Garanterad Plats",
+          "silver": "—",
+          "gold": "—",
+          "gold_coach": "✓"
+        }
       ]
     }
   },
@@ -621,6 +663,250 @@
       "title": "Skicka ett E-postmeddelande",
       "description": "För alla frågor, vänligen kontakta Mark direkt.",
       "button_text": "mark@bonobogym.com"
+    }
+  },
+  "labs_teaser": {
+    "eyebrow": "Ny tjänst: Bonobo Labs",
+    "title": "Mät hur du rör dig. Förbättra det som betyder något.",
+    "description": "Bonobo Movement Lab använder VALD HumanTrak för att göra objektiv rörelsedata till enkla träningsprioriteringar, tydliga framsteg och smartare coachning.",
+    "button": "Utforska Bonobo Labs",
+    "image_alt": "VALD HumanTrak-system för rörelseanalys",
+    "media_credit": "Media med tillstånd/källa: VALD HumanTrak produktsida.",
+    "proof_points": [
+      {
+        "title": "Objektiv baseline",
+        "description": "Mät rörlighet, balans, symmetri och rörelsekontroll innan du gissar vad du ska träna."
+      },
+      {
+        "title": "Tre prioriteringar",
+        "description": "Gå därifrån med ett tydligt träningsfokus istället för rådata som är svår att tolka."
+      },
+      {
+        "title": "Retest som bevis",
+        "description": "Gör om samma tester efter träning och se vad som har förändrats."
+      }
+    ]
+  },
+  "labs_page": {
+    "email": {
+      "subject_prefix": "Förfrågan Bonobo Movement Lab"
+    },
+    "media": {
+      "credit": "Media med tillstånd/källa: VALD HumanTrak.",
+      "video_fallback": "Öppna VALD-videon"
+    },
+    "hero": {
+      "eyebrow": "Bonobo Movement Lab",
+      "title": "Mät hur du rör dig. Förbättra det som betyder något. Bevisa dina framsteg.",
+      "subtitle": "Objektiva rörelseprofiler för individer, lag och arbetsplatser. Vi använder VALD HumanTrak för att mäta rörlighet, balans, symmetri och rörelsekontroll och omvandlar datan till praktiska träningsprioriteringar.",
+      "primary_cta": "För individer",
+      "secondary_cta": "För lag & föreningar",
+      "image_alt": "VALD HumanTrak produktbild för rörelseanalys"
+    },
+    "segment_nav": {
+      "label": "Målgrupper för Bonobo Labs"
+    },
+    "measure": {
+      "eyebrow": "Byggt på VALD HumanTrak",
+      "title": "En plattform, tre praktiska användningsområden.",
+      "description": "HumanTrak är ett portabelt markörlöst 3D-system för rörelseanalys. På Bonobo används tekniken som stöd för coachning: den hjälper oss att identifiera träningsprioriteringar och ger varje person eller grupp en baseline att testa om mot.",
+      "source_intro": "Baserat på officiell produkt- och supportinformation från VALD:",
+      "source_product": "HumanTrak översikt",
+      "source_tests": "testbibliotek",
+      "items": [
+        {
+          "title": "Rörlighet",
+          "description": "Rörlighetstester för axlar, bål, höfter, fotleder och andra viktiga rörelseområden."
+        },
+        {
+          "title": "Balans",
+          "description": "Balans- och kontrolltester för motionärer, idrottare och aktiva seniorer."
+        },
+        {
+          "title": "Symmetri",
+          "description": "Jämförelser mellan vänster och höger visar var träningen kan behöva mer fokus."
+        },
+        {
+          "title": "Rapporter och retest",
+          "description": "En konkret rapport och upprepbara testbatterier gör framsteg enklare att följa."
+        }
+      ]
+    },
+    "process": {
+      "title": "Så fungerar Labbet",
+      "description": "Varje väg följer samma enkla loop: mät, välj prioriteringar, träna och testa om.",
+      "steps": [
+        {
+          "title": "Baseline",
+          "description": "Vi gör ett testbatteri som matchar personen, laget eller arbetsplatsen."
+        },
+        {
+          "title": "Tre prioriteringar",
+          "description": "Vi översätter resultaten till de mest användbara träningsområdena."
+        },
+        {
+          "title": "Träningsplan",
+          "description": "Resultatet kopplas till pass, PT, lagträning eller uppföljning på jobbet."
+        },
+        {
+          "title": "Retest",
+          "description": "Gör om samma tester efter 8-12 veckor och se vad som har förändrats."
+        }
+      ]
+    },
+    "segments_intro": {
+      "eyebrow": "Välj din väg",
+      "title": "Byggt för tre primära målgrupper",
+      "description": "Tekniken är densamma, men erbjudandet, språket och nästa steg ändras beroende på vem som använder den."
+    },
+    "segments": [
+      {
+        "id": "individuals",
+        "nav_label": "Individer",
+        "eyebrow": "Individer",
+        "title": "För medlemmar, nybörjare och dig som återgår till träning",
+        "description": "Få en tydlig rörelsebaseline och en praktisk plan för vad du ska träna först. Det här är rätt väg om du vill ha personlig coachningsriktning utan att gissa.",
+        "media_title": "VALD HumanTrak-video för individuell rörelseanalys",
+        "media_caption": "Officiell VALD-video som visar hur HumanTrak fungerar för rörelseanalys.",
+        "email_context": "Mål eller sammanhang:",
+        "button": "Skicka förfrågan",
+        "highlights": [
+          "Tydlig baseline för rörlighet, balans, symmetri och kontroll",
+          "Tre fokuserade träningsprioriteringar",
+          "Enkel väg till retest som visar framsteg"
+        ],
+        "offers": [
+          {
+            "title": "Bonobo Movement Snapshot",
+            "duration": "20-25 minuter",
+            "price": "590 SEK medlem / 790 SEK icke-medlem",
+            "description": "En lågtröskelscreening för nyfikna medlemmar, Bruce-användare och boende i området.",
+            "includes": [
+              "3-5 tester",
+              "Kort förklaring",
+              "Ensidig sammanfattning"
+            ]
+          },
+          {
+            "title": "Bonobo Movement Profile",
+            "duration": "55-60 minuter",
+            "price": "1 290 SEK medlem / 1 490-1 590 SEK icke-medlem",
+            "description": "Den centrala betalda analysen för nya medlemmar, PT-intresserade och personer som återgår till träning.",
+            "includes": [
+              "Fullt testbatteri",
+              "VALD-rapport",
+              "Tre prioriterade områden",
+              "Träningsrekommendation"
+            ]
+          },
+          {
+            "title": "Bonobo Movement Upgrade",
+            "duration": "4-8 veckor",
+            "price": "3 990-4 900 SEK",
+            "description": "Gör analysen till coachad träning och ett retest.",
+            "includes": [
+              "Movement Profile",
+              "1-2 coachningspass",
+              "Passplan",
+              "Retest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "teams-clubs",
+        "nav_label": "Lag & föreningar",
+        "eyebrow": "Lag & föreningar",
+        "title": "För coacher som behöver snabb gruppinsikt",
+        "description": "Screena en trupp i ett upprepbart block, ge idrottarna individuella rapporter och ge coacherna en enkel sammanfattning att använda i träningen.",
+        "media_title": "VALD HumanTrak-video om grupptestning",
+        "media_caption": "Officiell VALD-video med fokus på grupptestning med HumanTrak.",
+        "email_context": "Lag, idrott, gruppstorlek och önskade datum:",
+        "button": "Fråga om teampris",
+        "highlights": [
+          "Grupptestning för 10-15 idrottare",
+          "Individuella rapporter plus coachsammanfattning",
+          "Användbart inför säsong, mitt i säsong eller som retestblock"
+        ],
+        "offers": [
+          {
+            "title": "Team / Club Screening",
+            "duration": "10-15 idrottare",
+            "price_note": "Fråga om teampris",
+            "description": "Gruppscreening för föreningar och lag som vill ha individuella rapporter och sammanfattning till coach.",
+            "includes": [
+              "Gruppbatteri",
+              "Individuella rapporter",
+              "Coachsammanfattning",
+              "Retest-alternativ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "enterprises",
+        "nav_label": "Företag",
+        "eyebrow": "Företag",
+        "title": "För företag som vill skapa praktiskt rörelseengagemang",
+        "description": "Ta in objektiv rörelsescreening och coachningsspråk i ett arbetsdagsformat. Fokus är medvetenhet, användbara vanor och tydliga nästa steg, inte medicinsk bedömning.",
+        "media_title": "VALD HumanTrak-video med arbetsplatsrelevant rörelse",
+        "media_caption": "Officiell VALD-video som visar box lift-testning med HumanTrak, här använd som närmaste arbetsplatsrelevanta media.",
+        "email_context": "Företag, gruppstorlek, plats och önskade datum:",
+        "button": "Fråga om företagspris",
+        "highlights": [
+          "Halvdags rörelseevent för lokala arbetsgivare",
+          "Miniscreeningar, utbildning och enkel rapportering",
+          "Möjlig uppföljning med full Movement Profile"
+        ],
+        "offers": [
+          {
+            "title": "Corporate Movement Day",
+            "duration": "Halvdag",
+            "price_note": "Fråga om företagspris",
+            "description": "Rörelsescreening och utbildning för kontorsteam och lokala arbetsgivare.",
+            "includes": [
+              "Miniscreeningar",
+              "Rörelseutbildning",
+              "Kort rapport",
+              "Erbjudande om full profil"
+            ]
+          }
+        ]
+      }
+    ],
+    "boundary": {
+      "title": "Tydligt träningsfokus",
+      "description": "Bonobo Movement Lab identifierar träningsprioriteringar. Medicinsk diagnos och behandling görs av vårdpersonal.",
+      "image_alt": "VALD HumanTrak används för rörelseanalys",
+      "reliability_link": "Läs VALDs kontext om tillförlitlighet.",
+      "items": [
+        "Inte medicinsk diagnos",
+        "Inte smärtdiagnos",
+        "Inte skadeprediktion",
+        "Inte garanterad skadeprevention",
+        "Inte gånganalys",
+        "Inte klinisk return-to-play-bedömning"
+      ]
+    },
+    "final_cta": {
+      "title": "Redo att träna från en bättre baseline?",
+      "description": "Berätta vilken väg som passar dig bäst så föreslår vi rätt nästa steg.",
+      "button": "Mejla Mark om Labs",
+      "email_context": "Jag är intresserad av:"
+    },
+    "references": {
+      "title": "VALD-källor för den här sidan",
+      "description": "Texten om Bonobo Labs bygger på officiellt produkt-, support-, tillförlitlighets- och mediematerial från VALD.",
+      "links": [
+        "HumanTrak produktsida",
+        "Artikel om markörlös rörelseanalys",
+        "HumanTrak testtyper",
+        "Vad HumanTrak mäter",
+        "HumanTrak tillförlitlighet",
+        "Individuell HumanTrak-video",
+        "Video om grupptestning",
+        "Video om box lift-testning"
+      ]
     }
   }
 }

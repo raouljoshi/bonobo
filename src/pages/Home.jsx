@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import ValueProp from '../components/landing/ValueProp';
 import FeaturedClasses from '../components/landing/FeaturedClasses';
+import LabsTeaser from '../components/landing/LabsTeaser';
 import CommunityTestimonials from '../components/landing/CommunityTestimonials';
 import FinalCTA from '../components/landing/FinalCTA';
 import InstagramFeed from '../components/InstagramFeed';
@@ -17,6 +18,7 @@ const Home = () => {
       <Hero />
       <ValueProp />
       <FeaturedClasses />
+      <LabsTeaser />
       <CommunityTestimonials />
       <FinalCTA />
       <InstagramFeed />

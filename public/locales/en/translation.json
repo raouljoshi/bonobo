@@ -6,7 +6,8 @@
     "about": "About",
     "contact": "Contact",
     "login": "Log In",
-    "book_class": "Book a Class"
+    "book_class": "Book a Class",
+    "labs": "Labs"
   },
   "hero": {
     "title": "Improvement by Movement",
@@ -200,7 +201,6 @@
         "imageUrl": "/images/carmatraining-logo.png",
         "url": "https://carmatraining.se"
       }
-
     ]
   },
   "announcement_banner": {
@@ -236,7 +236,8 @@
       "classes": "Classes",
       "memberships": "Memberships",
       "about": "About Us",
-      "contact": "Contact"
+      "contact": "Contact",
+      "labs": "Bonobo Labs"
     },
     "hours_title": "Hours",
     "hours_content": {
@@ -269,6 +270,10 @@
     "contact": {
       "title": "Contact Us | Bonobo Gym Nacka",
       "description": "Get in touch with Bonobo Gym. Find our address in Kvarnholmen, Nacka, our contact details, and a map to plan your visit."
+    },
+    "labs": {
+      "title": "Bonobo Movement Lab | VALD HumanTrak Assessments in Nacka",
+      "description": "Measure mobility, balance, symmetry and movement control with Bonobo Movement Lab, powered by VALD HumanTrak, then turn the data into smarter training priorities."
     }
   },
   "instagram_feed": {
@@ -411,7 +416,15 @@
   "class_schedule": {
     "title": "Our Weekly Class Schedule",
     "subtitle": "Find a time that works for you. All classes must be booked in advance.",
-    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
     "class_names": {
       "Strength & Conditioning": "Strength & Conditioning",
       "Strength & Conditioning_short": "S&C",
@@ -537,53 +550,53 @@
     "other_passes": {
       "title": "Other Passes & Packs",
       "passes": [
-        { 
-          "title": "10-Pack Clip Card", 
-          "price": "1 999 kr", 
+        {
+          "title": "10-Pack Clip Card",
+          "price": "1 999 kr",
           "description": "Train when it suits you. The 10-pack clip card is valid for 6 months from the date of purchase. Perfect for those who want flexibility in their training schedule.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=10-visit-klippkort"
         },
-        { 
-          "title": "Single Drop-in", 
-          "price": "250 kr", 
+        {
+          "title": "Single Drop-in",
+          "price": "250 kr",
           "description": "Perfect for trying out a class or for visitors. Book your spot in any of our regular classes. Great for those who want to experience our classes without a long-term commitment.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=drop-in-single-visit"
         },
-        { 
-          "title": "Funky Monkey Pass", 
-          "price": "1 995 kr", 
-          "description": "A 10-week pass for our Funky Monkey classes (ages 3-5) focused on playful movement and foundational motor skills.", 
+        {
+          "title": "Funky Monkey Pass",
+          "price": "1 995 kr",
+          "description": "A 10-week pass for our Funky Monkey classes (ages 3-5) focused on playful movement and foundational motor skills.",
           "link_text": "Read more",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=barntraning-3-5-ar-funky-monkeys"
         },
-        { 
-          "title": "Youth Class Pass", 
-          "price": "1 995 kr", 
-          "description": "A 10-week pass for our Youth classes (ages 10-14) aimed at building strength, mobility and confidence in a supportive environment.", 
+        {
+          "title": "Youth Class Pass",
+          "price": "1 995 kr",
+          "description": "A 10-week pass for our Youth classes (ages 10-14) aimed at building strength, mobility and confidence in a supportive environment.",
           "link_text": "Read more",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=youth-training-10-14-years"
         },
-        { 
-          "title": "Single PT Class", 
-          "price": "850 kr", 
+        {
+          "title": "Single PT Class",
+          "price": "850 kr",
           "description": "Get personalized attention and a workout tailored to your specific goals with a one-on-one session with our expert coaches. Suitable for those who want focused training and guidance.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
         },
-        { 
-          "title": "Strong Mama", 
-          "price": "2 990 kr", 
+        {
+          "title": "Strong Mama",
+          "price": "2 990 kr",
           "description": "A 10-class program designed to help new mothers safely and effectively return to training after childbirth. Babies are welcome! Perfect for new moms who want to regain strength and confidence in a supportive environment.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=strong-mamma"
         },
-        { 
-          "title": "Bruce Member Add-on", 
-          "price": "120 kr", 
+        {
+          "title": "Bruce Member Add-on",
+          "price": "120 kr",
           "description": "For our friends using Bruce! This add-on is for when you have used up your regular quota and want to join another class. Convenient for those who want to attend extra classes without upgrading their membership.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bruce-extra"
         },
-        { 
-          "title": "Plus Power", 
-          "price": "799 kr", 
+        {
+          "title": "Plus Power",
+          "price": "799 kr",
           "description": "A specialized monthly membership for individuals aged 65 and over, focusing on maintaining and improving vital physical skills that enhance daily life quality through functional strength, balance, and coordination training.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
         }
@@ -591,13 +604,43 @@
     },
     "comparison_table": {
       "title": "Membership Comparison",
-      "headers": ["Feature", "Silver", "Gold", "Gold+Coach"],
+      "headers": [
+        "Feature",
+        "Silver",
+        "Gold",
+        "Gold+Coach"
+      ],
       "rows": [
-        { "feature": "Bookings", "silver": "9 / month", "gold": "Unlimited", "gold_coach": "Unlimited" },
-        { "feature": "Friend Fridays", "silver": "—", "gold": "✓", "gold_coach": "✓" },
-        { "feature": "Freeze Weeks (2x2 weeks)", "silver": "2 / year", "gold": "4 / year", "gold_coach": "4 / year" },
-        { "feature": "PT Session", "silver": "—", "gold": "—", "gold_coach": "1 / month" },
-        { "feature": "Guaranteed Access", "silver": "—", "gold": "—", "gold_coach": "✓" }
+        {
+          "feature": "Bookings",
+          "silver": "9 / month",
+          "gold": "Unlimited",
+          "gold_coach": "Unlimited"
+        },
+        {
+          "feature": "Friend Fridays",
+          "silver": "—",
+          "gold": "✓",
+          "gold_coach": "✓"
+        },
+        {
+          "feature": "Freeze Weeks (2x2 weeks)",
+          "silver": "2 / year",
+          "gold": "4 / year",
+          "gold_coach": "4 / year"
+        },
+        {
+          "feature": "PT Session",
+          "silver": "—",
+          "gold": "—",
+          "gold_coach": "1 / month"
+        },
+        {
+          "feature": "Guaranteed Access",
+          "silver": "—",
+          "gold": "—",
+          "gold_coach": "✓"
+        }
       ]
     }
   },
@@ -617,6 +660,250 @@
       "title": "Send an Email",
       "description": "For any inquiries, please reach out to Mark directly.",
       "button_text": "mark@bonobogym.com"
+    }
+  },
+  "labs_teaser": {
+    "eyebrow": "New service: Bonobo Labs",
+    "title": "Measure how you move. Improve what matters.",
+    "description": "Bonobo Movement Lab uses VALD HumanTrak to turn objective movement data into simple training priorities, clear progress markers, and smarter coaching decisions.",
+    "button": "Explore Bonobo Labs",
+    "image_alt": "VALD HumanTrak movement analysis system interface",
+    "media_credit": "Media courtesy/source: VALD HumanTrak product page.",
+    "proof_points": [
+      {
+        "title": "Objective baseline",
+        "description": "Measure mobility, balance, symmetry and movement control before you guess what to train."
+      },
+      {
+        "title": "Three priorities",
+        "description": "Leave with a clear coaching focus instead of a confusing pile of raw data."
+      },
+      {
+        "title": "Retest proof",
+        "description": "Repeat the same tests after training and see what changed."
+      }
+    ]
+  },
+  "labs_page": {
+    "email": {
+      "subject_prefix": "Bonobo Movement Lab enquiry"
+    },
+    "media": {
+      "credit": "Media courtesy/source: VALD HumanTrak.",
+      "video_fallback": "Open the VALD video"
+    },
+    "hero": {
+      "eyebrow": "Bonobo Movement Lab",
+      "title": "Measure how you move. Improve what matters. Prove your progress.",
+      "subtitle": "Objective movement profiles for individuals, teams and workplaces. We use VALD HumanTrak to measure mobility, balance, symmetry and movement control, then turn the data into practical training priorities.",
+      "primary_cta": "For individuals",
+      "secondary_cta": "For teams & clubs",
+      "image_alt": "VALD HumanTrak product visual used for movement analysis"
+    },
+    "segment_nav": {
+      "label": "Bonobo Labs audience paths"
+    },
+    "measure": {
+      "eyebrow": "Powered by VALD HumanTrak",
+      "title": "One platform, three practical use cases.",
+      "description": "HumanTrak is a portable markerless 3D movement-analysis system. At Bonobo, the technology supports coaching: it helps identify training priorities and gives each person or group a baseline to retest against.",
+      "source_intro": "Based on official VALD product and support information:",
+      "source_product": "HumanTrak overview",
+      "source_tests": "test library",
+      "items": [
+        {
+          "title": "Mobility",
+          "description": "Range-of-motion tests for shoulders, trunk, hips, ankles and other key movement areas."
+        },
+        {
+          "title": "Balance",
+          "description": "Standing balance and control tests for general adults, athletes and active-aging clients."
+        },
+        {
+          "title": "Symmetry",
+          "description": "Left-right comparisons reveal where training may need more attention."
+        },
+        {
+          "title": "Reports and retesting",
+          "description": "A tangible report and repeatable test battery help turn training progress into proof."
+        }
+      ]
+    },
+    "process": {
+      "title": "How the Lab works",
+      "description": "Every path follows the same simple loop: measure, choose priorities, train, then retest.",
+      "steps": [
+        {
+          "title": "Baseline",
+          "description": "Run a test battery matched to the person, team or workplace."
+        },
+        {
+          "title": "Three priorities",
+          "description": "Translate the results into the most useful training focus areas."
+        },
+        {
+          "title": "Training plan",
+          "description": "Connect the result to classes, PT, team work or workplace follow-up."
+        },
+        {
+          "title": "Retest",
+          "description": "Repeat the same tests in 8-12 weeks to see what changed."
+        }
+      ]
+    },
+    "segments_intro": {
+      "eyebrow": "Choose your path",
+      "title": "Built for three primary audiences",
+      "description": "The technology is the same, but the offer, language and next step change depending on who is using it."
+    },
+    "segments": [
+      {
+        "id": "individuals",
+        "nav_label": "Individuals",
+        "eyebrow": "Individuals",
+        "title": "For members, new starters and returning exercisers",
+        "description": "Get a clear movement baseline and a practical plan for what to train first. This is the best path if you want personal coaching direction without guessing.",
+        "media_title": "VALD HumanTrak video for individual movement analysis",
+        "media_caption": "Official VALD video showing how HumanTrak works for movement analysis.",
+        "email_context": "Goal or context:",
+        "button": "Enquire by email",
+        "highlights": [
+          "Clear baseline for mobility, balance, symmetry and control",
+          "Three focused training priorities",
+          "Simple retest path to prove progress"
+        ],
+        "offers": [
+          {
+            "title": "Bonobo Movement Snapshot",
+            "duration": "20-25 minutes",
+            "price": "590 SEK member / 790 SEK non-member",
+            "description": "A low-friction screen for curious members, Bruce users and local residents.",
+            "includes": [
+              "3-5 tests",
+              "Short explanation",
+              "One-page summary"
+            ]
+          },
+          {
+            "title": "Bonobo Movement Profile",
+            "duration": "55-60 minutes",
+            "price": "1,290 SEK member / 1,490-1,590 SEK non-member",
+            "description": "The core paid assessment for new members, PT prospects and people returning to training.",
+            "includes": [
+              "Full test battery",
+              "VALD report",
+              "Three priority areas",
+              "Training recommendation"
+            ]
+          },
+          {
+            "title": "Bonobo Movement Upgrade",
+            "duration": "4-8 weeks",
+            "price": "3,990-4,900 SEK",
+            "description": "Turns an assessment into coached training and a retest.",
+            "includes": [
+              "Movement Profile",
+              "1-2 coaching sessions",
+              "Class plan",
+              "Retest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "teams-clubs",
+        "nav_label": "Teams & clubs",
+        "eyebrow": "Teams & clubs",
+        "title": "For coaches who need fast group insight",
+        "description": "Screen a squad in a repeatable block, give athletes individual reports and give coaches a simple summary they can use in training.",
+        "media_title": "VALD HumanTrak group testing video",
+        "media_caption": "Official VALD video focused on group testing with HumanTrak.",
+        "email_context": "Team, sport, squad size and preferred dates:",
+        "button": "Enquire for team pricing",
+        "highlights": [
+          "Group testing built for 10-15 athletes",
+          "Individual reports plus coach summary",
+          "Useful for preseason, mid-season or retest blocks"
+        ],
+        "offers": [
+          {
+            "title": "Team / Club Screening",
+            "duration": "10-15 athletes",
+            "price_note": "Enquire for team pricing",
+            "description": "Group screening for clubs and teams that need individual reports and a coach summary.",
+            "includes": [
+              "Group battery",
+              "Individual reports",
+              "Coach summary",
+              "Retest option"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "enterprises",
+        "nav_label": "Enterprises",
+        "eyebrow": "Enterprises",
+        "title": "For companies that want practical movement engagement",
+        "description": "Bring objective movement screening and coaching language into a workday format. The focus is awareness, useful habits and clear next steps, not medical assessment.",
+        "media_title": "VALD HumanTrak workplace-relevant movement video",
+        "media_caption": "Official VALD video showing HumanTrak box-lift testing, used here as the closest workplace-relevant media fit.",
+        "email_context": "Company, team size, location and preferred dates:",
+        "button": "Enquire for company pricing",
+        "highlights": [
+          "Half-day movement event for local employers",
+          "Mini-screens, education and simple reporting",
+          "Optional follow-up path into full Movement Profiles"
+        ],
+        "offers": [
+          {
+            "title": "Corporate Movement Day",
+            "duration": "Half-day",
+            "price_note": "Enquire for company pricing",
+            "description": "Movement screens and education for office teams and local employers.",
+            "includes": [
+              "Mini-screens",
+              "Movement education",
+              "Short report",
+              "Offer for full profile"
+            ]
+          }
+        ]
+      }
+    ],
+    "boundary": {
+      "title": "Clear fitness scope",
+      "description": "Bonobo Movement Lab identifies training priorities. Medical professionals diagnose and treat medical conditions.",
+      "image_alt": "VALD HumanTrak in use for movement analysis",
+      "reliability_link": "Read VALD reliability context.",
+      "items": [
+        "Not medical diagnosis",
+        "Not pain diagnosis",
+        "Not injury prediction",
+        "Not guaranteed injury prevention",
+        "Not gait analysis",
+        "Not clinical return-to-play clearance"
+      ]
+    },
+    "final_cta": {
+      "title": "Ready to train from a better baseline?",
+      "description": "Tell us which path fits you best and we will suggest the right next step.",
+      "button": "Email Mark about Labs",
+      "email_context": "I am interested in:"
+    },
+    "references": {
+      "title": "VALD sources used for this page",
+      "description": "Bonobo Labs copy is based on official VALD product, support, reliability and media material.",
+      "links": [
+        "HumanTrak product page",
+        "Markerless motion capture article",
+        "HumanTrak test types",
+        "What HumanTrak measures",
+        "HumanTrak reliability note",
+        "Individual HumanTrak video",
+        "Group testing video",
+        "Box-lift testing video"
+      ]
     }
   }
 }
