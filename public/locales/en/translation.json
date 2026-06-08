@@ -10,9 +10,9 @@
     "labs": "Labs"
   },
   "hero": {
-    "title": "Improvement by Movement",
-    "subtitle": "at Bonobo Gym - Kvarnholmen",
-    "button_trial": "Book a Trial",
+    "title": "Bonobo Gym",
+    "subtitle": "Improvement by Movement",
+    "button_trial": "Book a consultation",
     "button_membership": "View Memberships"
   },
   "value_prop": {
@@ -125,7 +125,7 @@
     "title": "Take the first step",
     "subtitle": "towards a stronger, more joyful you.",
     "button_join": "Join Today",
-    "button_trial": "Book a Trial"
+    "button_trial": "Book a consultation"
   },
   "about_hero": {
     "title": "Bonobo Gym",
@@ -173,7 +173,7 @@
     "title": "Take the first step",
     "subtitle": "towards a stronger, more joyful you.",
     "button_schedule": "View Our Class Schedule",
-    "button_trial": "Book Your Trial Session"
+    "button_trial": "Book a consultation"
   },
   "team_spotlight": {
     "title": "Meet Our Team",
@@ -253,7 +253,7 @@
   "seo": {
     "home": {
       "title": "Bonobo Gym Kvarnholmen | Boutique Gym & Group Training in Nacka",
-      "description": "Discover Bonobo Gym in Kvarnholmen. We offer personal training, group classes, and specialized programs like Strong Mama & kids' training. Trial cards available for new members!"
+      "description": "Discover Bonobo Gym in Kvarnholmen. We offer personal training, group classes, HumanTrak movement analysis, and consultation-led membership guidance."
     },
     "about": {
       "title": "About Us | Bonobo Gym Nacka",
@@ -438,7 +438,7 @@
   "booking_cta": {
     "title": "Take the first step",
     "subtitle": "towards a stronger, more joyful you.",
-    "trial_button": "Book a Trial",
+    "trial_button": "Book a consultation",
     "membership_button": "See Memberships"
   },
   "classes_faq": {
@@ -470,8 +470,8 @@
     "title": "Frequently Asked Questions",
     "questions": [
       {
-        "question": "What is the Bonobo Trail and what happens after it ends?",
-        "answer": "The Bonobo Trail is our introductory offer: 3 classes in 14 days for 360 kr. It's the perfect way to experience our gym. If you decide to join as a full member after your trial, you'll receive a 10% discount on your first month's membership!"
+        "question": "What happens in an introduction consultation?",
+        "answer": "The consultation is a short conversation with Mark about your goals, training history and best next step. It can lead to a membership, HumanTrak movement profile, PT, or a class recommendation."
       },
       {
         "question": "Can I bring a friend to train with me?",
@@ -497,69 +497,86 @@
   },
   "membership_page": {
     "header": {
-      "title": "Pick Your Path",
-      "subtitle": "Choose a membership option or flexible pass that meet your needs"
+      "title": "Choose the level of support you need",
+      "subtitle": "Memberships now start with a consultation so we can match you to the right mix of gym access, HumanTrak insight, PT and coaching."
     },
-    "trail_offer": {
-      "title": "Bonobo Trail",
-      "description": "Try us out! 3 classes in 14 days for only 360 kr.",
-      "promo": "Convert to a full membership and get 10% off your first month! ",
-      "button": "Claim Offer",
-      "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=prova-pa--bonobo-3-ggr"
+    "consultation": {
+      "subject_prefix": "Bonobo membership consultation",
+      "context": "Membership interest and training goal:"
     },
-    "pricing_cards": {
-      "silver": {
-        "title": "Silver",
-        "price_suffix": "/mo",
+    "consultation_offer": {
+      "title": "Start with an introduction consultation",
+      "description": "Tell us where you are starting from and what you want to improve. Mark will help you choose between Core, Longevity, Executive Coaching, HumanTrak or PT.",
+      "promo": "No advance package purchase required. The goal is to recommend the right next step before you buy.",
+      "button": "Book a consultation",
+      "email_subject": "Bonobo membership consultation",
+      "email_context": "Membership interest and training goal:"
+    },
+    "plans": [
+      {
+        "id": "core",
+        "title": "Bonobo Core Membership",
+        "audience": "For consistent small-group training",
+        "price": "1 200 kr",
+        "price_suffix": "/ month",
+        "description": "The core Bonobo membership for people who want regular training, community and clear weekly programming.",
         "features": [
-          "9 bookings per month",
-          "2 weeks freeze per year",
-          "Access to all classes"
+          "Gym access",
+          "Small-group community",
+          "Basic programming",
+          "Access to regular classes"
         ],
-        "button": "Choose Silver →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
+        "button": "Discuss Core Membership"
       },
-      "gold": {
-        "tag": "Most Popular",
-        "title": "Gold",
-        "price_suffix": "/mo",
+      {
+        "id": "longevity",
+        "tag": "Recommended",
+        "highlight": true,
+        "title": "Bonobo Longevity Membership",
+        "audience": "For measurable long-term progress",
+        "price": "1 599-1 899 kr",
+        "price_suffix": "/ month",
+        "description": "Adds objective HumanTrak check-ins and program reviews for members who want to keep moving better over time.",
         "features": [
-          "Unlimited bookings, all classes",
-          "Bring a friend on 'Friend Friday'",
-          "4 weeks freeze per year"
+          "Everything in Core",
+          "Quarterly HumanTrak scan",
+          "Private program updates",
+          "Goal reviews",
+          "Priority support"
         ],
-        "button": "Go for Gold →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
-        "annual_note": "Or pay annually (12 089 kr) and get 1 month for free!",
-        "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
+        "button": "Discuss Longevity"
       },
-      "gold_coach": {
-        "title": "Gold+Coach",
-        "price_suffix": "/mo",
+      {
+        "id": "executive",
+        "title": "Bonobo Executive Longevity Coaching",
+        "audience": "For high-touch coaching and accountability",
+        "price": "3 500-6 000 kr",
+        "price_suffix": "/ month",
+        "price_note": "Pricing depends on coaching volume: around two PT sessions monthly at the lower range and four to five sessions at the upper range.",
+        "description": "A premium coaching path combining HumanTrak, PT, small-group PT options and ongoing accountability online and in the gym.",
         "features": [
-          "All Gold benefits included",
-          "1 PT session per month",
-          "Guaranteed access to classes"
+          "Everything in Longevity",
+          "Monthly coaching",
+          "Quarterly HumanTrak scan",
+          "PT or small-group PT sessions",
+          "Online and in-gym accountability check-ins"
         ],
-        "button": "Upgrade to Gold+Coach",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=gold--coach",
-        "annual_note": "Or pay annually (19 789 kr) and get 1 month for free!",
-        "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold-coach"
+        "button": "Discuss Executive Coaching"
       }
-    },
+    ],
     "other_passes": {
       "title": "Other Passes & Packs",
       "passes": [
         {
           "title": "10-Pack Clip Card",
           "price": "1 999 kr",
-          "description": "Train when it suits you. The 10-pack clip card is valid for 6 months from the date of purchase. Perfect for those who want flexibility in their training schedule.",
+          "description": "Train when it suits you. The 10-pack clip card is valid for 6 months from the date of purchase.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=10-visit-klippkort"
         },
         {
           "title": "Single Drop-in",
           "price": "250 kr",
-          "description": "Perfect for trying out a class or for visitors. Book your spot in any of our regular classes. Great for those who want to experience our classes without a long-term commitment.",
+          "description": "Book a spot in one regular class when you need a flexible option without a membership.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=drop-in-single-visit"
         },
         {
@@ -577,69 +594,86 @@
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=youth-training-10-14-years"
         },
         {
-          "title": "Single PT Class",
-          "price": "850 kr",
-          "description": "Get personalized attention and a workout tailored to your specific goals with a one-on-one session with our expert coaches. Suitable for those who want focused training and guidance.",
+          "title": "Single PT Session",
+          "price": "1 200 kr",
+          "description": "One focused personal training session tailored to your goals, training history and current priorities.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
         },
         {
           "title": "Strong Mama",
           "price": "2 990 kr",
-          "description": "A 10-class program designed to help new mothers safely and effectively return to training after childbirth. Babies are welcome! Perfect for new moms who want to regain strength and confidence in a supportive environment.",
+          "description": "A 10-class program designed to help new mothers return to training with a supportive coach and group environment. Babies are welcome.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=strong-mamma"
         },
         {
           "title": "Bruce Member Add-on",
           "price": "120 kr",
-          "description": "For our friends using Bruce! This add-on is for when you have used up your regular quota and want to join another class. Convenient for those who want to attend extra classes without upgrading their membership.",
+          "description": "For Bruce members who have used their regular quota and want to join another class.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bruce-extra"
         },
         {
           "title": "Plus Power",
           "price": "799 kr",
-          "description": "A specialized monthly membership for individuals aged 65 and over, focusing on maintaining and improving vital physical skills that enhance daily life quality through functional strength, balance, and coordination training.",
+          "description": "A specialized monthly option for individuals aged 65 and over, focused on functional strength, balance and coordination.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
         }
       ]
     },
     "comparison_table": {
       "title": "Membership Comparison",
+      "plan_keys": [
+        "core",
+        "longevity",
+        "executive"
+      ],
       "headers": [
         "Feature",
-        "Silver",
-        "Gold",
-        "Gold+Coach"
+        "Core",
+        "Longevity",
+        "Executive"
       ],
       "rows": [
         {
-          "feature": "Bookings",
-          "silver": "9 / month",
-          "gold": "Unlimited",
-          "gold_coach": "Unlimited"
+          "feature": "Gym access and community",
+          "core": "Included",
+          "longevity": "Included",
+          "executive": "Included"
         },
         {
-          "feature": "Friend Fridays",
-          "silver": "—",
-          "gold": "✓",
-          "gold_coach": "✓"
+          "feature": "Basic programming",
+          "core": "Included",
+          "longevity": "Included",
+          "executive": "Included"
         },
         {
-          "feature": "Freeze Weeks (2x2 weeks)",
-          "silver": "2 / year",
-          "gold": "4 / year",
-          "gold_coach": "4 / year"
+          "feature": "Quarterly HumanTrak scan",
+          "core": "-",
+          "longevity": "Included",
+          "executive": "Included"
         },
         {
-          "feature": "PT Session",
-          "silver": "—",
-          "gold": "—",
-          "gold_coach": "1 / month"
+          "feature": "Private program updates",
+          "core": "-",
+          "longevity": "Included",
+          "executive": "Included"
         },
         {
-          "feature": "Guaranteed Access",
-          "silver": "—",
-          "gold": "—",
-          "gold_coach": "✓"
+          "feature": "Goal reviews",
+          "core": "-",
+          "longevity": "Included",
+          "executive": "Included"
+        },
+        {
+          "feature": "PT / small-group PT",
+          "core": "-",
+          "longevity": "-",
+          "executive": "2-5 sessions / month"
+        },
+        {
+          "feature": "Accountability check-ins",
+          "core": "-",
+          "longevity": "Priority support",
+          "executive": "Online and in-gym"
         }
       ]
     }
@@ -776,7 +810,7 @@
           {
             "title": "Bonobo Movement Snapshot",
             "duration": "20-25 minutes",
-            "price": "590 SEK member / 790 SEK non-member",
+            "price": "500 SEK member / 790 SEK non-member",
             "description": "A low-friction screen for curious members, Bruce users and local residents.",
             "includes": [
               "3-5 tests",
@@ -804,7 +838,7 @@
             "includes": [
               "Movement Profile",
               "1-2 coaching sessions",
-              "Class plan",
+              "Workout plan",
               "Retest"
             ]
           }
@@ -844,31 +878,52 @@
         "id": "enterprises",
         "nav_label": "Enterprises",
         "eyebrow": "Enterprises",
-        "title": "For companies that want practical movement engagement",
-        "description": "Bring objective movement screening and coaching language into a workday format. The focus is awareness, useful habits and clear next steps, not medical assessment.",
-        "media_title": "VALD HumanTrak workplace-relevant movement video",
-        "media_caption": "Official VALD video showing HumanTrak box-lift testing, used here as the closest workplace-relevant media fit.",
+        "title": "For companies that want people moving better at work",
+        "description": "Bonobo can design HumanTrak test batteries around the way your people actually work: desk-heavy teams, hybrid teams, leadership teams, occupational-health partners and physical-role teams. The aim is practical movement insight that supports wellbeing, attendance and morale without turning the workplace into a clinic.",
+        "media_title": "VALD HumanTrak overview video for enterprise movement screening",
+        "media_caption": "Official VALD HumanTrak overview video showing portable movement analysis and reporting for a broad range of use cases.",
         "email_context": "Company, team size, location and preferred dates:",
         "button": "Enquire for company pricing",
         "highlights": [
-          "Half-day movement event for local employers",
-          "Mini-screens, education and simple reporting",
-          "Optional follow-up path into full Movement Profiles"
+          "Tailored test batteries aligned with workplace strategies and job demands",
+          "Movement insights that can support better habits, attendance and general wellbeing",
+          "A visible investment in employees that can strengthen workplace morale"
         ],
         "offers": [
           {
             "title": "Corporate Movement Day",
             "duration": "Half-day",
             "price_note": "Enquire for company pricing",
-            "description": "Movement screens and education for office teams and local employers.",
+            "description": "Workplace movement screening and education for teams that want objective insight, practical habits and a clearer wellbeing signal.",
             "includes": [
-              "Mini-screens",
+              "Tailored mini-screens",
               "Movement education",
-              "Short report",
-              "Offer for full profile"
+              "Team-level summary",
+              "Offer for full Movement Profiles"
             ]
           }
-        ]
+        ],
+        "resources": {
+          "title": "Enterprise proof points from VALD",
+          "description": "These official VALD resources show how HumanTrak can support personnel screening, role-specific benchmarks and return-to-work contexts. Bonobo uses that logic for fitness and workplace movement insight, not medical diagnosis.",
+          "items": [
+            {
+              "title": "VALD Tactical",
+              "description": "Role-specific benchmarks and personnel assessment context.",
+              "source_key": "valdTactical"
+            },
+            {
+              "title": "Department of State case study",
+              "description": "HumanTrak used for objective personnel movement communication.",
+              "source_key": "departmentState"
+            },
+            {
+              "title": "Return-to-work use case",
+              "description": "Workplace movement context and objective progress reporting.",
+              "source_key": "returnToWork"
+            }
+          ]
+        }
       }
     ],
     "boundary": {
@@ -902,8 +957,15 @@
         "HumanTrak reliability note",
         "Individual HumanTrak video",
         "Group testing video",
-        "Box-lift testing video"
+        "HumanTrak overview video",
+        "VALD Tactical",
+        "Department of State case study",
+        "Return-to-work use case"
       ]
     }
+  },
+  "consultation": {
+    "email_subject": "Bonobo consultation enquiry",
+    "email_context": "Interest area: membership, HumanTrak, PT, or classes:"
   }
 }

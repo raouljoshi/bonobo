@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import SEO from './components/SEO';
 import ClassSchedule from './components/classes/ClassSchedule';
+import Membership from './components/Membership';
 import Labs from './pages/Labs';
-import { BOOKING_URL, openBookingUrl } from './utils/booking';
+import { BOOKING_URL, buildConsultationEmailLink, openBookingUrl } from './utils/booking';
 import { buildLabsEmailLink } from './utils/labs';
 import englishTranslations from '../public/locales/en/translation.json';
 import swedishTranslations from '../public/locales/sv/translation.json';
@@ -157,10 +158,84 @@ const mockTranslations = vi.hoisted(() => ({
       ],
     },
   },
+  membership_page: {
+    header: {
+      title: 'Choose the level of support you need',
+      subtitle: 'Memberships now start with a consultation.',
+    },
+    consultation: {
+      subject_prefix: 'Bonobo membership consultation',
+      context: 'Membership interest and training goal:',
+    },
+    consultation_offer: {
+      title: 'Start with an introduction consultation',
+      description: 'Mark will help you choose the right next step.',
+      promo: 'No advance package purchase required.',
+      button: 'Book a consultation',
+      email_subject: 'Bonobo membership consultation',
+      email_context: 'Membership interest and training goal:',
+    },
+    plans: [
+      {
+        id: 'core',
+        title: 'Bonobo Core Membership',
+        audience: 'For consistent small-group training',
+        price: '1 200 kr',
+        price_suffix: '/ month',
+        description: 'Core training.',
+        features: ['Gym access', 'Community', 'Basic programming'],
+        button: 'Discuss Core Membership',
+      },
+      {
+        id: 'longevity',
+        tag: 'Recommended',
+        highlight: true,
+        title: 'Bonobo Longevity Membership',
+        audience: 'For measurable long-term progress',
+        price: '1 599-1 899 kr',
+        price_suffix: '/ month',
+        description: 'Long-term progress.',
+        features: ['Quarterly HumanTrak scan', 'Goal reviews', 'Priority support'],
+        button: 'Discuss Longevity',
+      },
+      {
+        id: 'executive',
+        title: 'Bonobo Executive Longevity Coaching',
+        audience: 'For high-touch coaching',
+        price: '3 500-6 000 kr',
+        price_suffix: '/ month',
+        price_note: 'Pricing depends on coaching volume.',
+        description: 'Premium coaching.',
+        features: ['Monthly coaching', 'PT or small-group PT sessions', 'Accountability check-ins'],
+        button: 'Discuss Executive Coaching',
+      },
+    ],
+    other_passes: {
+      title: 'Other Passes & Packs',
+      passes: [],
+    },
+    comparison_table: {
+      title: 'Membership Comparison',
+      plan_keys: ['core', 'longevity', 'executive'],
+      headers: ['Feature', 'Core', 'Longevity', 'Executive'],
+      rows: [
+        { feature: 'Gym access and community', core: 'Included', longevity: 'Included', executive: 'Included' },
+        { feature: 'Quarterly HumanTrak scan', core: '-', longevity: 'Included', executive: 'Included' },
+      ],
+    },
+  },
+  faq: {
+    title: 'FAQ',
+    questions: [],
+  },
   seo: {
     labs: {
       title: 'Bonobo Labs',
       description: 'Movement profiles.',
+    },
+    membership: {
+      title: 'Memberships',
+      description: 'Membership options.',
     },
   },
 }));
@@ -191,6 +266,8 @@ test('renders a mobile-friendly class agenda alongside the desktop schedule', ()
 
   expect(screen.getByRole('heading', { name: 'Our Weekly Class Schedule' })).toBeInTheDocument();
   expect(screen.getByText('10:30-11:30')).toBeInTheDocument();
+  expect(screen.getAllByText('10:00-11:00').length).toBeGreaterThan(0);
+  expect(screen.getAllByText('11:00-12:00').length).toBeGreaterThan(0);
   expect(screen.getAllByText('Strong Mama (CarMa Training)').length).toBeGreaterThan(0);
 });
 
@@ -209,6 +286,15 @@ test('builds prefilled Bonobo Labs email enquiry links', () => {
   expect(link).toContain('mailto:mark@bonobogym.com');
   expect(decodeURIComponent(link)).toContain('Bonobo Movement Lab enquiry: Bonobo Movement Profile');
   expect(decodeURIComponent(link)).toContain('Goal or context:');
+});
+
+test('builds prefilled Bonobo consultation email links', () => {
+  const link = buildConsultationEmailLink('Bonobo consultation enquiry', 'Interest area:');
+
+  expect(link).toContain('mailto:mark@bonobogym.com');
+  expect(decodeURIComponent(link)).toContain('Bonobo consultation enquiry');
+  expect(decodeURIComponent(link)).toContain('I would like to book a consultation.');
+  expect(decodeURIComponent(link)).toContain('Interest area:');
 });
 
 test('renders Bonobo Labs segment anchors and enquiry-only team/company offers', () => {
@@ -232,4 +318,34 @@ test('keeps public Labs prices limited to individual offers in locale content', 
     expect(segments[0].offers.every((offer) => offer.price)).toBe(true);
     expect(segments.slice(1).flatMap((segment) => segment.offers).every((offer) => !offer.price && offer.price_note)).toBe(true);
   });
+});
+
+test('keeps Labs pricing and offer copy aligned with Mark feedback', () => {
+  const individualOffers = englishTranslations.labs_page.segments.find((segment) => segment.id === 'individuals').offers;
+  const snapshot = individualOffers.find((offer) => offer.title === 'Bonobo Movement Snapshot');
+  const upgrade = individualOffers.find((offer) => offer.title === 'Bonobo Movement Upgrade');
+
+  expect(snapshot.price).toBe('500 SEK member / 790 SEK non-member');
+  expect(upgrade.includes).toContain('Workout plan');
+  expect(upgrade.includes).not.toContain('Class plan');
+});
+
+test('renders consultation-led membership tiers', () => {
+  render(<Membership />);
+
+  expect(screen.getByRole('heading', { name: 'Choose the level of support you need' })).toBeInTheDocument();
+  expect(screen.getByText('Bonobo Core Membership')).toBeInTheDocument();
+  expect(screen.getByText('Bonobo Longevity Membership')).toBeInTheDocument();
+  expect(screen.getByText('Bonobo Executive Longevity Coaching')).toBeInTheDocument();
+  expect(screen.getByText('1 200 kr')).toBeInTheDocument();
+  expect(screen.getByText('1 599-1 899 kr')).toBeInTheDocument();
+  expect(screen.getByText('3 500-6 000 kr')).toBeInTheDocument();
+  expect(screen.queryByText('Bonobo Trail')).not.toBeInTheDocument();
+});
+
+test('removes trial framing from primary home and membership locale content', () => {
+  expect(englishTranslations.hero.button_trial.toLowerCase()).toContain('consultation');
+  expect(englishTranslations.membership_page.consultation_offer.title.toLowerCase()).toContain('consultation');
+  expect(JSON.stringify(englishTranslations.membership_page)).not.toContain('Bonobo Trail');
+  expect(JSON.stringify(swedishTranslations.membership_page)).not.toContain('Bonobo Trail');
 });

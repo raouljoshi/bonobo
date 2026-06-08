@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { BOOKING_URL } from '../../utils/booking';
+import { buildConsultationEmailLink } from '../../utils/booking';
 
 const BookingCTA = () => {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ const BookingCTA = () => {
           {cta.subtitle}
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"> {cta.trial_button} </a>
+          <a href={buildConsultationEmailLink(t('consultation.email_subject'), t('consultation.email_context'))} className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"> {cta.trial_button} </a>
           <Link to="/membership" className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-200 px-5 py-3 text-base font-medium text-gray-800 hover:bg-gray-300"> {cta.membership_button} </Link>
         </div>
       </div>

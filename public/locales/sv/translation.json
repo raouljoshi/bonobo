@@ -10,9 +10,9 @@
     "labs": "Labs"
   },
   "hero": {
-    "title": "Improvement by Movement",
-    "subtitle": "hos Bonobo Gym - Kvarnholmen",
-    "button_trial": "Boka Prova på",
+    "title": "Bonobo Gym",
+    "subtitle": "Improvement by Movement",
+    "button_trial": "Boka konsultation",
     "button_membership": "Se Medlemskap"
   },
   "value_prop": {
@@ -128,7 +128,7 @@
     "title": "Ta första steget",
     "subtitle": "mot ett starkare och gladare du.",
     "button_join": "Bli medlem idag",
-    "button_trial": "Boka prova på"
+    "button_trial": "Boka konsultation"
   },
   "about_hero": {
     "title": "Bonobo Gym",
@@ -176,7 +176,7 @@
     "title": "Ta första steget",
     "subtitle": "mot ett starkare och gladare du.",
     "button_schedule": "Se vårt passchema",
-    "button_trial": "Boka ditt prova-på-pass"
+    "button_trial": "Boka konsultation"
   },
   "team_spotlight": {
     "title": "Möt vårt team",
@@ -256,7 +256,7 @@
   "seo": {
     "home": {
       "title": "Bonobo Gym Kvarnholmen | Boutique Gym & Gruppträning i Nacka",
-      "description": "Upptäck Bonobo Gym på Kvarnholmen. Vi erbjuder personlig träning, gruppträning och specialpass som Strong Mama & barnträning. Prova-på-kort för nya medlemmar!"
+      "description": "Upptäck Bonobo Gym på Kvarnholmen. Vi erbjuder personlig träning, gruppträning, HumanTrak-rörelseanalys och konsultation för rätt medlemskap."
     },
     "about": {
       "title": "Om Oss | Bonobo Gym Nacka",
@@ -441,7 +441,7 @@
   "booking_cta": {
     "title": "Ta första steget",
     "subtitle": "mot ett starkare och gladare du.",
-    "trial_button": "Boka prova på",
+    "trial_button": "Boka konsultation",
     "membership_button": "Se Medlemskap"
   },
   "classes_faq": {
@@ -473,8 +473,8 @@
     "title": "Vanliga frågor",
     "questions": [
       {
-        "question": "Vad är Bonobo Trail och vad händer när det är slut?",
-        "answer": "Bonobo Trail är vårt introduktionserbjudande: 3 pass på 14 dagar för 360 kr. Det är det perfekta sättet att uppleva vårt gym. Om du bestämmer dig för att bli fullvärdig medlem efter din provperiod får du 10% rabatt på din första månads medlemskap!"
+        "question": "Vad händer under en introduktionskonsultation?",
+        "answer": "Konsultationen är ett kort samtal med Mark om dina mål, din träningsbakgrund och bästa nästa steg. Det kan leda till medlemskap, HumanTrak-rörelseprofil, PT eller rekommendation av pass."
       },
       {
         "question": "Kan jag ta med en vän för att träna?",
@@ -500,69 +500,86 @@
   },
   "membership_page": {
     "header": {
-      "title": "Välj Din Väg",
-      "subtitle": "Välj ett medlemskap eller flexibelt kort som passar dina behov"
+      "title": "Välj rätt nivå av stöd",
+      "subtitle": "Medlemskapen börjar med en konsultation så att vi kan matcha dig med rätt mix av gym, HumanTrak, PT och coachning."
     },
-    "trail_offer": {
-      "title": "Bonobo Trail",
-      "description": "Prova på! 3 pass i 14 dagar för endast 360 kr.",
-      "promo": "Uppgradera till fullt medlemskap och få 10% rabatt på din första månad!",
-      "button": "Starta din Prova-på →",
-      "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=prova-pa--bonobo-3-ggr"
+    "consultation": {
+      "subject_prefix": "Bonobo medlemskapskonsultation",
+      "context": "Intresse för medlemskap och träningsmål:"
     },
-    "pricing_cards": {
-      "silver": {
-        "title": "Silver",
-        "price_suffix": "/mån",
+    "consultation_offer": {
+      "title": "Börja med en introduktionskonsultation",
+      "description": "Berätta var du startar och vad du vill förbättra. Mark hjälper dig att välja mellan Core, Longevity, Executive Coaching, HumanTrak eller PT.",
+      "promo": "Inget paketköp krävs i förväg. Målet är att rekommendera rätt nästa steg innan du köper.",
+      "button": "Boka konsultation",
+      "email_subject": "Bonobo medlemskapskonsultation",
+      "email_context": "Intresse för medlemskap och träningsmål:"
+    },
+    "plans": [
+      {
+        "id": "core",
+        "title": "Bonobo Core Membership",
+        "audience": "För regelbunden smågruppsträning",
+        "price": "1 200 kr",
+        "price_suffix": "/ månad",
+        "description": "Bonobos grundmedlemskap för dig som vill ha regelbunden träning, gemenskap och tydlig veckoprogrammering.",
         "features": [
-          "9 bokningar per månad",
-          "2 veckors frysning per år",
-          "Tillgång till alla klasser"
+          "Gymtillgång",
+          "Smågruppsgemenskap",
+          "Grundprogrammering",
+          "Tillgång till ordinarie pass"
         ],
-        "button": "Välj Silver →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
+        "button": "Prata om Core Membership"
       },
-      "gold": {
-        "tag": "Mest Populära",
-        "title": "Guld",
-        "price_suffix": "/mån",
+      {
+        "id": "longevity",
+        "tag": "Rekommenderas",
+        "highlight": true,
+        "title": "Bonobo Longevity Membership",
+        "audience": "För mätbara framsteg över tid",
+        "price": "1 599-1 899 kr",
+        "price_suffix": "/ månad",
+        "description": "Lägger till objektiva HumanTrak-uppföljningar och programgenomgångar för medlemmar som vill röra sig bättre över tid.",
         "features": [
-          "Obegränsade bokningar, alla klasser",
-          "Ta med en vän på 'Friend Friday'",
-          "4 veckors frysning per år"
+          "Allt i Core",
+          "HumanTrak-scan varje kvartal",
+          "Privata programuppdateringar",
+          "Måluppföljningar",
+          "Prioriterat stöd"
         ],
-        "button": "Gå för Guld →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
-        "annual_note": "Eller betala årligen (12 089 kr) och få 1 månad gratis!",
-        "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
+        "button": "Prata om Longevity"
       },
-      "gold_coach": {
-        "title": "Guld+Coach",
-        "price_suffix": "/mån",
+      {
+        "id": "executive",
+        "title": "Bonobo Executive Longevity Coaching",
+        "audience": "För hög nivå av coachning och ansvarstagande",
+        "price": "3 500-6 000 kr",
+        "price_suffix": "/ månad",
+        "price_note": "Priset beror på coachningsvolym: ungefär två PT-pass per månad i den lägre nivån och fyra till fem pass i den övre nivån.",
+        "description": "En premiumväg som kombinerar HumanTrak, PT, möjliga smågrupps-PT-pass och löpande ansvarstagande online och på gymmet.",
         "features": [
-          "Alla Guld-förmåner ingår",
-          "1 PT-session per månad",
-          "Garanterad plats på klasser"
+          "Allt i Longevity",
+          "Månatlig coachning",
+          "HumanTrak-scan varje kvartal",
+          "PT eller smågrupps-PT",
+          "Uppföljning online och på gymmet"
         ],
-        "button": "Uppgradera till Guld+Coach",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=gold--coach",
-        "annual_note": "Eller betala årligen (19 789 kr) och få 1 månad gratis!",
-        "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold-coach"
+        "button": "Prata om Executive Coaching"
       }
-    },
+    ],
     "other_passes": {
       "title": "Andra Kort & Klippkort",
       "passes": [
         {
           "title": "10-Klippkort",
           "price": "1 999 kr",
-          "description": "Träna när det passar dig. 10-klippkortet är giltigt i 6 månader från inköpsdatum. Perfekt för dig som vill ha flexibilitet i din träning.",
+          "description": "Träna när det passar dig. 10-klippkortet är giltigt i 6 månader från inköpsdatum.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=10-visit-klippkort"
         },
         {
           "title": "Drop-in",
           "price": "250 kr",
-          "description": "Perfekt för att prova en klass eller för besökare. Boka din plats på någon av våra ordinarie klasser. Utmärkt för dig som vill uppleva våra klasser utan ett långsiktigt åtagande.",
+          "description": "Boka en plats på ett ordinarie pass när du behöver ett flexibelt alternativ utan medlemskap.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=drop-in-single-visit"
         },
         {
@@ -575,74 +592,91 @@
         {
           "title": "Ungdomskort",
           "price": "1 995 kr",
-          "description": "Ett 10-veckorskort för våra ungdomsklasser (10-14 år) som syftar till att bygga styrka, rörlighet och självförtroende i en stödjande miljö.",
+          "description": "Ett 10-veckorskort för våra ungdomsklasser (10-14 år) som bygger styrka, rörlighet och självförtroende i en stödjande miljö.",
           "link_text": "Läs mer",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=youth-training-10-14-years"
         },
         {
-          "title": "Enskild PT-klass",
-          "price": "850 kr",
-          "description": "Få personlig uppmärksamhet och ett träningspass anpassat efter dina specifika mål med en en-mot-en-session med våra expertcoacher. Lämplig för dig som vill ha fokuserad träning och vägledning.",
+          "title": "Enskilt PT-pass",
+          "price": "1 200 kr",
+          "description": "Ett fokuserat personligt träningspass anpassat efter dina mål, din träningsbakgrund och dina prioriteringar.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
         },
         {
           "title": "Strong Mama",
           "price": "2 990 kr",
-          "description": "Ett 10-klassersprogram utformat för att hjälpa nyblivna mammor att säkert och effektivt återgå till träning efter förlossningen. Bebisar är välkomna! Perfekt för nyblivna mammor som vill återfå styrka och självförtroende i en stödjande miljö.",
+          "description": "Ett 10-passprogram för nyblivna mammor som vill komma tillbaka till träning i en stödjande coach- och gruppmiljö. Bebisar är välkomna.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=strong-mamma"
         },
         {
           "title": "Bruce Medlemstillägg",
           "price": "120 kr",
-          "description": "För våra vänner som använder Bruce! Detta tillägg är till för när du har använt upp din vanliga kvot och vill delta i en annan klass. Praktiskt för dig som vill gå på extra klasser utan att uppgradera ditt medlemskap.",
+          "description": "För Bruce-medlemmar som har använt sin vanliga kvot och vill delta på ytterligare ett pass.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bruce-extra"
         },
         {
           "title": "Plus Power",
           "price": "799 kr",
-          "description": "Ett specialiserat månadsmedlemskap för individer från 65 år och uppåt, med fokus på att bibehålla och förbättra viktiga fysiska färdigheter som höjer livskvaliteten i vardagen genom funktionell styrka, balans och koordinationsträning.",
+          "description": "Ett specialiserat månadsalternativ för personer från 65 år och uppåt med fokus på funktionell styrka, balans och koordination.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
         }
       ]
     },
     "comparison_table": {
       "title": "Jämför medlemskap",
+      "plan_keys": [
+        "core",
+        "longevity",
+        "executive"
+      ],
       "headers": [
         "Förmån",
-        "Silver",
-        "Guld",
-        "Guld+Coach"
+        "Core",
+        "Longevity",
+        "Executive"
       ],
       "rows": [
         {
-          "feature": "Bokningar",
-          "silver": "9 / mån",
-          "gold": "Obegränsat",
-          "gold_coach": "Obegränsat"
+          "feature": "Gym och gemenskap",
+          "core": "Ingår",
+          "longevity": "Ingår",
+          "executive": "Ingår"
         },
         {
-          "feature": "Kompis-fredagar",
-          "silver": "—",
-          "gold": "✓",
-          "gold_coach": "✓"
+          "feature": "Grundprogrammering",
+          "core": "Ingår",
+          "longevity": "Ingår",
+          "executive": "Ingår"
         },
         {
-          "feature": "Frysning (veckor)",
-          "silver": "2 / år",
-          "gold": "4 / år",
-          "gold_coach": "4 / år"
+          "feature": "HumanTrak-scan varje kvartal",
+          "core": "-",
+          "longevity": "Ingår",
+          "executive": "Ingår"
         },
         {
-          "feature": "PT-pass",
-          "silver": "—",
-          "gold": "—",
-          "gold_coach": "1 / mån"
+          "feature": "Privata programuppdateringar",
+          "core": "-",
+          "longevity": "Ingår",
+          "executive": "Ingår"
         },
         {
-          "feature": "Garanterad Plats",
-          "silver": "—",
-          "gold": "—",
-          "gold_coach": "✓"
+          "feature": "Måluppföljningar",
+          "core": "-",
+          "longevity": "Ingår",
+          "executive": "Ingår"
+        },
+        {
+          "feature": "PT / smågrupps-PT",
+          "core": "-",
+          "longevity": "-",
+          "executive": "2-5 pass / månad"
+        },
+        {
+          "feature": "Ansvarstagande och check-ins",
+          "core": "-",
+          "longevity": "Prioriterat stöd",
+          "executive": "Online och på gymmet"
         }
       ]
     }
@@ -779,7 +813,7 @@
           {
             "title": "Bonobo Movement Snapshot",
             "duration": "20-25 minuter",
-            "price": "590 SEK medlem / 790 SEK icke-medlem",
+            "price": "500 SEK medlem / 790 SEK icke-medlem",
             "description": "En lågtröskelscreening för nyfikna medlemmar, Bruce-användare och boende i området.",
             "includes": [
               "3-5 tester",
@@ -807,7 +841,7 @@
             "includes": [
               "Movement Profile",
               "1-2 coachningspass",
-              "Passplan",
+              "Träningsplan",
               "Retest"
             ]
           }
@@ -847,31 +881,52 @@
         "id": "enterprises",
         "nav_label": "Företag",
         "eyebrow": "Företag",
-        "title": "För företag som vill skapa praktiskt rörelseengagemang",
-        "description": "Ta in objektiv rörelsescreening och coachningsspråk i ett arbetsdagsformat. Fokus är medvetenhet, användbara vanor och tydliga nästa steg, inte medicinsk bedömning.",
-        "media_title": "VALD HumanTrak-video med arbetsplatsrelevant rörelse",
-        "media_caption": "Officiell VALD-video som visar box lift-testning med HumanTrak, här använd som närmaste arbetsplatsrelevanta media.",
+        "title": "För företag som vill att människor rör sig bättre på jobbet",
+        "description": "Bonobo kan designa HumanTrak-testbatterier utifrån hur era medarbetare faktiskt arbetar: kontorsteam, hybridteam, ledningsgrupper, företagshälsopartners och mer fysiska roller. Målet är praktisk rörelseinsikt som stödjer välmående, närvaro och moral utan att göra arbetsplatsen till en klinik.",
+        "media_title": "VALD HumanTrak översiktsvideo för företagsscreening",
+        "media_caption": "Officiell VALD HumanTrak-översiktsvideo som visar portabel rörelseanalys och rapportering för flera användningsområden.",
         "email_context": "Företag, gruppstorlek, plats och önskade datum:",
         "button": "Fråga om företagspris",
         "highlights": [
-          "Halvdags rörelseevent för lokala arbetsgivare",
-          "Miniscreeningar, utbildning och enkel rapportering",
-          "Möjlig uppföljning med full Movement Profile"
+          "Skräddarsydda testbatterier kopplade till arbetsplatsstrategier och rollkrav",
+          "Rörelseinsikter som kan stödja bättre vanor, närvaro och allmänt välmående",
+          "En tydlig investering i medarbetarna som kan stärka arbetsplatsens moral"
         ],
         "offers": [
           {
             "title": "Corporate Movement Day",
             "duration": "Halvdag",
             "price_note": "Fråga om företagspris",
-            "description": "Rörelsescreening och utbildning för kontorsteam och lokala arbetsgivare.",
+            "description": "Rörelsescreening och utbildning för team som vill ha objektiv insikt, praktiska vanor och en tydligare signal om välmående.",
             "includes": [
-              "Miniscreeningar",
+              "Skräddarsydda miniscreeningar",
               "Rörelseutbildning",
-              "Kort rapport",
-              "Erbjudande om full profil"
+              "Sammanfattning på teamnivå",
+              "Erbjudande om full Movement Profile"
             ]
           }
-        ]
+        ],
+        "resources": {
+          "title": "Företagsrelevanta exempel från VALD",
+          "description": "Dessa officiella VALD-resurser visar hur HumanTrak kan stödja personalscreening, rollspecifika riktmärken och return-to-work-sammanhang. Bonobo använder logiken för träning och rörelseinsikt på arbetsplatsen, inte medicinsk diagnos.",
+          "items": [
+            {
+              "title": "VALD Tactical",
+              "description": "Rollspecifika riktmärken och personalscreening.",
+              "source_key": "valdTactical"
+            },
+            {
+              "title": "Department of State case study",
+              "description": "HumanTrak för objektiv kommunikation om personalens rörelse.",
+              "source_key": "departmentState"
+            },
+            {
+              "title": "Return-to-work use case",
+              "description": "Arbetsplatskontext och objektiv uppföljning av framsteg.",
+              "source_key": "returnToWork"
+            }
+          ]
+        }
       }
     ],
     "boundary": {
@@ -905,8 +960,15 @@
         "HumanTrak tillförlitlighet",
         "Individuell HumanTrak-video",
         "Video om grupptestning",
-        "Video om box lift-testning"
+        "HumanTrak översiktsvideo",
+        "VALD Tactical",
+        "Department of State case study",
+        "Return-to-work use case"
       ]
     }
+  },
+  "consultation": {
+    "email_subject": "Förfrågan om Bonobo-konsultation",
+    "email_context": "Intresseområde: medlemskap, HumanTrak, PT eller pass:"
   }
 }

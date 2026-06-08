@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = 'mark@bonobogym.com';
+import { CONTACT_EMAIL } from './booking';
 
 export const buildLabsEmailLink = (
   offerTitle,
@@ -27,7 +27,11 @@ export const VALD_SOURCES = {
   reliability: 'https://valdhealth.com/news/validity-and-reliability-of-movement-analysis-methods-used-in-humantrak',
   individualsVideo: 'https://www.youtube.com/watch?v=1fYycDOJ4S8',
   teamsVideo: 'https://www.youtube.com/watch?v=6q5FojdrH8c',
-  enterprisesVideo: 'https://www.youtube.com/watch?v=BjqOcezvLxM',
+  enterprisesVideo: 'https://vimeo.com/270464819',
+  boxLiftVideo: 'https://www.youtube.com/watch?v=BjqOcezvLxM',
+  valdTactical: 'https://valdtactical.com/',
+  departmentState: 'https://valdperformance.com/news/monitoring-personnel-at-the-u-s-department-of-state',
+  returnToWork: 'https://valdhealth.com/news/return-to-work-with-humantrak-use-case/',
 };
 
 export const VALD_MEDIA = {
@@ -39,11 +43,11 @@ export const VALD_MEDIA = {
   segmentVideos: {
     individuals: 'https://www.youtube.com/embed/1fYycDOJ4S8',
     'teams-clubs': 'https://www.youtube.com/embed/6q5FojdrH8c',
-    enterprises: 'https://www.youtube.com/embed/BjqOcezvLxM',
+    enterprises: 'https://player.vimeo.com/video/270464819',
   },
   segmentSources: {
     individuals: 'https://www.youtube.com/watch?v=1fYycDOJ4S8',
     'teams-clubs': 'https://www.youtube.com/watch?v=6q5FojdrH8c',
-    enterprises: 'https://www.youtube.com/watch?v=BjqOcezvLxM',
+    enterprises: 'https://vimeo.com/270464819',
   },
 };

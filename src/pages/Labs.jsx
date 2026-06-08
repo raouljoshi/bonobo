@@ -211,6 +211,27 @@ const Labs = () => {
                     <OfferCard key={offer.title} offer={offer} segment={segment} email={labs.email} />
                   ))}
                 </div>
+
+                {segment.resources && (
+                  <div className="mt-8 rounded-lg border border-gray-200 bg-gray-50 p-5">
+                    <h4 className="text-lg font-bold text-gray-900">{segment.resources.title}</h4>
+                    <p className="mt-2 text-gray-600">{segment.resources.description}</p>
+                    <div className="mt-5 grid gap-4 md:grid-cols-3">
+                      {segment.resources.items.map((resource) => (
+                        <a
+                          key={resource.title}
+                          href={VALD_SOURCES[resource.source_key]}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-md border border-gray-200 bg-white p-4 text-sm shadow-sm hover:border-gray-900"
+                        >
+                          <span className="font-bold text-gray-900">{resource.title}</span>
+                          <span className="mt-2 block text-gray-600">{resource.description}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </section>
             ))}
           </div>
@@ -252,6 +273,9 @@ const Labs = () => {
                 VALD_SOURCES.individualsVideo,
                 VALD_SOURCES.teamsVideo,
                 VALD_SOURCES.enterprisesVideo,
+                VALD_SOURCES.valdTactical,
+                VALD_SOURCES.departmentState,
+                VALD_SOURCES.returnToWork,
               ].map((href, index) => (
                 <SourceLink key={href} href={href}>{labs.references.links[index]}</SourceLink>
               ))}
