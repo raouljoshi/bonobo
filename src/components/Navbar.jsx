@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { FaGlobe, FaTimes } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
 import bonoboLogo from '../assets/images/bonobo logo.JPEG';
 import { openBookingUrl } from '../utils/booking';
 
@@ -9,30 +9,6 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isLangDropdownOpen, setLangDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isAnnouncementBannerVisible, setAnnouncementBannerVisible] = useState(true);
-
-  // Get announcements data
-  const announcements = t('announcements', { returnObjects: true });
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const activeAnnouncements = announcements.filter(announcement => {
-    const endDate = new Date(announcement.endDate);
-    return endDate >= today;
-  });
-
-  // Check if banner was previously dismissed
-  useEffect(() => {
-    const dismissed = localStorage.getItem('announcementBannerDismissed');
-    if (dismissed === 'true') {
-      setAnnouncementBannerVisible(false);
-    }
-  }, []);
-
-  const handleCloseAnnouncementBanner = () => {
-    setAnnouncementBannerVisible(false);
-    localStorage.setItem('announcementBannerDismissed', 'true');
-  };
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -44,39 +20,8 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
-
-
-  const showAnnouncementBanner = isAnnouncementBannerVisible && activeAnnouncements.length > 0;
-
   return (
     <nav className="bg-white shadow-md sticky top-0 z-20">
-      {/* Announcement Banner */}
-      {showAnnouncementBanner && (
-        <div className="bg-brand">
-          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
-            <p className="flex-1 text-center text-sm font-medium text-white">
-              {activeAnnouncements[0].message}
-              {activeAnnouncements[0].link && (
-                <Link
-                  to={activeAnnouncements[0].link}
-                  className="ml-2 underline underline-offset-2 hover:no-underline"
-                  onClick={handleLinkClick}
-                >
-                  {t('announcement_banner.view_details')}
-                </Link>
-              )}
-            </p>
-            <button
-              onClick={handleCloseAnnouncementBanner}
-              className="shrink-0 text-white/70 transition-colors hover:text-white"
-              aria-label="Close announcement"
-            >
-              <FaTimes className="h-3 w-3" />
-            </button>
-          </div>
-        </div>
-      )}
-      
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -119,7 +64,6 @@ const Navbar = () => {
 
           {/* Mobile right-side icons */}
           <div className="-mr-2 flex items-center space-x-2 md:hidden">
-            {/* Language selector for mobile */}
             <div className="relative">
               <button
                 onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
@@ -136,7 +80,7 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            
+
             <button
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
               type="button"
