@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import AnimateIn from '../AnimateIn';
 import strengthImage from '../../assets/images/resistance training.JPEG';
 import movementImage from '../../assets/images/mvmt.jpg';
 import allAgesImage from '../../assets/images/kids training 1.JPEG';
@@ -30,8 +31,8 @@ const FeaturedClasses = () => {
           </p>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {classes.map((item) => (
-            <div key={item.title} className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl">
+          {classes.map((item, index) => (
+            <AnimateIn key={item.title} delay={index * 100} className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl">
               <img className="w-full h-64 object-cover" src={item.imageUrl} alt={item.title} />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
@@ -40,7 +41,7 @@ const FeaturedClasses = () => {
                   {t('featured_classes.learn_more')}
                 </Link>
               </div>
-            </div>
+            </AnimateIn>
           ))}
         </div>
       </div>

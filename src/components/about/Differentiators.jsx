@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaUsers, FaChild, FaHeartbeat } from 'react-icons/fa';
+import AnimateIn from '../AnimateIn';
 
 const featureIcons = [FaUsers, FaChild, FaHeartbeat];
 
@@ -24,8 +25,8 @@ const Differentiators = () => {
         </div>
         <div className="mt-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.name} className="pt-6">
+            {features.map((feature, index) => (
+              <AnimateIn key={feature.name} delay={index * 120} className="pt-6">
                 <div className="flow-root bg-white rounded-lg px-6 pb-8 shadow-lg">
                   <div className="-mt-6">
                     <div>
@@ -37,8 +38,8 @@ const Differentiators = () => {
                     <p className="mt-5 text-base text-gray-500">{feature.description}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+            </AnimateIn>
+          ))}
           </div>
         </div>
       </div>

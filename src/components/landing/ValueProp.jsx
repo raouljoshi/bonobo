@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import AnimateIn from '../AnimateIn';
 import trainBodyImage from '../../assets/images/rings 1.JPEG';
 import tinyGroupsImage from '../../assets/images/kettlebells 2.JPEG';
 import joySessionImage from '../../assets/images/outdoor exercise 3.JPEG';
@@ -40,12 +41,12 @@ const ValueProp = () => {
           </p>
         </div>
         <div className="mt-12 grid gap-10 md:grid-cols-3">
-          {values.map((value) => (
-            <div key={value.title} className="flex flex-col items-center text-center">
+          {values.map((value, index) => (
+            <AnimateIn key={value.title} delay={index * 120} className="flex flex-col items-center text-center">
               <img className={`h-48 w-full object-cover rounded-lg shadow-md ${value.positionClass}`} src={value.imageUrl} alt={value.title} />
               <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">{value.title}</h3>
               <p className="mt-2 text-base text-gray-500">{value.description}</p>
-            </div>
+            </AnimateIn>
           ))}
         </div>
         <div className="mt-12 text-center">
