@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ctaImage from '../../assets/images/kettlebells 3.JPEG';
-import { BOOKING_URL } from '../../utils/booking';
+import { buildConsultationEmailLink } from '../../utils/booking';
 
 const FinalCTA = () => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const FinalCTA = () => {
             <Link to="/membership" className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900">
               {t('final_cta.button_join')}
             </Link>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-200 px-5 py-3 text-base font-medium text-gray-800 hover:bg-gray-300">
+            <a href={buildConsultationEmailLink(t('consultation.email_subject'), t('consultation.email_context'))} className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-200 px-5 py-3 text-base font-medium text-gray-800 hover:bg-gray-300">
               {t('final_cta.button_trial')}
             </a>
         </div>

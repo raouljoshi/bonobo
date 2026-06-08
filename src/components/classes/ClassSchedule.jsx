@@ -26,6 +26,8 @@ const scheduleData = [
   { name: 'Strength & Conditioning', day: 'Fri', startTime: '12:15', endTime: '13:00' },
   // Saturday
   { name: 'Movement', day: 'Sat', startTime: '08:45', endTime: '09:45' },
+  { name: 'Strength & Conditioning', day: 'Sat', startTime: '10:00', endTime: '11:00' },
+  { name: 'Strength & Conditioning', day: 'Sat', startTime: '11:00', endTime: '12:00' },
   // Sunday
   { name: 'Funky Monkeys', day: 'Sun', startTime: '10:00', endTime: '10:50' },
 ];

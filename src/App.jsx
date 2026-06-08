@@ -7,6 +7,7 @@ import About from './pages/About';
 import Classes from './pages/Classes';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Labs from './pages/Labs';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/membership" element={<Membership />} />
+            <Route path="/labs" element={<Labs />} />
             <Route path="/about" element={<About />} />
             <Route path="/classes" element={<Classes />} />
             <Route path="/contact" element={<Contact />} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { BOOKING_URL } from '../../utils/booking';
+import { buildConsultationEmailLink } from '../../utils/booking';
 
 const CTASection = () => {
   const { t } = useTranslation();
@@ -23,9 +23,7 @@ const CTASection = () => {
             {t('about_cta.button_schedule')}
           </Link>
           <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={buildConsultationEmailLink(t('consultation.email_subject'), t('consultation.email_context'))}
             className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-600 px-5 py-3 text-base font-medium text-white hover:bg-gray-700"
           >
             {t('about_cta.button_trial')}
