@@ -153,7 +153,7 @@ const Membership = () => {
                     <td className="px-4 py-4 text-left">{row.feature}</td>
                     {tableKeys.map((key) => (
                       <td key={key} className="px-4 py-4 text-center">
-                        {row[key] === 'yes' ? <span className="text-gray-800">yes</span> : row[key]}
+                        {row[key]}
                       </td>
                     ))}
                   </tr>
