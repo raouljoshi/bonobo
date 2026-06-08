@@ -1,217 +1,136 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { FaGlobe, FaChevronDown, FaTimes } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import bonoboLogo from '../assets/images/bonobo logo.JPEG';
-import useOutsideClick from '../hooks/useOutsideClick';
-import { openBookingUrl } from '../utils/booking';
+import { BOOKING_URL } from '../utils/booking';
+
+const NAV_LINKS = [
+  { label: 'Home',               to: '/' },
+  { label: 'For Individuals',    to: '/for-individuals' },
+  { label: 'For Teams',          to: '/for-teams' },
+  { label: 'For Enterprises',    to: '/for-enterprises' },
+  { label: 'About',              to: '/about' },
+  { label: 'Contact',            to: '/contact' },
+];
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
-  const [isLangDropdownOpen, setLangDropdownOpen] = useState(false);
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isAnnouncementDropdownOpen, setAnnouncementDropdownOpen] = useState(false);
-  const [isAnnouncementBannerVisible, setAnnouncementBannerVisible] = useState(true);
-  const announcementDropdownRef = useRef(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-
-
-  // Close announcement dropdown when clicking outside
-  useOutsideClick([announcementDropdownRef], () => {
-    if (isAnnouncementDropdownOpen) {
-      setAnnouncementDropdownOpen(false);
-    }
-  });
-
-  // Get announcements data
-  const announcements = t('announcements', { returnObjects: true });
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const activeAnnouncements = announcements.filter(announcement => {
-    const endDate = new Date(announcement.endDate);
-    return endDate >= today;
-  });
-
-  // Check if banner was previously dismissed
+  /* Scroll shadow */
   useEffect(() => {
-    const dismissed = localStorage.getItem('announcementBannerDismissed');
-    if (dismissed === 'true') {
-      setAnnouncementBannerVisible(false);
-    }
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleCloseAnnouncementBanner = () => {
-    setAnnouncementBannerVisible(false);
-    localStorage.setItem('announcementBannerDismissed', 'true');
-  };
+  /* Close mobile menu on route change */
+  useEffect(() => { setMobileOpen(false); }, [location.pathname]);
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    setLangDropdownOpen(false);
-    setMobileMenuOpen(false);
-  };
-
-  const handleLinkClick = () => {
-    setMobileMenuOpen(false);
-  };
-
-
-
-  const showAnnouncementBanner = isAnnouncementBannerVisible && activeAnnouncements.length > 0;
+  const isActive = (to) => location.pathname === to;
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-20">
-      {/* Announcement Banner */}
-      {showAnnouncementBanner && (
-        <div className="bg-gray-100 border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-2">
-              <div className="flex items-center flex-1 relative" ref={announcementDropdownRef}>
-                <button
-                  onClick={() => setAnnouncementDropdownOpen(!isAnnouncementDropdownOpen)}
-                  className="flex min-h-10 items-center space-x-2 text-sm text-gray-600 transition-colors duration-200 hover:text-gray-800"
-                  aria-expanded={isAnnouncementDropdownOpen}
-                >
-                  <FaChevronDown 
-                    className={`w-4 h-4 transition-transform duration-200 text-blue-500 ${
-                      isAnnouncementDropdownOpen ? 'rotate-180' : ''
-                    }`} 
-                  />
-                  <span>
-                    {activeAnnouncements.length === 1 
-                      ? t('announcement_banner.new_announcement_single')
-                      : t('announcement_banner.new_announcements_multiple', { count: activeAnnouncements.length })}
-                  </span>
-                </button>
+    <nav
+      className={`sticky top-0 z-50 bg-warm-white transition-shadow duration-300 ${
+        scrolled ? 'shadow-sm shadow-ink/10' : ''
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-16 lg:h-18">
 
-                {/* Dropdown content */}
-                {isAnnouncementDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-screen max-w-sm bg-white rounded-lg shadow-lg border border-gray-200 z-40">
-                    <div className="p-3 border-b border-gray-200">
-                      <h3 className="font-semibold text-gray-800">{t('announcement_banner.announcements_title')}</h3>
-                    </div>
-                    <div className="max-h-64 overflow-y-auto">
-                      {activeAnnouncements.map((announcement, index) => (
-                        <div key={announcement.id} className={`p-3 ${index !== activeAnnouncements.length - 1 ? 'border-b border-gray-100' : ''}`}>
-                          <Link
-                            to={announcement.link || '/membership'}
-                            className="block text-sm text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                            onClick={() => setAnnouncementDropdownOpen(false)}
-                          >
-                            {announcement.message}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+          {/* Logo */}
+          <Link to="/" aria-label="Bonobo Gym home" className="flex-shrink-0">
+            <img
+              src={bonoboLogo}
+              alt="Bonobo Gym"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
+
+          {/* Desktop links */}
+          <div className="hidden lg:flex items-center gap-1">
+            {NAV_LINKS.map(({ label, to }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`relative px-3 py-2 font-body text-sm font-medium transition-colors duration-200 ${
+                  isActive(to)
+                    ? 'text-amber'
+                    : 'text-ink-soft hover:text-ink'
+                }`}
+              >
+                {label}
+                {isActive(to) && (
+                  <span className="absolute bottom-0 left-3 right-3 h-px bg-amber" />
                 )}
-              </div>
-
-              {/* Close button */}
-              <button
-                onClick={handleCloseAnnouncementBanner}
-                className="min-h-10 min-w-10 p-2 text-gray-400 transition-colors duration-200 hover:text-gray-600"
-                aria-label="Close announcement banner"
-              >
-                <FaTimes className="w-3 h-3" />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-      
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" onClick={handleLinkClick} className="text-2xl font-bold text-gray-800">
-              <img src={bonoboLogo} alt="Bonobo Gym logo" className="h-12" />
-            </Link>
+              </Link>
+            ))}
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-1">
-            <Link to="/" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.home')}</Link>
-            <Link to="/classes" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.classes')}</Link>
-            <Link to="/membership" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.memberships')}</Link>
-            <Link to="/about" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.about')}</Link>
-            <Link to="/contact" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.contact')}</Link>
-          </div>
-
-          <div className="hidden md:flex items-center space-x-2">
-            <div className="relative">
-              <button
-                onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
-                className="min-h-11 min-w-11 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-800"
-                aria-label="Choose language"
-                aria-expanded={isLangDropdownOpen}
-              >
-                <FaGlobe className="h-5 w-5" />
-              </button>
-              {isLangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
-                  <button onClick={() => changeLanguage('en')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
-                  <button onClick={() => changeLanguage('sv')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Svenska</button>
-                </div>
-              )}
-            </div>
-
-            <button onClick={() => openBookingUrl()} className="min-h-11 rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">{t('navbar.book_class')}</button>
-          </div>
-
-          {/* Mobile right-side icons */}
-          <div className="-mr-2 flex items-center space-x-2 md:hidden">
-            {/* Language selector for mobile */}
-            <div className="relative">
-              <button
-                onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
-                className="min-h-11 min-w-11 rounded-md p-2 text-gray-600 hover:text-gray-800"
-                aria-label="Choose language"
-                aria-expanded={isLangDropdownOpen}
-              >
-                <FaGlobe className="h-5 w-5" />
-              </button>
-              {isLangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
-                  <button onClick={() => { changeLanguage('en'); handleLinkClick(); }} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
-                  <button onClick={() => { changeLanguage('sv'); handleLinkClick(); }} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Svenska</button>
-                </div>
-              )}
-            </div>
-            
-            <button
-              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-              type="button"
-              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
-              aria-controls="mobile-menu"
-              aria-expanded={isMobileMenuOpen}
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 bg-ink text-warm-white font-display font-bold text-sm tracking-wide hover:bg-amber transition-colors duration-200"
             >
-              <span className="sr-only">Open main menu</span>
-              <svg className={`${isMobileMenuOpen ? 'hidden' : 'block'} h-6 w-6`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-              <svg className={`${isMobileMenuOpen ? 'block' : 'hidden'} h-6 w-6`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+              Book a consultation
+            </a>
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 group"
+          >
+            <span
+              className={`block w-6 h-px bg-ink transition-all duration-300 origin-center ${
+                mobileOpen ? 'rotate-45 translate-y-[3.5px]' : ''
+              }`}
+            />
+            <span
+              className={`block h-px bg-ink transition-all duration-300 ${
+                mobileOpen ? 'w-0 opacity-0' : 'w-6'
+              }`}
+            />
+            <span
+              className={`block w-6 h-px bg-ink transition-all duration-300 origin-center ${
+                mobileOpen ? '-rotate-45 -translate-y-[3.5px]' : ''
+              }`}
+            />
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-white shadow-lg`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link to="/" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.home')}</Link>
-          <Link to="/classes" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.classes')}</Link>
-          <Link to="/membership" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.memberships')}</Link>
-          <Link to="/about" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.about')}</Link>
-          <Link to="/contact" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.contact')}</Link>
-        </div>
-        <div className="pt-4 pb-3 border-t border-gray-200">
-          <div className="mt-3 px-2 space-y-1">
-            <button onClick={() => { openBookingUrl(); handleLinkClick(); }} className="block min-h-12 w-full rounded-md bg-gray-800 px-4 py-3 text-center text-base font-medium text-white hover:bg-gray-700">{t('navbar.book_class')}</button>
-          </div>
+      {/* Mobile drawer */}
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          mobileOpen ? 'max-h-screen' : 'max-h-0'
+        }`}
+      >
+        <div className="bg-warm-white border-t border-fog px-5 py-6 flex flex-col gap-1">
+          {NAV_LINKS.map(({ label, to }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`block px-3 py-3 font-body text-base font-medium border-b border-fog/60 last:border-0 transition-colors ${
+                isActive(to) ? 'text-amber' : 'text-ink'
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 block text-center px-5 py-3.5 bg-ink text-warm-white font-display font-bold text-sm tracking-wide"
+          >
+            Book a consultation
+          </a>
         </div>
       </div>
     </nav>
