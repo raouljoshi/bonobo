@@ -45,7 +45,7 @@ const SegmentVideo = ({ segment, media }) => {
 };
 
 const OfferCard = ({ offer, segment, email }) => (
-  <article className="flex flex-col rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+  <article className="flex flex-col rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
     <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">{offer.duration}</p>
     <h3 className="mt-2 text-xl font-bold text-gray-900">{offer.title}</h3>
     <p className="mt-3 text-lg font-bold text-gray-900">{offer.price || offer.price_note}</p>

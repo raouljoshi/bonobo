@@ -13,7 +13,7 @@ const Hero = () => {
       className="relative flex min-h-[calc(100svh-6rem)] items-center justify-center overflow-hidden bg-cover bg-center px-4 py-20 text-center text-white sm:min-h-screen"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/20"></div>
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center">
         <img src={bonoboLogo} alt="Bonobo Gym logo" className="h-24 w-auto rounded-md bg-white/90 p-2 shadow-2xl sm:h-32" />
         <h1 className="mt-6 text-3xl font-extrabold leading-tight sm:text-4xl md:text-6xl">

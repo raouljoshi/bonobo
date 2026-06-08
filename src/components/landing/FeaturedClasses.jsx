@@ -31,7 +31,7 @@ const FeaturedClasses = () => {
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {classes.map((item) => (
-            <div key={item.title} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div key={item.title} className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl">
               <img className="w-full h-64 object-cover" src={item.imageUrl} alt={item.title} />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>

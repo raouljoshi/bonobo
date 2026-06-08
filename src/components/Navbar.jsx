@@ -158,7 +158,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <button onClick={() => openBookingUrl()} className="min-h-11 rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">{t('navbar.book_class')}</button>
+            <button onClick={() => openBookingUrl()} className="min-h-11 rounded-md bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-dark">{t('navbar.book_class')}</button>
           </div>
 
           {/* Mobile right-side icons */}
@@ -212,7 +212,7 @@ const Navbar = () => {
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200">
           <div className="mt-3 px-2 space-y-1">
-            <button onClick={() => { openBookingUrl(); handleLinkClick(); }} className="block min-h-12 w-full rounded-md bg-gray-800 px-4 py-3 text-center text-base font-medium text-white hover:bg-gray-700">{t('navbar.book_class')}</button>
+            <button onClick={() => { openBookingUrl(); handleLinkClick(); }} className="block min-h-12 w-full rounded-md bg-brand px-4 py-3 text-center text-base font-medium text-white hover:bg-brand-dark">{t('navbar.book_class')}</button>
           </div>
         </div>
       </div>

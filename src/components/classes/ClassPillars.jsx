@@ -14,7 +14,7 @@ const pillarIconMap = {
 };
 
 const ExpandableCard = ({ pillar, details, icon: Icon, isOpen, onClick }) => (
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+  <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-200 hover:shadow-lg">
     <button
       onClick={onClick}
       className="w-full p-6 text-left flex flex-col items-center focus:outline-none"

@@ -12,7 +12,7 @@ const FinalCTA = () => {
       className="relative bg-cover bg-center"
       style={{ backgroundImage: `url(${ctaImage})` }}
     >
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/20"></div>
       <div className="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
           <span className="block">{t('final_cta.title')}</span>

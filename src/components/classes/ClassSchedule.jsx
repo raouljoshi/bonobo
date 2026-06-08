@@ -42,12 +42,12 @@ const getClassesForDay = (day) =>
 const getClassStyles = (className) => {
   if (!className) return 'bg-white';
   const lower = className.toLowerCase();
-  if (lower.includes('strength')) return 'bg-gray-200 text-gray-800';
-  if (lower.includes('movement')) return 'bg-gray-300 text-gray-800';
-  if (lower.includes('mama')) return 'bg-gray-400 text-gray-900';
-  if (lower.includes('plus power')) return 'bg-gray-500 text-white';
-  if (lower.includes('funky monkeys') || lower.includes('youth class')) return 'bg-gray-600 text-white';
-  return 'bg-gray-100';
+  if (lower.includes('strength')) return 'bg-orange-50 text-orange-900';
+  if (lower.includes('movement')) return 'bg-teal-50 text-teal-900';
+  if (lower.includes('mama')) return 'bg-rose-50 text-rose-900';
+  if (lower.includes('plus power')) return 'bg-violet-50 text-violet-900';
+  if (lower.includes('funky monkeys') || lower.includes('youth')) return 'bg-amber-50 text-amber-900';
+  return 'bg-gray-100 text-gray-800';
 };
 
 const ClassSchedule = () => {

@@ -19,7 +19,7 @@ const PassItem = ({ title, price, description, purchaseUrl, children }) => {
         <span>{title}</span>
         <span>{isOpen ? '-' : '+'}</span>
       </button>
-      {isOpen && (
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="px-6 pb-6">
           <p className="text-2xl font-bold">{price}</p>
           {description && <p className="mt-2 text-gray-600">{description}</p>}
@@ -28,13 +28,13 @@ const PassItem = ({ title, price, description, purchaseUrl, children }) => {
             {t('Buy')}
           </a>
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
 const PlanCard = ({ plan, consultation }) => (
-  <article className={`relative flex flex-col rounded-lg p-6 shadow-sm ${plan.highlight ? 'border-2 border-gray-900 bg-gray-50' : 'border border-gray-200 bg-white'}`}>
+  <article className={`relative flex flex-col rounded-lg p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${plan.highlight ? 'border-2 border-gray-900 bg-gray-50' : 'border border-gray-200 bg-white'}`}>
     {plan.tag && (
       <div className="absolute left-6 top-0 -translate-y-1/2 rounded-full bg-gray-900 px-4 py-1 text-sm font-semibold text-white">
         {plan.tag}
