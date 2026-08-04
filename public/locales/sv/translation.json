@@ -267,7 +267,7 @@
     },
     "membership": {
       "title": "Priser & Medlemskap | Bonobo Gym Nacka",
-      "description": "Hitta ett medlemskap som passar dig på Bonobo Gym i Nacka. Välj mellan flexibla klippkort, månadsmedlemskap (Silver, Guld) och PT-paket."
+      "description": "Hitta Bonobo Gyms aktuella medlemskap, klippkort och PT-paket."
     },
     "contact": {
       "title": "Kontakta Oss | Bonobo Gym Nacka",
@@ -465,11 +465,11 @@
       },
       {
         "question": "Kan jag ta med en vän för att träna?",
-        "answer": "Våra Guld- och Guld+Coach-medlemmar kan ta med en vän som inte är medlem till vårt månatliga 'Kompis-fredag'-event. Andra medlemskap inkluderar inte denna förmån."
+        "answer": "Guld-medlemmar kan ta med en vän som inte är medlem till vårt månatliga 'Kompis-fredag'-event."
       },
       {
         "question": "Kan jag frysa mitt medlemskap?",
-        "answer": "Ja! Vårt Silver-medlemskap inkluderar 2 veckors frysning per år, och våra Guld- och Guld+Coach-medlemskap inkluderar 4 veckors frysning (uppdelat på två 2-veckorsperioder). Vänligen kontakta oss för att ordna en frysning."
+        "answer": "Ja! Guld-medlemskapet inkluderar 4 veckors frysning per år, uppdelat på två 2-veckorsperioder. Vänligen kontakta oss för att ordna en frysning."
       },
       {
         "question": "Vad är er avbokningspolicy?",
@@ -498,20 +498,10 @@
       "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=prova-pa--bonobo-3-ggr"
     },
     "pricing_cards": {
-      "silver": {
-        "title": "Silver",
-        "price_suffix": "/mån",
-        "features": [
-          "9 bokningar per månad",
-          "2 veckors frysning per år",
-          "Tillgång till alla klasser"
-        ],
-        "button": "Välj Silver →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
-      },
       "gold": {
         "tag": "Mest Populära",
         "title": "Guld",
+        "price": "1 099 kr",
         "price_suffix": "/mån",
         "features": [
           "Obegränsade bokningar, alla klasser",
@@ -522,19 +512,6 @@
         "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
         "annual_note": "Eller betala årligen (12 089 kr) och få 1 månad gratis!",
         "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
-      },
-      "gold_coach": {
-        "title": "Guld+Coach",
-        "price_suffix": "/mån",
-        "features": [
-          "Alla Guld-förmåner ingår",
-          "1 PT-session per månad",
-          "Garanterad plats på klasser"
-        ],
-        "button": "Uppgradera till Guld+Coach",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=gold--coach",
-        "annual_note": "Eller betala årligen (19 789 kr) och få 1 månad gratis!",
-        "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold-coach"
       }
     },
     "other_passes": {
@@ -560,23 +537,16 @@
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=barntraning-3-5-ar-funky-monkeys"
         },
         {
-          "title": "Ungdomskort",
-          "price": "1 995 kr",
-          "description": "Ett 10-veckorskort för våra ungdomsklasser (10-14 år) som syftar till att bygga styrka, rörlighet och självförtroende i en stödjande miljö.",
-          "link_text": "Läs mer",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=youth-training-10-14-years"
-        },
-        {
-          "title": "Enskild PT-klass",
-          "price": "850 kr",
-          "description": "Få personlig uppmärksamhet och ett träningspass anpassat efter dina specifika mål med en en-mot-en-session med våra expertcoacher. Lämplig för dig som vill ha fokuserad träning och vägledning.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
-        },
-        {
-          "title": "Strong Mama",
+          "title": "Mamma Camp",
           "price": "2 990 kr",
-          "description": "Ett 10-klassersprogram utformat för att hjälpa nyblivna mammor att säkert och effektivt återgå till träning efter förlossningen. Bebisar är välkomna! Perfekt för nyblivna mammor som vill återfå styrka och självförtroende i en stödjande miljö.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=strong-mamma"
+          "description": "Ett träningsläger med 10 tillfällen för mammor.",
+          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=mamma-camp"
+        },
+        {
+          "title": "P.T. one to one", "price": "1 100 kr", "description": "En PT-session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
+        },
+        {
+          "title": "PT 5-kort", "price": "4 250 kr", "description": "Fem PT-sessioner.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         },
         {
           "title": "Bruce Medlemstillägg",
@@ -589,19 +559,20 @@
           "price": "799 kr",
           "description": "Ett specialiserat månadsmedlemskap för individer från 65 år och uppåt, med fokus på att bibehålla och förbättra viktiga fysiska färdigheter som höjer livskvaliteten i vardagen genom funktionell styrka, balans och koordinationsträning.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
+        },
+        {
+          "title": "PT 10", "price": "8 500 kr", "description": "10 PT-sessioner.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+        },
+        {
+          "title": "PT 20-kort", "price": "16 000 kr", "description": "20 PT-sessioner.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+        },
+        {
+          "title": "Sound healing", "price": "200 kr / månad", "description": "Sound healing-session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+        },
+        {
+          "title": "Yoga/MVMT-klippkort", "price": "2 000 kr / månad", "description": "Yoga/MVMT-klippkort med 10 klipp.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         }
 
-      ]
-    },
-    "comparison_table": {
-      "title": "Jämför medlemskap",
-      "headers": ["Förmån", "Silver", "Guld", "Guld+Coach"],
-      "rows": [
-        { "feature": "Bokningar", "silver": "9 / mån", "gold": "Obegränsat", "gold_coach": "Obegränsat" },
-        { "feature": "Kompis-fredagar", "silver": "—", "gold": "✓", "gold_coach": "✓" },
-        { "feature": "Frysning (veckor)", "silver": "2 / år", "gold": "4 / år", "gold_coach": "4 / år" },
-        { "feature": "PT-pass", "silver": "—", "gold": "—", "gold_coach": "1 / mån" },
-        { "feature": "Garanterad Plats", "silver": "—", "gold": "—", "gold_coach": "✓" }
       ]
     }
   },

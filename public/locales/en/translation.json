@@ -264,7 +264,7 @@
     },
     "membership": {
       "title": "Pricing & Memberships | Bonobo Gym Nacka",
-      "description": "Find a membership that suits you at Bonobo Gym in Nacka. Choose from flexible clip cards, monthly memberships (Silver, Gold), and PT packages."
+      "description": "Find the current Bonobo Gym memberships, clip cards and PT packages."
     },
     "contact": {
       "title": "Contact Us | Bonobo Gym Nacka",
@@ -462,11 +462,11 @@
       },
       {
         "question": "Can I bring a friend to train with me?",
-        "answer": "Our Gold and Gold+Coach members can bring a friend who is not currently a member to our monthly 'Friend Friday' event. Other passes do not include this perk."
+        "answer": "Gold members can bring a friend who is not currently a member to our monthly 'Friend Friday' event."
       },
       {
         "question": "Can I freeze my membership?",
-        "answer": "Yes! Our Silver membership includes a 2-week freeze per year, and our Gold and Gold+Coach memberships include a 4-week freeze (split into two 2-week periods). Please contact us to arrange a freeze."
+        "answer": "Yes! Gold membership includes 4 weeks of freeze per year, split into two 2-week periods. Please contact us to arrange a freeze."
       },
       {
         "question": "What is your cancellation policy?",
@@ -495,20 +495,10 @@
       "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=prova-pa--bonobo-3-ggr"
     },
     "pricing_cards": {
-      "silver": {
-        "title": "Silver",
-        "price_suffix": "/mo",
-        "features": [
-          "9 bookings per month",
-          "2 weeks freeze per year",
-          "Access to all classes"
-        ],
-        "button": "Choose Silver →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
-      },
       "gold": {
         "tag": "Most Popular",
         "title": "Gold",
+        "price": "1 099 kr",
         "price_suffix": "/mo",
         "features": [
           "Unlimited bookings, all classes",
@@ -519,19 +509,6 @@
         "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
         "annual_note": "Or pay annually (12 089 kr) and get 1 month for free!",
         "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
-      },
-      "gold_coach": {
-        "title": "Gold+Coach",
-        "price_suffix": "/mo",
-        "features": [
-          "All Gold benefits included",
-          "1 PT session per month",
-          "Guaranteed access to classes"
-        ],
-        "button": "Upgrade to Gold+Coach",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=gold--coach",
-        "annual_note": "Or pay annually (19 789 kr) and get 1 month for free!",
-        "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold-coach"
       }
     },
     "other_passes": {
@@ -557,23 +534,16 @@
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=barntraning-3-5-ar-funky-monkeys"
         },
         { 
-          "title": "Youth Class Pass", 
-          "price": "1 995 kr", 
-          "description": "A 10-week pass for our Youth classes (ages 10-14) aimed at building strength, mobility and confidence in a supportive environment.", 
-          "link_text": "Read more",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=youth-training-10-14-years"
+          "title": "Mamma Camp",
+          "price": "2 990 kr",
+          "description": "A 10-session training camp for mothers.",
+          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=mamma-camp"
         },
-        { 
-          "title": "Single PT Class", 
-          "price": "850 kr", 
-          "description": "Get personalized attention and a workout tailored to your specific goals with a one-on-one session with our expert coaches. Suitable for those who want focused training and guidance.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
+        {
+          "title": "P.T. One to One", "price": "1 100 kr", "description": "One personal-training session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
         },
-        { 
-          "title": "Strong Mama", 
-          "price": "2 990 kr", 
-          "description": "A 10-class program designed to help new mothers safely and effectively return to training after childbirth. Babies are welcome! Perfect for new moms who want to regain strength and confidence in a supportive environment.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=strong-mamma"
+        {
+          "title": "PT 5 Card", "price": "4 250 kr", "description": "Five personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         },
         { 
           "title": "Bruce Member Add-on", 
@@ -586,18 +556,19 @@
           "price": "799 kr", 
           "description": "A specialized monthly membership for individuals aged 65 and over, focusing on maintaining and improving vital physical skills that enhance daily life quality through functional strength, balance, and coordination training.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
+        },
+        {
+          "title": "PT 10", "price": "8 500 kr", "description": "10 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+        },
+        {
+          "title": "PT 20 Card", "price": "16 000 kr", "description": "20 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+        },
+        {
+          "title": "Sound Healing", "price": "200 kr / month", "description": "Sound healing session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+        },
+        {
+          "title": "Yoga/MVMT Clip Card", "price": "2 000 kr / month", "description": "10-clip Yoga/MVMT card.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         }
-      ]
-    },
-    "comparison_table": {
-      "title": "Membership Comparison",
-      "headers": ["Feature", "Silver", "Gold", "Gold+Coach"],
-      "rows": [
-        { "feature": "Bookings", "silver": "9 / month", "gold": "Unlimited", "gold_coach": "Unlimited" },
-        { "feature": "Friend Fridays", "silver": "—", "gold": "✓", "gold_coach": "✓" },
-        { "feature": "Freeze Weeks (2x2 weeks)", "silver": "2 / year", "gold": "4 / year", "gold_coach": "4 / year" },
-        { "feature": "PT Session", "silver": "—", "gold": "—", "gold_coach": "1 / month" },
-        { "feature": "Guaranteed Access", "silver": "—", "gold": "—", "gold_coach": "✓" }
       ]
     }
   },
