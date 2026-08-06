@@ -543,7 +543,7 @@
           "title": "P.T. One to One", "price": "1 100 kr", "description": "One personal-training session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
         },
         {
-          "title": "PT 5 Card", "price": "4 250 kr", "description": "Five personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+          "title": "PT 5 Card", "price": "5 500 kr", "description": "Five personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         },
         { 
           "title": "Bruce Member Add-on", 
@@ -558,10 +558,10 @@
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
         },
         {
-          "title": "PT 10", "price": "8 500 kr", "description": "10 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+          "title": "PT 10", "price": "10 000 kr", "description": "10 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         },
         {
-          "title": "PT 20 Card", "price": "16 000 kr", "description": "20 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+          "title": "PT 20 Card", "price": "20 000 kr", "description": "20 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         },
         {
           "title": "Sound Healing", "price": "200 kr / month", "description": "Sound healing session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
