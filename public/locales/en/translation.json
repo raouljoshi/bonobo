@@ -212,20 +212,14 @@
   "announcements": [
     {
       "id": 1,
-      "message": "Funky Monkeys (3-5) starts on 24/8. View 'Classes' for schedule.",
-      "link": "/membership",
-      "endDate": "2025-10-31"
+      "message": "Funky Monkey kids (3-5 yrs) classes starting on the 23/8.",
+      "link": "/classes",
+      "endDate": "2026-12-31"
     },
     {
       "id": 2,
-      "message": "Youth Class (10-14) starts 26/8. View 'Classes' for schedule.",
-      "link": "/membership",
-      "endDate": "2025-10-31"
-    },
-    {
-      "id": 3,
-      "message": "Plus Power (65+) starts on 26/8. View 'Classes' for schedule",
-      "link": "/membership",
+      "message": "Plus Power (65+) classes starting on the 25/8.",
+      "link": "/classes",
       "endDate": "2026-12-31"
     }
   ],
@@ -462,11 +456,11 @@
       },
       {
         "question": "Can I bring a friend to train with me?",
-        "answer": "Gold members can bring a friend who is not currently a member to our monthly 'Friend Friday' event."
+        "answer": "Monthly membership holders can bring a friend who is not currently a member to our monthly 'Friend Friday' event."
       },
       {
         "question": "Can I freeze my membership?",
-        "answer": "Yes! Gold membership includes 4 weeks of freeze per year, split into two 2-week periods. Please contact us to arrange a freeze."
+        "answer": "Yes! Monthly membership includes 4 weeks of freeze per year, split into two 2-week periods. Please contact us to arrange a freeze."
       },
       {
         "question": "What is your cancellation policy?",
@@ -496,8 +490,7 @@
     },
     "pricing_cards": {
       "gold": {
-        "tag": "Most Popular",
-        "title": "Gold",
+        "title": "Monthly membership",
         "price": "1 099 kr",
         "price_suffix": "/mo",
         "features": [
@@ -505,7 +498,7 @@
           "Bring a friend on 'Friend Friday'",
           "4 weeks freeze per year"
         ],
-        "button": "Go for Gold →",
+        "button": "Choose Monthly Membership →",
         "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
         "annual_note": "Or pay annually (12 089 kr) and get 1 month for free!",
         "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
@@ -547,13 +540,13 @@
         },
         { 
           "title": "Bruce Member Add-on", 
-          "price": "120 kr", 
+          "price": "140 kr",
           "description": "For our friends using Bruce! This add-on is for when you have used up your regular quota and want to join another class. Convenient for those who want to attend extra classes without upgrading their membership.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bruce-extra"
         },
         { 
           "title": "Plus Power", 
-          "price": "799 kr", 
+          "price": "950 kr",
           "description": "A specialized monthly membership for individuals aged 65 and over, focusing on maintaining and improving vital physical skills that enhance daily life quality through functional strength, balance, and coordination training.",
           "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
         },
@@ -564,7 +557,7 @@
           "title": "PT 20 Card", "price": "20 000 kr", "description": "20 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         },
         {
-          "title": "Sound Healing", "price": "200 kr / month", "description": "Sound healing session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+          "title": "Sound Healing", "price": "250 kr", "description": "Sound healing session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
         },
         {
           "title": "Yoga/MVMT Clip Card", "price": "2 000 kr / month", "description": "10-clip Yoga/MVMT card.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
