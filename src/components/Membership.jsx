@@ -62,8 +62,7 @@ const Membership = () => {
 
         {/* Pricing Cards */}
         <div className="mt-12 max-w-md mx-auto">
-          <div className="border-2 border-yellow-500 rounded-lg p-8 flex flex-col relative">
-            <div className="absolute top-0 -translate-y-1/2 bg-gray-800 text-white px-4 py-1 rounded-full text-sm font-semibold">{gold.tag}</div>
+          <div className="border rounded-lg p-8 flex flex-col">
             <h3 className="text-3xl font-bold text-gray-900">{gold.title}</h3>
             <p className="mt-6 text-4xl font-bold">{gold.price} <span className="text-lg font-medium text-gray-500">{gold.price_suffix}</span></p>
             <ul className="mt-6 space-y-4 text-left mb-8">
