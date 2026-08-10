@@ -456,11 +456,11 @@
       },
       {
         "question": "Can I bring a friend to train with me?",
-        "answer": "Monthly membership holders can bring a friend who is not currently a member to our monthly 'Friend Friday' event."
+        "answer": "Gold members can bring a friend who is not currently a member to our monthly 'Friend Friday' event."
       },
       {
         "question": "Can I freeze my membership?",
-        "answer": "Yes! Monthly membership includes 4 weeks of freeze per year, split into two 2-week periods. Please contact us to arrange a freeze."
+        "answer": "Yes! Gold membership includes 4 weeks of freeze per year, split into two 2-week periods. Please contact us to arrange a freeze."
       },
       {
         "question": "What is your cancellation policy?",
@@ -501,7 +501,7 @@
         "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
       },
       "gold": {
-        "title": "Monthly membership",
+        "title": "Gold",
         "price": "1 199 kr",
         "price_suffix": "/mo",
         "features": [
@@ -509,7 +509,7 @@
           "Bring a friend on 'Friend Friday'",
           "4 weeks freeze per year"
         ],
-        "button": "Choose Monthly Membership →",
+        "button": "Go for Gold →",
         "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
         "annual_note": "Or pay annually (12 089 kr) and get 1 month for free!",
         "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
