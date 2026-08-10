@@ -459,11 +459,11 @@
       },
       {
         "question": "Kan jag ta med en vän för att träna?",
-        "answer": "Medlemmar med månadsmedlemskap kan ta med en vän som inte är medlem till vårt månatliga 'Kompis-fredag'-event."
+        "answer": "Guld-medlemmar kan ta med en vän som inte är medlem till vårt månatliga 'Kompis-fredag'-event."
       },
       {
         "question": "Kan jag frysa mitt medlemskap?",
-        "answer": "Ja! Månadsmedlemskapet inkluderar 4 veckors frysning per år, uppdelat på två 2-veckorsperioder. Vänligen kontakta oss för att ordna en frysning."
+        "answer": "Ja! Guld-medlemskapet inkluderar 4 veckors frysning per år, uppdelat på två 2-veckorsperioder. Vänligen kontakta oss för att ordna en frysning."
       },
       {
         "question": "Vad är er avbokningspolicy?",
@@ -492,16 +492,27 @@
       "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=prova-pa--bonobo-3-ggr"
     },
     "pricing_cards": {
+      "silver": {
+        "title": "Silver",
+        "price": "999 kr",
+        "price_suffix": "/mån",
+        "features": [
+          "9 bokningar per månad",
+          "Tillgång till alla klasser"
+        ],
+        "button": "Välj Silver →",
+        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
+      },
       "gold": {
-        "title": "Månadsmedlemskap",
-        "price": "1 099 kr",
+        "title": "Guld",
+        "price": "1 199 kr",
         "price_suffix": "/mån",
         "features": [
           "Obegränsade bokningar, alla klasser",
           "Ta med en vän på 'Friend Friday'",
           "4 veckors frysning per år"
         ],
-        "button": "Välj månadsmedlemskap →",
+        "button": "Gå för Guld →",
         "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
         "annual_note": "Eller betala årligen (12 089 kr) och få 1 månad gratis!",
         "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
