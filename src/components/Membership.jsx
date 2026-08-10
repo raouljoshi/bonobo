@@ -41,7 +41,7 @@ const Membership = () => {
   }
 
   const { header, trail_offer, pricing_cards, other_passes } = page;
-  const { gold } = pricing_cards;
+  const { silver, gold } = pricing_cards;
 
   return (
     <div className="bg-white py-16">
@@ -61,7 +61,19 @@ const Membership = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="mt-12 max-w-md mx-auto">
+        <div className="mt-12 grid max-w-3xl mx-auto grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="border rounded-lg p-8 flex flex-col">
+            <h3 className="text-3xl font-bold text-gray-900">{silver.title}</h3>
+            <p className="mt-6 text-4xl font-bold">{silver.price} <span className="text-lg font-medium text-gray-500">{silver.price_suffix}</span></p>
+            <ul className="mt-6 space-y-4 text-left mb-8">
+              {silver.features.map((feature, index) => (
+                <li key={index} className="flex items-start"><span className="text-gray-800 mr-2">✓</span>{feature}</li>
+              ))}
+            </ul>
+            <div className="mt-auto">
+              <a href={silver.purchaseUrl || SHOP_URL} target="_blank" rel="noopener noreferrer" className="block w-full rounded-lg bg-gray-800 py-4 text-center font-semibold text-white hover:bg-gray-700">{silver.button}</a>
+            </div>
+          </div>
           <div className="border rounded-lg p-8 flex flex-col">
             <h3 className="text-3xl font-bold text-gray-900">{gold.title}</h3>
             <p className="mt-6 text-4xl font-bold">{gold.price} <span className="text-lg font-medium text-gray-500">{gold.price_suffix}</span></p>

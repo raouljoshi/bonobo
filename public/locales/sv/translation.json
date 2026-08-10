@@ -492,9 +492,20 @@
       "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=prova-pa--bonobo-3-ggr"
     },
     "pricing_cards": {
+      "silver": {
+        "title": "Silver",
+        "price": "999 kr",
+        "price_suffix": "/mån",
+        "features": [
+          "9 bokningar per månad",
+          "Tillgång till alla klasser"
+        ],
+        "button": "Välj Silver →",
+        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
+      },
       "gold": {
         "title": "Månadsmedlemskap",
-        "price": "1 099 kr",
+        "price": "1 199 kr",
         "price_suffix": "/mån",
         "features": [
           "Obegränsade bokningar, alla klasser",
