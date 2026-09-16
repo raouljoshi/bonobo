@@ -7,6 +7,7 @@ const FAQItem = ({ question, answer }) => {
   return (
     <div className="border-b">
       <button
+        aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex justify-between items-center py-4 text-left font-semibold"
       >

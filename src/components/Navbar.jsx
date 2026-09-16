@@ -1,221 +1,54 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { FaGlobe, FaChevronDown, FaTimes } from 'react-icons/fa';
+import { FaGlobe, FaBars, FaTimes } from 'react-icons/fa';
 import bonoboLogo from '../assets/images/bonobo logo.JPEG';
 import useOutsideClick from '../hooks/useOutsideClick';
-import { openBookingUrl } from '../utils/booking';
+import { ACCOUNT_URL, TRIAL_URL } from '../utils/booking';
 
-const Navbar = () => {
+const links = [['/', 'home'], ['/classes', 'classes'], ['/membership', 'memberships'], ['/about', 'about'], ['/contact', 'contact']];
+
+export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const [isLangDropdownOpen, setLangDropdownOpen] = useState(false);
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isAnnouncementDropdownOpen, setAnnouncementDropdownOpen] = useState(false);
-  const [isAnnouncementBannerVisible, setAnnouncementBannerVisible] = useState(true);
-  const announcementDropdownRef = useRef(null);
+  const { pathname } = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
+  const languageRef = useRef(null);
+  const menuButtonRef = useRef(null);
+  useOutsideClick([languageRef], () => setLanguageOpen(false));
 
-
-
-  // Close announcement dropdown when clicking outside
-  useOutsideClick([announcementDropdownRef], () => {
-    if (isAnnouncementDropdownOpen) {
-      setAnnouncementDropdownOpen(false);
+  useEffect(() => { setMenuOpen(false); setLanguageOpen(false); }, [pathname]);
+  const closeOnEscape = (event) => {
+    if (event.key === 'Escape') {
+      setLanguageOpen(false);
+      if (menuOpen) { setMenuOpen(false); menuButtonRef.current?.focus(); }
     }
-  });
-
-  // Get announcements data
-  const announcements = t('announcements', { returnObjects: true });
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const activeAnnouncements = announcements.filter(announcement => {
-    const endDate = new Date(announcement.endDate);
-    return endDate >= today;
-  });
-
-  // Check if banner was previously dismissed
-  useEffect(() => {
-    const dismissed = localStorage.getItem('announcementBannerDismissed');
-    if (dismissed === 'true') {
-      setAnnouncementBannerVisible(false);
-    }
-  }, []);
-
-  const handleCloseAnnouncementBanner = () => {
-    setAnnouncementBannerVisible(false);
-    localStorage.setItem('announcementBannerDismissed', 'true');
   };
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    setLangDropdownOpen(false);
-    setMobileMenuOpen(false);
-  };
-
-  const handleLinkClick = () => {
-    setMobileMenuOpen(false);
-  };
-
-
-
-  const showAnnouncementBanner = isAnnouncementBannerVisible && activeAnnouncements.length > 0;
+  const navClass = ({ isActive }) => `inline-flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium ${isActive ? 'bg-gray-100 text-gray-950' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`;
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-20">
-      {/* Announcement Banner */}
-      {showAnnouncementBanner && (
-        <div className="bg-gray-100 border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-2">
-              <div className="flex items-center flex-1 relative" ref={announcementDropdownRef}>
-                <button
-                  onClick={() => setAnnouncementDropdownOpen(!isAnnouncementDropdownOpen)}
-                  className="flex min-h-10 items-center space-x-2 text-sm text-gray-600 transition-colors duration-200 hover:text-gray-800"
-                  aria-expanded={isAnnouncementDropdownOpen}
-                >
-                  <FaChevronDown 
-                    className={`w-4 h-4 transition-transform duration-200 text-blue-500 ${
-                      isAnnouncementDropdownOpen ? 'rotate-180' : ''
-                    }`} 
-                  />
-                  <span>
-                    {activeAnnouncements.length === 1 
-                      ? t('announcement_banner.new_announcement_single')
-                      : t('announcement_banner.new_announcements_multiple', { count: activeAnnouncements.length })}
-                  </span>
-                </button>
-
-                {/* Dropdown content */}
-                {isAnnouncementDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-screen max-w-sm bg-white rounded-lg shadow-lg border border-gray-200 z-40">
-                    <div className="p-3 border-b border-gray-200">
-                      <h3 className="font-semibold text-gray-800">{t('announcement_banner.announcements_title')}</h3>
-                    </div>
-                    <div className="max-h-64 overflow-y-auto">
-                      {activeAnnouncements.map((announcement, index) => (
-                        <div key={announcement.id} className={`p-3 ${index !== activeAnnouncements.length - 1 ? 'border-b border-gray-100' : ''}`}>
-                          <Link
-                            to={announcement.link || '/membership'}
-                            className="block text-sm text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                            onClick={() => setAnnouncementDropdownOpen(false)}
-                          >
-                            {announcement.message}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Close button */}
-              <button
-                onClick={handleCloseAnnouncementBanner}
-                className="min-h-10 min-w-10 p-2 text-gray-400 transition-colors duration-200 hover:text-gray-600"
-                aria-label="Close announcement banner"
-              >
-                <FaTimes className="w-3 h-3" />
-              </button>
-            </div>
-          </div>
+    <nav aria-label={t('navbar.navigation')} onKeyDown={closeOnEscape} className="sticky top-0 z-20 border-b border-gray-200 bg-white shadow-sm">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
+        <Link to="/" aria-label="Bonobo Gym" onClick={() => setMenuOpen(false)} className="shrink-0"><img src={bonoboLogo} alt="Bonobo Gym" className="h-12" /></Link>
+        <div className="hidden items-center lg:flex">
+          {links.map(([url, key]) => <NavLink key={url} to={url} className={navClass}>{t(`navbar.${key}`)}</NavLink>)}
         </div>
-      )}
-      
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" onClick={handleLinkClick} className="text-2xl font-bold text-gray-800">
-              <img src={bonoboLogo} alt="Bonobo Gym logo" className="h-12" />
-            </Link>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <div ref={languageRef} className="relative">
+            <button onClick={() => setLanguageOpen(!languageOpen)} aria-label={t('navbar.language')} aria-expanded={languageOpen} aria-controls="language-menu" className="flex min-h-11 min-w-11 items-center justify-center rounded-md text-gray-700 hover:bg-gray-100"><FaGlobe aria-hidden="true" /></button>
+            {languageOpen && <div id="language-menu" className="absolute right-0 mt-2 w-40 rounded-lg border border-gray-200 bg-white p-1 shadow-lg">
+              {['en', 'sv'].map(lng => <button key={lng} lang={lng} onClick={() => { i18n.changeLanguage(lng); setLanguageOpen(false); }} className="block min-h-11 w-full rounded-md px-4 text-left hover:bg-gray-100">{lng === 'en' ? 'English' : 'Svenska'}</button>)}
+            </div>}
           </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-1">
-            <Link to="/" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.home')}</Link>
-            <Link to="/classes" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.classes')}</Link>
-            <Link to="/membership" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.memberships')}</Link>
-            <Link to="/about" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.about')}</Link>
-            <Link to="/contact" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">{t('navbar.contact')}</Link>
-          </div>
-
-          <div className="hidden md:flex items-center space-x-2">
-            <div className="relative">
-              <button
-                onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
-                className="min-h-11 min-w-11 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-800"
-                aria-label="Choose language"
-                aria-expanded={isLangDropdownOpen}
-              >
-                <FaGlobe className="h-5 w-5" />
-              </button>
-              {isLangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
-                  <button onClick={() => changeLanguage('en')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
-                  <button onClick={() => changeLanguage('sv')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Svenska</button>
-                </div>
-              )}
-            </div>
-
-            <button onClick={() => openBookingUrl()} className="min-h-11 rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">{t('navbar.book_class')}</button>
-          </div>
-
-          {/* Mobile right-side icons */}
-          <div className="-mr-2 flex items-center space-x-2 md:hidden">
-            {/* Language selector for mobile */}
-            <div className="relative">
-              <button
-                onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}
-                className="min-h-11 min-w-11 rounded-md p-2 text-gray-600 hover:text-gray-800"
-                aria-label="Choose language"
-                aria-expanded={isLangDropdownOpen}
-              >
-                <FaGlobe className="h-5 w-5" />
-              </button>
-              {isLangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
-                  <button onClick={() => { changeLanguage('en'); handleLinkClick(); }} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
-                  <button onClick={() => { changeLanguage('sv'); handleLinkClick(); }} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Svenska</button>
-                </div>
-              )}
-            </div>
-            
-            <button
-              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-              type="button"
-              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
-              aria-controls="mobile-menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg className={`${isMobileMenuOpen ? 'hidden' : 'block'} h-6 w-6`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-              <svg className={`${isMobileMenuOpen ? 'block' : 'hidden'} h-6 w-6`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+          <a href={ACCOUNT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-100">{t('mana.my_account')}</a>
+          <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer" className="hidden min-h-11 items-center rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 lg:inline-flex">{t('navbar.try_us')}</a>
+          <button ref={menuButtonRef} onClick={() => { setMenuOpen(!menuOpen); setLanguageOpen(false); }} aria-label={t(menuOpen ? 'navbar.close_menu' : 'navbar.open_menu')} aria-controls="mobile-menu" aria-expanded={menuOpen} className="flex min-h-11 min-w-11 items-center justify-center rounded-md text-gray-700 hover:bg-gray-100 lg:hidden">{menuOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}</button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-white shadow-lg`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link to="/" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.home')}</Link>
-          <Link to="/classes" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.classes')}</Link>
-          <Link to="/membership" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.memberships')}</Link>
-          <Link to="/about" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.about')}</Link>
-          <Link to="/contact" onClick={handleLinkClick} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">{t('navbar.contact')}</Link>
-        </div>
-        <div className="pt-4 pb-3 border-t border-gray-200">
-          <div className="mt-3 px-2 space-y-1">
-            <button onClick={() => { openBookingUrl(); handleLinkClick(); }} className="block min-h-12 w-full rounded-md bg-gray-800 px-4 py-3 text-center text-base font-medium text-white hover:bg-gray-700">{t('navbar.book_class')}</button>
-          </div>
-        </div>
-      </div>
+      {menuOpen && <div id="mobile-menu" className="max-h-[calc(100svh-5rem)] overflow-y-auto border-t border-gray-100 bg-white p-4 lg:hidden">
+        <div className="flex flex-col gap-1">{links.map(([url, key]) => <NavLink key={url} to={url} onClick={() => setMenuOpen(false)} className={navClass}>{t(`navbar.${key}`)}</NavLink>)}</div>
+        <a href={TRIAL_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="mt-4 flex min-h-12 items-center justify-center rounded-lg bg-gray-900 px-4 py-3 font-semibold text-white">{t('navbar.try_us')}</a>
+      </div>}
     </nav>
   );
-};
-
-export default Navbar;
+}

@@ -10,10 +10,10 @@ i18n
   .init({
     supportedLngs: ['en', 'sv'],
     fallbackLng: 'en',
-    debug: true,
+    debug: false,
     // Options for language detector
     detection: {
-      order: ['path', 'cookie', 'navigator', 'htmlTag', 'localStorage', 'subdomain'],
+      order: ['cookie', 'localStorage', 'navigator', 'htmlTag'],
       caches: ['cookie'],
     },
     // Options for http backend
@@ -27,3 +27,7 @@ i18n
   });
 
 export default i18n;
+
+i18n.on('languageChanged', language => {
+  document.documentElement.lang = language.startsWith('sv') ? 'sv' : 'en';
+});

@@ -3,6 +3,22 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/membership",
+      "destination": "/membership.html"
+    },
+    {
+      "source": "/classes",
+      "destination": "/classes.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

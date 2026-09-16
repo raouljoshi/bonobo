@@ -6,7 +6,7 @@ import majaImage from '../../assets/images/maja.jpg';
 const teamImageUrls = [
   markInstructorImage,
   majaImage, // Maja headshot
-  'https://via.placeholder.com/150', // Placeholder for Christian
+  null, // No portrait supplied for Christian.
 ];
 
 const TeamSpotlight = () => {
@@ -34,7 +34,7 @@ const TeamSpotlight = () => {
             const hasUrl = !!person.url;
             const PersonCard = (
               <>
-                <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.imageUrl} alt={person.alt || person.name} />
+                {person.imageUrl ? <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.imageUrl} alt={person.alt || person.name} /> : <div aria-hidden="true" className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gray-100 text-3xl font-semibold text-gray-600">{person.name.charAt(0)}</div>}
                 <h3 className={`mt-6 text-base font-semibold leading-7 tracking-tight ${hasUrl ? 'text-blue-600 group-hover:text-blue-800' : 'text-gray-900'}`}>{person.name}</h3>
                 <p className={`text-sm leading-6 ${hasUrl ? 'text-blue-600 group-hover:text-blue-800' : 'text-gray-600'}`}>{person.role}</p>
               </>

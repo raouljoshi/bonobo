@@ -53,7 +53,7 @@ const CommunityTestimonials = () => {
             </article>
           ))}
         </div>
-        <div className="mt-12 hidden md:block">
+        <div className="mx-2 mt-12 hidden md:block">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="p-4">
