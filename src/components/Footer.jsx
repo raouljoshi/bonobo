@@ -59,7 +59,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-500">
+        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
           <div className="mb-4 flex flex-wrap justify-center gap-x-6">
             <a href={FAQ_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-gray-400 underline hover:text-white">{t('mana.faq')}</a>
             <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-gray-400 underline hover:text-white">{t('mana.terms')}</a>

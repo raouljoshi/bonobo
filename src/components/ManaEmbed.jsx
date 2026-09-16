@@ -51,7 +51,7 @@ export default function ManaEmbed({ type }) {
         title={t(`mana.title_${type}`)}
         src={`${MANA_STUDIO_URL}/embed/${type}`}
         className="block w-full rounded-xl border-0 bg-white"
-        style={{ height: type === 'schedule' ? 800 : 600 }}
+        style={{ height: type === 'schedule' ? 800 : 600, display: status === 'slow' ? 'none' : 'block' }}
         onError={() => setStatus('slow')}
       />
     </div>

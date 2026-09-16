@@ -24,6 +24,7 @@ API requests are public, read-only, and credential-free. The site does not creat
 - A Swedish hydration mismatch found during the sweep was fixed by restoring the language preference after the pre-rendered content hydrates. The final sweep has no page errors.
 - Browser checks include persistent language choice, keyboard Escape, mobile menus, course filtering, no-JavaScript prices/schedule, and API/iframe failure paths.
 - Membership checkout was opened as an anonymous visitor and showed the correct Bonobo Gold item and current price. No account or payment was submitted.
+- During local outage simulation, the upstream iframe could remain on its own loading screen. After 15 seconds the website collapses it and retains a clear direct-Mana link; no stale website prices remain.
 - Visual evidence is saved locally under `output/playwright/` (excluded from Git).
 
 ## Upstream content observations

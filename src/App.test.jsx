@@ -111,9 +111,11 @@ test('blocked iframe offers direct access and ignores unrelated readiness messag
   expect(screen.getByRole('status')).toHaveTextContent('Loading from Mana');
   act(() => vi.advanceTimersByTime(15000));
   expect(screen.getByRole('status')).toHaveTextContent('Taking a while to load');
+  expect(frame).not.toBeVisible();
   expect(screen.getByRole('link')).toHaveAttribute('href', `${MANA_STUDIO_URL}/schedule`);
   act(() => window.dispatchEvent(new MessageEvent('message', { origin: MANA_ORIGIN, source: frame.contentWindow, data: ready })));
   expect(screen.queryByRole('status')).not.toBeInTheDocument();
+  expect(frame).toBeVisible();
 });
 
 test('schedule displays Stockholm time, filters classes, and links full classes without promising a place', async () => {
