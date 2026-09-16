@@ -25,6 +25,8 @@ API requests are public, read-only, and credential-free. The site does not creat
 - Browser checks include persistent language choice, keyboard Escape, mobile menus, course filtering, no-JavaScript prices/schedule, and API/iframe failure paths.
 - Membership checkout was opened as an anonymous visitor and showed the correct Bonobo Gold item and current price. No account or payment was submitted.
 - During local outage simulation, the upstream iframe could remain on its own loading screen. After 15 seconds the website collapses it and retains a clear direct-Mana link; no stale website prices remain.
+- Axe accessibility checks (WCAG 2 A/AA and 2.1 AA tags) report zero detected violations on all five routes after fixing footer and testimonial contrast.
+- Updated React Router to a patched release; the production dependency audit reports zero known vulnerabilities.
 - Visual evidence is saved locally under `output/playwright/` (excluded from Git).
 
 ## Upstream content observations
