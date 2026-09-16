@@ -9,9 +9,9 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
 
-function App() {
+export function Site() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-white">
         <Navbar />
@@ -26,8 +26,10 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return <Router><Site /></Router>;
+}

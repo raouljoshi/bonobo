@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import strengthImage from '../../assets/images/resistance training.JPEG';
 import movementImage from '../../assets/images/mvmt.jpg';
-import allAgesImage from '../../assets/images/kids training 1.JPEG';
+import allAgesImage from '../../assets/images/65training.png';
 
 const classMedia = [
   { imageUrl: strengthImage, link: '/classes' },

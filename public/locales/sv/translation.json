@@ -1,12 +1,16 @@
 {
   "navbar": {
     "home": "Hem",
-    "classes": "Pass",
-    "memberships": "Medlemskap",
+    "classes": "Schema & pass",
+    "memberships": "Priser",
     "about": "Om oss",
     "contact": "Kontakt",
     "login": "Logga in",
-    "book_class": "Boka ett pass"
+    "try_us": "Prova på",
+    "navigation": "Huvudmeny",
+    "language": "Välj språk",
+    "open_menu": "Öppna menyn",
+    "close_menu": "Stäng menyn"
   },
   "hero": {
     "title": "Improvement by Movement",
@@ -35,15 +39,14 @@
   },
   "featured_classes": {
     "title": "Våra pass",
-    "subtitle": "Oavsett om du vill bygga grundläggande styrka, förbättra din rörlighet eller hitta specialiserat stöd har Bonobo Gym ett pass som är utformat för dig.",
+    "subtitle": "Bygg styrka, utforska rörelse och hitta ett pass som passar dig.",
     "learn_more": "Läs mer →",
     "classes": [
       {
         "id": "strength_conditioning",
         "title": "Strenght & Conditioning",
         "description": "Vårt kärnerbjudande för att bygga funktionell styrka och uthållighet. Upplev utmanande träningspass anpassade efter din nivå, vilket säkerställer stadig framgång och verkliga resultat.",
-        "button": "Ta del av erbjudandet",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
+        "button": "Ta del av erbjudandet"
       },
       {
         "id": "movement",
@@ -51,9 +54,8 @@
         "description": "Lås upp din kropps fulla potential. Våra unika movement-pass blandar element från olika discipliner för att förbättra din flexibilitet, balans och övergripande kroppsmedvetenhet."
       },
       {
-        "id": "funky_monkeys",
-        "title": "Funky Monkeys (3-5 år)",
-        "description": "Från våra 'Funky Monkeys' (3-5 år) och 'Ungdomspass (10-14 år)' till vår 'Senior-Styrka' (65+), erbjuder vi säker, effektiv och rolig träning för varje skede i livet."
+        "title": "Träning som passar dig",
+        "description": "Upptäck Plus Power, personlig träning och bootcamps. Se aktuellt utbud och tillgänglighet i Mana."
       }
     ]
   },
@@ -203,29 +205,9 @@
         "imageUrl": "/images/carmatraining-logo.png",
         "url": "https://carmatraining.se"
       }
-
     ]
   },
-  "announcement_banner": {
-    "new_announcement_single": "Nytt meddelande tillgängligt",
-    "new_announcements_multiple": "{{count}} nya meddelanden tillgängliga",
-    "view_details": "Visa detaljer",
-    "announcements_title": "Meddelanden"
-  },
-  "announcements": [
-    {
-      "id": 1,
-      "message": "Funky Monkey-barnklasser (3-5 år) startar den 23/8.",
-      "link": "/classes",
-      "endDate": "2026-12-31"
-    },
-    {
-      "id": 2,
-      "message": "Plus Power-klasser (65+) startar den 25/8.",
-      "link": "/classes",
-      "endDate": "2026-12-31"
-    }
-  ],
+  "announcements": [],
   "footer": {
     "tagline": "Improvement by Movement",
     "quick_links": "Snabblänkar",
@@ -235,21 +217,15 @@
       "about": "Om Oss",
       "contact": "Kontakt"
     },
-    "hours_title": "Öppettider",
-    "hours_content": {
-      "weekdays": "Måndag - Fredag: 07:00 - 20:00",
-      "saturday": "Lördag: 09:00 - 13:00",
-      "sunday": "Söndag: 09:00 - 13:00"
-    },
     "contact_title": "Kontakt",
-    "copyright": " 2025 Bonobo Gym. Alla rättigheter förbehållna.",
+    "copyright": "© {{year}} Bonobo Gym. Alla rättigheter förbehållna.",
     "service_area_title": "Vårt serviceområde",
     "service_area_content": "Med bas på Kvarnholmen, erbjuder vi medlemmar från Värmdö och Nacka enkel och närhet till träning."
   },
   "seo": {
     "home": {
       "title": "Bonobo Gym Kvarnholmen | Boutique Gym & Gruppträning i Nacka",
-      "description": "Upptäck Bonobo Gym på Kvarnholmen. Vi erbjuder personlig träning, gruppträning och specialpass som Strong Mama & barnträning. Prova-på-kort för nya medlemmar!"
+      "description": "Bonobo Gym på Kvarnholmen i Nacka. Personlig träning, gruppträning och rörelseglädje. Se aktuellt schema, priser och prova-på-erbjudanden via Mana."
     },
     "about": {
       "title": "Om Oss | Bonobo Gym Nacka",
@@ -257,7 +233,7 @@
     },
     "classes": {
       "title": "Klasser | Bonobo Gym Nacka",
-      "description": "Utforska vårt breda utbud av gruppträningsklasser på Bonobo Gym i Nacka, från högintensiva pass till specialiserad ungdoms- och mammaträning."
+      "description": "Se Bonobo Gyms aktuella schema och boka pass via Mana. Styrka, rörelse, Plus Power och bootcamps på Kvarnholmen."
     },
     "membership": {
       "title": "Priser & Medlemskap | Bonobo Gym Nacka",
@@ -280,144 +256,11 @@
   },
   "class_pillars": {
     "title": "Våra pass",
-    "subtitle": "Utforska våra pass, utformade för att möta dina unika behov och mål.",
-    "pillars": [
-      {
-        "id": "strength_conditioning",
-        "title": "Strength & Conditioning",
-        "description": "Bygg funktionell styrka, uthållighet och allmän kondition i våra grundläggande pass för vuxna."
-      },
-      {
-        "id": "movement",
-        "title": "Movement (MVMT)",
-        "description": "Utforska smidighet, balans och kroppsmedvetenhet genom varierade rörelseövningar för alla vuxna."
-      },
-      {
-        "id": "funky_monkeys",
-        "title": "Funky Monkeys (3-5 år)",
-        "description": "Introducera de yngsta till rörelse, koordination och självförtroende i en rolig miljö där föräldrar deltar."
-      },
-      {
-        "id": "youth_class",
-        "title": "Ungdomsklass (10-14 år)",
-        "description": "Stärk förtonåringar och tonåringar att bygga styrka, stabilitet och hälsosamma vanor för deras växande kroppar."
-      },
-      {
-        "id": "plus_power",
-        "title": "Plus Power (65+)",
-        "description": "Förbättra livskvaliteten med pass fokuserade på styrka, balans och smidighet, specifikt för seniorer."
-      },
-      {
-        "id": "strong_mama",
-        "title": "Strong Mama",
-        "description": "Återfå styrka och kroppskontroll på ett säkert sätt efter förlossningen med expertvägledning. Ta med din bebis!"
-      }
-    ]
+    "subtitle": "Lär känna vår träning. Se aktuella pass, tider och tillgänglighet i schemat ovan."
   },
-  "class_details": [
-    {
-      "id": "strength_conditioning",
-      "title": "Strength & Conditioning",
-      "description": "Våra grundläggande Strength & Conditioning-pass är utformade för att bygga en robust och motståndskraftig kropp. Vi kombinerar funktionell styrketräning med utmanande konditionselement för att förbättra din kraft, uthållighet och övergripande kondition.",
-      "experience_title": "Du kommer att uppleva:",
-      "experience_list": [
-        "Dynamisk uppvärmning: Ofta med lekfulla inslag för att göra kropp och sinne redo.",
-        "Varierade pass: Med vikter, kroppsvikt, repetitioner och tidsintervaller.",
-        "Integrerad approach: Fokus på koordination, rytm och rörlighet i varje pass.",
-        "Dedikerad stretch: Varje pass avslutas med en strukturerad nedvarvning."
-      ],
-      "who_for_label": "För vem:",
-      "who_for_text": "Alla träningsnivåer! Våra coacher anpassar övningarna för att säkerställa att du utmanas maximalt, på ett säkert och effektivt sätt."
-    },
-    {
-      "id": "movement",
-      "title": "Movement (MVMT)",
-      "description": "Vårt Movement-pass är en timmes utforskning av din kropps förmågor, till musik. Vi hämtar inspiration från olika discipliner som yoga, kampsport, dans och pilates för att förbättra din flexibilitet, balans och kroppsmedvetenhet.",
-      "experience_title": "Du kommer att uppleva:",
-      "experience_list": [
-        "Kontinuerligt flöde: Smidiga, dynamiska sekvenser som utmanar din stabilitet och ditt rörelseomfång.",
-        "Kroppsmedvetenhet: Upptäck och stärk områden du kanske missar i traditionell styrketräning.",
-        "Koppling mellan kropp & sinne: Fokus på kontroll och precision i varje rörelse."
-      ],
-      "who_for_label": "För vem:",
-      "who_for_text": "Rekommenderas starkt för alla, särskilt de som vill förbättra sin flexibilitet eller komplettera sin styrketräning."
-    },
-    {
-      "id": "strong_mama",
-      "title": "Strong Mama (CarMa Mammaträning)",
-      "description": "Vår 'Strong Mama'-klass är utformad för nyblivna mammor, med fokus på att säkert bygga upp bålstyrka, förbättra hållningen och öka energinivåerna. Klassen tillhandahålls i samarbete med vår externa partner, <a href='https://carmatraining.se' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 font-semibold'>CarMa Training</a>, i en stödjande miljö där du kan ta med din bebis.",
-      "experience_title": "Unika fördelar:",
-      "experience_list": [
-        "Ta med din bebis: Bebisar är välkomna och kan vara med dig under passet.",
-        "Specialiserad coachning: Kontrollerad, processdriven träning för att hjälpa dig att säkert återfå bålstyrkan.",
-        "Intim miljö: Små gruppstorlekar (max 10 mammor) säkerställer personlig uppmärksamhet."
-      ],
-      "who_for_label": "För vem:",
-      "who_for_text": "Nyblivna mammor som vill återgå till träning i en kontrollerad och stödjande miljö."
-    },
-    {
-      "id": "funky_monkeys",
-      "title": "Funky Monkeys (3-5 år)",
-      "description": "Vårt 'Funky Monkeys'-program introducerar barn i åldern 3-5 till rörelseglädje i en rolig, säker och engagerande miljö. Vi fokuserar på att bygga grundläggande motoriska färdigheter, koordination och självförtroende genom lekfulla övningar och lekar, allt medan en förälder deltar tillsammans med dem.",
-      "experience_title": "Fördelar:",
-      "experience_list": [
-        "Förbättrad fysisk utveckling och balans.",
-        "Ökat självförtroende och förmåga att lyssna."
-      ],
-      "who_for_label": "För vem:",
-      "who_for_text": "Föräldrar och deras barn i åldern 3-5 år."
-    },
-    {
-      "id": "youth_class",
-      "title": "Ungdomsklass (10-14 år)",
-      "description": "Vårt 'Ungdomspass' är specifikt utformat för förtonåringar och tonåringar, med fokus på att bygga styrka, stabilitet och korrekta rörelsemönster när deras kroppar växer och förändras.",
-      "experience_title": "Du kommer att uppleva:",
-      "experience_list": [
-        "Grundläggande utveckling av styrka och koordination.",
-        "Balanserad träning och en positiv miljö."
-      ],
-      "who_for_label": "För vem:",
-      "who_for_text": "Förtonåringar och ungdomar (t.ex. 11-16) som vill bygga en stark och kapabel kropp."
-    },
-    {
-      "id": "plus_power",
-      "title": "Plus Power (65+)",
-      "description": "Vårt 'Plus Power'-pass är skräddarsytt för individer från 65 år och uppåt, med fokus på att bibehålla och förbättra de viktiga fysiska färdigheter som höjer livskvaliteten i vardagen.",
-      "experience_title": "Du kommer att uppleva:",
-      "experience_list": [
-        "Funktionell styrke- och balansträning.",
-        "Koordination, rörlighet och en stödjande atmosfär."
-      ],
-      "who_for_label": "För vem:",
-      "who_for_text": "Individer 65 år och äldre som vill hålla sig aktiva och bibehålla sin självständighet."
-    },
-    {
-      "id": "workshops",
-      "title": "Specialiserade Workshops & Evenemang",
-      "description": "Under året anordnar Bonobo Gym särskilda workshops för att fördjupa dina tekniska färdigheter och utöka dina kunskaper om holistisk hälsa.",
-      "experience_title": "Exempel:",
-      "experience_list": [
-        "Kettlebell- & Skivstångsteknik",
-        "Kampsport/Boxning",
-        "Näringslära & Immunitet"
-      ],
-      "who_for_label": "För vem:",
-      "who_for_text": "Medlemmar som vill finslipa specifika tekniker eller få bredare hälsoinsikter."
-    }
-  ],
   "class_schedule": {
-    "title": "Vårt veckoschema",
-    "subtitle": "Hitta en tid som passar dig. Alla pass måste bokas i förväg.",
-    "days": ["Mån", "Tis", "Ons", "Tors", "Fre", "Lör", "Sön"],
-    "class_names": {
-      "Strength & Conditioning": "Strength & Conditioning",
-      "Strength & Conditioning_short": "S&C",
-      "Movement": "Movement (MVMT)",
-      "Strong Mama": "Strong Mama (CarMa Training)",
-      "Funky Monkeys": "Funky Monkeys",
-      "Youth Class": "Ungdomspass",
-      "Plus Power": "Plus Power"
-    }
+    "title": "Schema & bokning",
+    "subtitle": "Hitta ditt nästa pass och boka din plats. Schemat uppdateras direkt från Mana."
   },
   "booking_cta": {
     "title": "Ta första steget",
@@ -434,7 +277,7 @@
       },
       {
         "question": "Måste jag boka i förväg?",
-        "answer": "Ja, alla pass måste bokas i förväg via vårt online-system för att säkra din plats, eftersom våra små gruppklasser har begränsat antal platser."
+        "answer": "Ja. Boka via schemat på den här sidan eller direkt i Mana. Där ser du tillgängliga platser och bokningsvillkor."
       },
       {
         "question": "Vad gör jag om jag har en skada eller fysisk begränsning?",
@@ -451,140 +294,39 @@
     ]
   },
   "faq": {
-    "title": "Vanliga frågor",
+    "title": "Bra att veta",
     "questions": [
       {
-        "question": "Vad är Bonobo Trail och vad händer när det är slut?",
-        "answer": "Bonobo Trail är vårt introduktionserbjudande: 3 pass på 14 dagar för 360 kr. Det är det perfekta sättet att uppleva vårt gym. Om du bestämmer dig för att bli fullvärdig medlem efter din provperiod får du 10% rabatt på din första månads medlemskap!"
+        "question": "Hur provar jag på?",
+        "answer": "Välj ”Prova på” för att se våra aktuella introduktionserbjudanden i Mana. Där finns priser, innehåll och villkor innan du väljer."
       },
       {
-        "question": "Kan jag ta med en vän för att träna?",
-        "answer": "Guld-medlemmar kan ta med en vän som inte är medlem till vårt månatliga 'Kompis-fredag'-event."
+        "question": "Var hanterar jag mitt medlemskap och mina bokningar?",
+        "answer": "Välj ”Mitt konto” för att öppna ditt konto i Mana. Kontakta oss om du behöver hjälp efter bytet av bokningssystem."
       },
       {
-        "question": "Kan jag frysa mitt medlemskap?",
-        "answer": "Ja! Guld-medlemskapet inkluderar 4 veckors frysning per år, uppdelat på två 2-veckorsperioder. Vänligen kontakta oss för att ordna en frysning."
+        "question": "Vilka villkor gäller för klippkort och avbokning?",
+        "answer": "Se villkoren för det alternativ du väljer i Mana. Använd länkarna ovan till bokningsfrågor och aktuella villkor, eller kontakta oss om något är oklart."
       },
       {
-        "question": "Vad är er avbokningspolicy?",
-        "answer": "Våra månadsmedlemskap kan sägas upp när som helst med 30 dagars varsel. Klippkort, bootcamps och årsmedlemskap är inte återbetalningsbara."
-      },
-      {
-        "question": "Finns det alternativ för barn?",
-        "answer": "Ja, vi erbjuder ett Barn- och Ungdomskort som är giltigt för våra specifika pass för yngre medlemmar. Se pass-schemat för detaljer eller kontakta oss för mer information."
-      },
-      {
-        "question": "Tänk om jag aldrig har tränat förut?",
-        "answer": "Inga problem! Våra pass är utformade för alla träningsnivåer. Våra expertcoacher kommer att ge anpassningar för att säkerställa att du får ett säkert och effektivt träningspass."
+        "question": "Kan jag börja om jag aldrig har tränat tidigare?",
+        "answer": "Absolut. Våra tränare hjälper dig att anpassa övningarna efter din nivå. Kontakta oss om du vill ha hjälp att välja ditt första pass."
       }
     ]
   },
   "membership_page": {
     "header": {
-      "title": "Välj Din Väg",
-      "subtitle": "Välj ett medlemskap eller flexibelt kort som passar dina behov"
+      "title": "Hitta din träning",
+      "subtitle": "Medlemskap och klippkort för din vardag. Se aktuella priser och köp direkt här via Mana."
     },
-    "trail_offer": {
-      "title": "Bonobo Trail",
-      "description": "Prova på! 3 pass i 14 dagar för endast 360 kr.",
-      "promo": "Uppgradera till fullt medlemskap och få 10% rabatt på din första månad!",
-      "button": "Starta din Prova-på →",
-      "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=prova-pa--bonobo-3-ggr"
+    "trial": {
+      "title": "Ny på Bonobo?",
+      "description": "Börja med vårt prova-på-erbjudande. Se alternativen och välj det som passar dig i Mana."
     },
-    "pricing_cards": {
-      "silver": {
-        "title": "Silver",
-        "price": "999 kr",
-        "price_suffix": "/mån",
-        "features": [
-          "9 bokningar per månad",
-          "Tillgång till alla klasser"
-        ],
-        "button": "Välj Silver →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
-      },
-      "gold": {
-        "title": "Guld",
-        "price": "1 199 kr",
-        "price_suffix": "/mån",
-        "features": [
-          "Obegränsade bokningar, alla klasser",
-          "Ta med en vän på 'Friend Friday'",
-          "4 veckors frysning per år"
-        ],
-        "button": "Gå för Guld →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
-        "annual_note": "Eller betala årligen (12 089 kr) och få 1 månad gratis!",
-        "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
-      }
-    },
-    "other_passes": {
-      "title": "Andra Kort & Klippkort",
-      "passes": [
-        {
-          "title": "10-Klippkort",
-          "price": "1 999 kr",
-          "description": "Träna när det passar dig. 10-klippkortet är giltigt i 6 månader från inköpsdatum. Perfekt för dig som vill ha flexibilitet i din träning.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=10-visit-klippkort"
-        },
-        {
-          "title": "Drop-in",
-          "price": "250 kr",
-          "description": "Perfekt för att prova en klass eller för besökare. Boka din plats på någon av våra ordinarie klasser. Utmärkt för dig som vill uppleva våra klasser utan ett långsiktigt åtagande.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=drop-in-single-visit"
-        },
-        {
-          "title": "Funky Monkey-kort",
-          "price": "1 995 kr",
-          "description": "Ett 10-veckorskort för våra Funky Monkey-klasser (3-5 år) med fokus på lekfull rörelse och grundläggande motorik.",
-          "link_text": "Läs mer",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=barntraning-3-5-ar-funky-monkeys"
-        },
-        {
-          "title": "Mamma Camp",
-          "price": "2 990 kr",
-          "description": "Ett träningsläger med 10 tillfällen för mammor.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=mamma-camp"
-        },
-        {
-          "title": "P.T. one to one", "price": "1 100 kr", "description": "En PT-session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
-        },
-        {
-          "title": "PT 5-kort", "price": "5 500 kr", "description": "Fem PT-sessioner.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        },
-        {
-          "title": "Bruce Medlemstillägg",
-          "price": "140 kr",
-          "description": "För våra vänner som använder Bruce! Detta tillägg är till för när du har använt upp din vanliga kvot och vill delta i en annan klass. Praktiskt för dig som vill gå på extra klasser utan att uppgradera ditt medlemskap.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bruce-extra"
-        },
-        {
-          "title": "Plus Power",
-          "price": "950 kr",
-          "description": "Ett specialiserat månadsmedlemskap för individer från 65 år och uppåt, med fokus på att bibehålla och förbättra viktiga fysiska färdigheter som höjer livskvaliteten i vardagen genom funktionell styrka, balans och koordinationsträning.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
-        },
-        {
-          "title": "PT 10", "price": "10 000 kr", "description": "10 PT-sessioner.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        },
-        {
-          "title": "PT 20-kort", "price": "20 000 kr", "description": "20 PT-sessioner.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        },
-        {
-          "title": "Sound healing", "price": "250 kr", "description": "Sound healing-session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        },
-        {
-          "title": "Yoga/MVMT-klippkort", "price": "2 000 kr / månad", "description": "Yoga/MVMT-klippkort med 10 klipp.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        }
-
-      ]
-    }
-  },
-  "redirect_modal": {
-    "title": "Omdirigerar till boknings- och betalningssystem",
-    "description": "Du kommer nu att omdirigeras till vårt externa boknings- och betalningssystem för att slutföra ditt köp.",
-    "confirm_button": "Fortsätt",
-    "cancel_button": "Avbryt"
+    "options": "Träningsalternativ",
+    "memberships": "Medlemskap",
+    "credits": "Klippkort & engångspass",
+    "more": "PT, bootcamps & event"
   },
   "contact_page": {
     "header": {
@@ -597,5 +339,64 @@
       "description": "För alla frågor, vänligen kontakta Mark direkt.",
       "button_text": "mark@bonobogym.com"
     }
+  },
+  "mana": {
+    "live": "Aktuellt utbud direkt från Mana.",
+    "new_tab": "(öppnas i en ny flik)",
+    "open_schedule": "Öppna schemat i Mana",
+    "open_memberships": "Se medlemskap i Mana",
+    "open_credits": "Se klippkort i Mana",
+    "title_schedule": "Bonobo Gyms aktuella schema och bokning i Mana",
+    "title_memberships": "Bonobo Gyms medlemskap och priser i Mana",
+    "title_credits": "Bonobo Gyms klippkort och priser i Mana",
+    "loading": "Hämtar från Mana…",
+    "slow": "Tar det tid att ladda? Använd länken ovan för att fortsätta direkt i Mana.",
+    "manage_bookings": "Logga in & hantera bokningar",
+    "services": "Personlig träning",
+    "services_description": "Se aktuella PT-tjänster, paket och priser i Mana.",
+    "open_services": "Se personlig träning",
+    "courses": "Bootcamps & event",
+    "courses_description": "Upptäck aktuella bootcamps och event. Datum, platser och anmälan finns i Mana.",
+    "open_courses": "Se bootcamps & event",
+    "faq": "Bokningsfrågor i Mana",
+    "terms": "Aktuella villkor",
+    "help": "Hjälp att välja? Kontakta oss",
+    "hours": "Träna med oss",
+    "hours_description": "Se aktuella passtider och boka din plats i schemat.",
+    "schedule_link": "Se schema & boka",
+    "account": "Mitt konto i Mana",
+    "empty_catalog": "Se aktuella alternativ direkt i Mana.",
+    "per_month": "/ mån",
+    "credits_count": "{{count}} klipp",
+    "credits_month": "{{count}} klipp per månad",
+    "credits_week": "{{count}} klipp per vecka",
+    "commitment": "{{count}} månaders bindningstid",
+    "no_commitment": "Ingen bindningstid",
+    "buy": "Köp",
+    "learn_more": "Läs mer",
+    "trial_terms": "För nya kunder. Behörighet och villkor bekräftas i Mana.",
+    "filter_classes": "Filtrera pass",
+    "all_classes": "Alla pass & kurstillfällen",
+    "schedule_window": "Kommande 14 dagar · uppdateras från Mana",
+    "timezone": "Alla tider: {{timezone}}",
+    "no_classes": "Inga pass visas för den här perioden. Se hela schemat i Mana.",
+    "course_session": "Kurstillfälle · anmälan via kursen",
+    "full": "Fullbokat · se alternativ i Mana",
+    "spots": "{{count}} lediga platser",
+    "check_availability": "Se tillgänglighet i Mana",
+    "view_course": "Se kurs",
+    "view_class": "Se pass",
+    "book": "Boka",
+    "availability_note": "Platser kan ändras. Bokning och slutlig tillgänglighet bekräftas i Mana.",
+    "my_account": "Mitt konto",
+    "check_schedule": "Se aktuella tider och detaljer i schemat.",
+    "read_faq": "Läs alla bokningsfrågor i Mana",
+    "pt_checkout": "Köp PT-paket",
+    "credits_count_one": "{{count}} klipp",
+    "credits_count_other": "{{count}} klipp",
+    "spots_one": "{{count}} ledig plats",
+    "spots_other": "{{count}} lediga platser",
+    "sessions": "{{count}} tillfällen",
+    "no_courses": "Se kommande bootcamps och event i Mana."
   }
 }

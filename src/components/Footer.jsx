@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import { ACCOUNT_URL, TERMS_URL, FAQ_URL } from '../utils/booking';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -15,8 +16,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold">Bonobo Gym</h3>
             <p className="text-gray-400">{t('footer.tagline')}</p>
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/bonobogym/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><FaInstagram size={20} /></a>
-              <a href="https://www.bonobogym.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><FaFacebookF size={20} /></a>
+              <a aria-label="Bonobo Gym Instagram" href="https://www.instagram.com/bonobogym/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><FaInstagram size={20} /></a>
             </div>
           </div>
 
@@ -33,11 +33,11 @@ const Footer = () => {
 
           {/* Hours */}
           <div>
-            <h3 className="text-lg font-bold">{t('footer.hours_title')}</h3>
+            <h3 className="text-lg font-bold">{t('mana.hours')}</h3>
             <ul className="mt-4 space-y-2 text-gray-400">
-              <li>{t('footer.hours_content.weekdays')}</li>
-              <li>{t('footer.hours_content.saturday')}</li>
-              <li>{t('footer.hours_content.sunday')}</li>
+              <li>{t('mana.hours_description')}</li>
+              <li><Link to="/classes#schedule" className="inline-flex min-h-11 items-center underline hover:text-white">{t('mana.schedule_link')}</Link></li>
+              <li><a href={ACCOUNT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline hover:text-white">{t('mana.account')}</a></li>
             </ul>
           </div>
 
@@ -59,8 +59,12 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-500">
-          <p>{t('footer.copyright')}</p>
+        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
+          <div className="mb-4 flex flex-wrap justify-center gap-x-6">
+            <a href={FAQ_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-gray-400 underline hover:text-white">{t('mana.faq')}</a>
+            <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-gray-400 underline hover:text-white">{t('mana.terms')}</a>
+          </div>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>

@@ -14,8 +14,8 @@ const Classes = () => {
     <div>
       <SEO title={t('seo.classes.title')} description={t('seo.classes.description')} />
       <ClassesHero />
-      <ClassPillars />
       <ClassSchedule />
+      <ClassPillars />
       <BookingCTA />
       <ClassesFAQ />
     </div>

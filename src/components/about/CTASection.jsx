@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { BOOKING_URL } from '../../utils/booking';
+import { TRIAL_URL } from '../../utils/booking';
 
 const CTASection = () => {
   const { t } = useTranslation();
@@ -17,13 +17,13 @@ const CTASection = () => {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
           <Link
-            to="/classes"
+            to="/classes#schedule"
             className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-100 px-5 py-3 text-base font-medium text-gray-800 hover:bg-gray-200"
           >
             {t('about_cta.button_schedule')}
           </Link>
           <a
-            href={BOOKING_URL}
+            href={TRIAL_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-12 items-center justify-center rounded-md border border-transparent bg-gray-600 px-5 py-3 text-base font-medium text-white hover:bg-gray-700"

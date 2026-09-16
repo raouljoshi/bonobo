@@ -1,114 +1,57 @@
-import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import FAQ from './FAQ';
+import ManaFAQ from './ManaFAQ';
 import SEO from './SEO';
-import { SHOP_URL } from '../utils/booking';
+import ManaCatalog from './ManaCatalog';
+import TrialOffers from './TrialOffers';
+import CourseCatalog from './CourseCatalog';
+import { SERVICES_URL, COURSES_URL, PT_PACK_URL, FAQ_URL, TERMS_URL } from '../utils/booking';
 
-const PassItem = ({ title, price, description, purchaseUrl, children }) => {
+export default function Membership() {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="border rounded-lg">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-6 text-left font-bold text-xl"
-      >
-        <span>{title}</span>
-        <span>{isOpen ? '−' : '+'}</span>
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6">
-          <p className="text-2xl font-bold">{price}</p>
-          {description && <p className="mt-2 text-gray-600">{description}</p>}
-          {children}
-          <a href={purchaseUrl || SHOP_URL} target="_blank" rel="noopener noreferrer" className="mt-4 block w-full rounded-lg bg-gray-800 px-4 py-3 text-center font-semibold text-white hover:bg-gray-900">
-            {t('Buy')}
-          </a>
-        </div>
-      )}
-    </div>
-  );
-};
-
-const Membership = () => {
-  const { t } = useTranslation();
-
-  const page = t('membership_page', { returnObjects: true });
-
-  if (!page || !page.header) {
-    return null; // Or a loading spinner
-  }
-
-  const { header, trail_offer, pricing_cards, other_passes } = page;
-  const { silver, gold } = pricing_cards;
-
-  return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-12 sm:py-16">
       <SEO title={t('seo.membership.title')} description={t('seo.membership.description')} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">{header.title}</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">{header.subtitle}</p>
-        </div>
-
-        {/* Bonobo Trail Offer */}
-        <div className="mt-12 max-w-lg mx-auto bg-gray-900 text-white rounded-lg p-6 text-center">
-          <h3 className="text-2xl font-bold">{trail_offer.title}</h3>
-          <p className="mt-2">{trail_offer.description}</p>
-          <p className="text-sm mt-2">{trail_offer.promo}</p>
-          <a href={trail_offer.purchaseUrl || SHOP_URL} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-gray-900 hover:bg-gray-200">{trail_offer.button}</a>
-        </div>
-
-        {/* Pricing Cards */}
-        <div className="mt-12 grid max-w-3xl mx-auto grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="border rounded-lg p-8 flex flex-col">
-            <h3 className="text-3xl font-bold text-gray-900">{silver.title}</h3>
-            <p className="mt-6 text-4xl font-bold">{silver.price} <span className="text-lg font-medium text-gray-500">{silver.price_suffix}</span></p>
-            <ul className="mt-6 space-y-4 text-left mb-8">
-              {silver.features.map((feature, index) => (
-                <li key={index} className="flex items-start"><span className="text-gray-800 mr-2">✓</span>{feature}</li>
-              ))}
-            </ul>
-            <div className="mt-auto">
-              <a href={silver.purchaseUrl || SHOP_URL} target="_blank" rel="noopener noreferrer" className="block w-full rounded-lg bg-gray-800 py-4 text-center font-semibold text-white hover:bg-gray-700">{silver.button}</a>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <header className="mx-auto max-w-3xl text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500">Bonobo Gym · Kvarnholmen</p>
+          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">{t('membership_page.header.title')}</h1>
+          <p className="mt-4 text-lg text-gray-600">{t('membership_page.header.subtitle')}</p>
+        </header>
+        <TrialOffers />
+        <nav aria-label={t('membership_page.options')} className="mb-10 flex flex-wrap gap-3">
+          {['memberships', 'credits', 'more'].map(section => (
+            <a key={section} href={`#${section}`} className="inline-flex min-h-11 items-center rounded-full border border-gray-300 px-5 py-2 font-medium text-gray-800 hover:bg-gray-100">{t(`membership_page.${section}`)}</a>
+          ))}
+        </nav>
+        <section id="memberships" aria-labelledby="memberships-heading" className="scroll-mt-24">
+          <h2 id="memberships-heading" className="mb-3 text-3xl font-bold">{t('membership_page.memberships')}</h2>
+          <ManaCatalog type="memberships" />
+        </section>
+        <section id="credits" aria-labelledby="credits-heading" className="mt-12 scroll-mt-24 border-t border-gray-200 pt-10">
+          <h2 id="credits-heading" className="mb-3 text-3xl font-bold">{t('membership_page.credits')}</h2>
+          <ManaCatalog type="credits" />
+        </section>
+        <section id="more" aria-label={t('membership_page.more')} className="my-12 grid scroll-mt-24 gap-6 md:grid-cols-2">
+          {[['services', SERVICES_URL], ['courses', COURSES_URL]].map(([key, url]) => (
+            <div key={key} className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <h2 className="text-2xl font-bold">{t(`mana.${key}`)}</h2>
+              <p className="mt-3 text-gray-600">{t(`mana.${key}_description`)}</p>
+              {key === 'services' && <a href={PT_PACK_URL} target="_blank" rel="noopener noreferrer" className="mr-5 mt-4 inline-flex min-h-12 items-center rounded-lg bg-gray-900 px-5 py-3 font-semibold text-white hover:bg-gray-700">{t('mana.pt_checkout')} ↗</a>}
+              <a href={url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center font-semibold underline underline-offset-4">{t(`mana.open_${key}`)} ↗</a>
             </div>
-          </div>
-          <div className="border rounded-lg p-8 flex flex-col">
-            <h3 className="text-3xl font-bold text-gray-900">{gold.title}</h3>
-            <p className="mt-6 text-4xl font-bold">{gold.price} <span className="text-lg font-medium text-gray-500">{gold.price_suffix}</span></p>
-            <ul className="mt-6 space-y-4 text-left mb-8">
-              {gold.features.map((feature, index) => (
-                <li key={index} className="flex items-start"><span className="text-gray-800 mr-2">✓</span>{feature}</li>
-              ))}
-            </ul>
-            <div className="mt-auto">
-              <a href={gold.purchaseUrl || SHOP_URL} target="_blank" rel="noopener noreferrer" className="block w-full rounded-lg bg-gray-800 py-4 text-center font-semibold text-white hover:bg-gray-900">{gold.button}</a>
-              <p className="mt-6 text-center text-sm text-gray-500">{gold.annual_link ? (<a href={gold.annual_link} target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">{gold.annual_note}</a>) : gold.annual_note}</p>
-            </div>
-          </div>
+          ))}
+        </section>
+        <CourseCatalog />
+        <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href={FAQ_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline">{t('mana.faq')}</a>
+          <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline">{t('mana.terms')}</a>
+          <Link to="/contact" className="inline-flex min-h-11 items-center underline">{t('mana.help')}</Link>
         </div>
-
-        {/* Other Passes */}
-        <div className="py-12">
-            <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl font-bold">{other_passes.title}</h2>
-            </div>
-            <div className="mt-8 max-w-4xl mx-auto">
-                <div className="space-y-4">
-                    {other_passes.passes.map((pass, index) => (
-                        <PassItem key={index} title={pass.title} price={pass.price} description={pass.description} purchaseUrl={pass.purchaseUrl}>
-                        </PassItem>
-                    ))}
-                </div>
-            </div>
-        </div>
-
+        <ManaFAQ />
         <FAQ />
-
       </div>
     </div>
   );
-};
-
-export default Membership;
+}

@@ -1,12 +1,16 @@
 {
   "navbar": {
     "home": "Home",
-    "classes": "Classes",
-    "memberships": "Memberships",
+    "classes": "Schedule & classes",
+    "memberships": "Prices",
     "about": "About",
     "contact": "Contact",
     "login": "Log In",
-    "book_class": "Book a Class"
+    "try_us": "Try us",
+    "navigation": "Main navigation",
+    "language": "Choose language",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu"
   },
   "hero": {
     "title": "Improvement by Movement",
@@ -35,7 +39,7 @@
   },
   "featured_classes": {
     "title": "Our Main Classes",
-    "subtitle": "Whether you're looking to build foundational strength, enhance your movement, or find specialized support, Bonobo Gym has a class designed for you.",
+    "subtitle": "Build strength, explore movement, and find a class that suits you.",
     "learn_more": "Learn More →",
     "classes": [
       {
@@ -49,8 +53,8 @@
         "description": "Unlock your body's full potential. Our unique movement classes blend elements from various disciplines to improve your flexibility, balance, and overall body awareness."
       },
       {
-        "title": "Fitness for Every Age",
-        "description": "From our 'Funky Monkeys' (3-5 years) and 'Youth Class (10-14 years)' to our 'Plus Power' (65+), we offer safe, effective, and fun training for every stage of life."
+        "title": "Find your kind of training",
+        "description": "Explore Plus Power, personal training, and bootcamps. Find the current options and availability in Mana."
       }
     ]
   },
@@ -200,29 +204,9 @@
         "imageUrl": "/images/carmatraining-logo.png",
         "url": "https://carmatraining.se"
       }
-
     ]
   },
-  "announcement_banner": {
-    "new_announcement_single": "New announcement available",
-    "new_announcements_multiple": "{{count}} new announcements available",
-    "view_details": "View details",
-    "announcements_title": "Announcements"
-  },
-  "announcements": [
-    {
-      "id": 1,
-      "message": "Funky Monkey kids (3-5 yrs) classes starting on the 23/8.",
-      "link": "/classes",
-      "endDate": "2026-12-31"
-    },
-    {
-      "id": 2,
-      "message": "Plus Power (65+) classes starting on the 25/8.",
-      "link": "/classes",
-      "endDate": "2026-12-31"
-    }
-  ],
+  "announcements": [],
   "footer": {
     "tagline": "Improvement by Movement",
     "quick_links": "Quick Links",
@@ -232,21 +216,15 @@
       "about": "About Us",
       "contact": "Contact"
     },
-    "hours_title": "Hours",
-    "hours_content": {
-      "weekdays": "Monday - Friday: 7:00 - 20:00",
-      "saturday": "Saturday: 9:00 - 13:00",
-      "sunday": "Sunday: 9:00 - 13:00"
-    },
     "contact_title": "Contact",
-    "copyright": " 2024 Bonobo Gym. All rights reserved.",
+    "copyright": "© {{year}} Bonobo Gym. All rights reserved.",
     "service_area_title": "Our Service Area",
     "service_area_content": "With our base in Kvarnholmnen, we proudly serve members from all of Värmdö and Nacka."
   },
   "seo": {
     "home": {
       "title": "Bonobo Gym Kvarnholmen | Boutique Gym & Group Training in Nacka",
-      "description": "Discover Bonobo Gym in Kvarnholmen. We offer personal training, group classes, and specialized programs like Strong Mama & kids' training. Trial cards available for new members!"
+      "description": "Bonobo Gym on Kvarnholmen in Nacka. Personal training, small group classes, and movement. Find live schedules, prices, and first-time offers through Mana."
     },
     "about": {
       "title": "About Us | Bonobo Gym Nacka",
@@ -254,7 +232,7 @@
     },
     "classes": {
       "title": "Classes | Bonobo Gym Nacka",
-      "description": "Explore our wide range of group training classes at Bonobo Gym in Nacka, from high-intensity workouts to specialized youth and postnatal training."
+      "description": "See the live Bonobo Gym schedule and book classes through Mana. Strength, movement, Plus Power, and bootcamps on Kvarnholmen."
     },
     "membership": {
       "title": "Pricing & Memberships | Bonobo Gym Nacka",
@@ -277,144 +255,11 @@
   },
   "class_pillars": {
     "title": "Our Classes",
-    "subtitle": "Explore our classes designed to meet your unique needs and goals.",
-    "pillars": [
-      {
-        "id": "strength_conditioning",
-        "title": "Strength & Conditioning",
-        "description": "Build functional strength, endurance, and overall fitness in our foundational classes for adults."
-      },
-      {
-        "id": "movement",
-        "title": "Movement (MVMT)",
-        "description": "Explore fluidity, balance, and body awareness through diverse movement practices for all adults."
-      },
-      {
-        "id": "funky_monkeys",
-        "title": "Funky Monkeys (3-5)",
-        "description": "Introduce your youngest ones to movement, coordination, and confidence in a fun, parent-inclusive setting."
-      },
-      {
-        "id": "youth_class",
-        "title": "Youth Class (10-14)",
-        "description": "Empower pre-teens and teens to build strength, stability, and healthy habits for their developing bodies."
-      },
-      {
-        "id": "plus_power",
-        "title": "Plus Power (65+)",
-        "description": "Enhance life quality with classes focused on strength, balance, and agility specifically for seniors."
-      },
-      {
-        "id": "strong_mama",
-        "title": "Strong Mama",
-        "description": "Safely regain strength and body control post-natal with expert guidance, and bring your baby along!"
-      }
-    ]
+    "subtitle": "Get to know our training. See the schedule above for current classes, times, and availability."
   },
-  "class_details": [
-    {
-      "id": "strength_conditioning",
-      "title": "Strength & Conditioning",
-      "description": "Our foundational Strength & Conditioning classes are designed to build a robust and resilient body. We combine functional strength work with challenging conditioning elements to improve your power, endurance, and overall fitness.",
-      "experience_title": "You'll Experience:",
-      "experience_list": [
-        "Dynamic Warm-ups: Often including playful games to get your body and mind ready.",
-        "Varied Workouts: Utilizing weights, bodyweight, reps, and time intervals.",
-        "Integrated Approach: Focus on coordination, rhythm, and mobility in every session.",
-        "Dedicated Stretch: Each class concludes with a structured cool-down."
-      ],
-      "who_for_label": "Who it's for:",
-      "who_for_text": "All fitness levels! Our coaches scale exercises to ensure you're challenged at your maximum, safely and effectively."
-    },
-    {
-      "id": "movement",
-      "title": "Movement (MVMT)",
-      "description": "Our Movement class is an hour-long exploration of your body's capabilities, set to music. We draw inspiration from diverse disciplines like yoga, martial arts, dance, and Pilates to enhance your flexibility, balance, and body awareness.",
-      "experience_title": "You'll Experience:",
-      "experience_list": [
-        "Continuous Flow: Fluid, dynamic sequences that challenge your stability and range of motion.",
-        "Body Awareness: Discover and strengthen areas you might overlook in traditional strength training.",
-        "Mind-Body Connection: Focus on control and precision in every movement."
-      ],
-      "who_for_label": "Who it's for:",
-      "who_for_text": "Highly recommended for everyone, especially those seeking to improve flexibility or complement their strength training."
-    },
-    {
-      "id": "strong_mama",
-      "title": "Strong Mama (CarMa Training)",
-      "description": "Our 'Strong Mama' class is designed for new mothers, focusing on safely rebuilding core strength, improving posture, and increasing energy levels. This class is provided in collaboration with our external partner, <a href='https://carmatraining.se' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 font-semibold'>CarMa Training</a>, in a supportive environment where you can bring your baby along.",
-      "experience_title": "Unique Features:",
-      "experience_list": [
-        "Bring Your Baby: Babies are welcome and can be with you during the class.",
-        "Specialized Coaching: Controlled, process-driven training to help you safely regain core strength.",
-        "Intimate Setting: Small group sizes (max 10 moms) ensure personalized attention."
-      ],
-      "who_for_label": "Who it's for:",
-      "who_for_text": "New mothers looking to return to training in a controlled and supportive environment."
-    },
-    {
-      "id": "funky_monkeys",
-      "title": "Funky Monkeys (Ages 3-5)",
-      "description": "Our 'Funky Monkeys' program introduces children aged 3-5 to the joy of movement in a fun, safe, and engaging environment. We focus on building fundamental motor skills, coordination, and confidence through playful exercises and games, all while a parent participates alongside them.",
-      "experience_title": "Benefits:",
-      "experience_list": [
-        "Enhanced physical development and balance.",
-        "Increased confidence and listening skills."
-      ],
-      "who_for_label": "Who it's for:",
-      "who_for_text": "Parents and their children aged 3-5."
-    },
-    {
-      "id": "youth_class",
-      "title": "Youth Class (Ages 10-14)",
-      "description": "The 'Youth Class' program is specifically designed for pre-teens and adolescents, focusing on building strength, stability, and proper movement patterns as their bodies grow and change.",
-      "experience_title": "You'll Experience:",
-      "experience_list": [
-        "Foundational Strength & Coordination Development.",
-        "Balanced Training & Positive Environment."
-      ],
-      "who_for_label": "Who it's for:",
-      "who_for_text": "Pre-teens and adolescents (e.g., 11-16) looking to build a strong, capable body."
-    },
-    {
-      "id": "plus_power",
-      "title": "Plus Power (65+)",
-      "description": "Our 'Plus Power' class is tailored for individuals aged 65 and over, focusing on maintaining and improving the vital physical skills that enhance daily life quality.",
-      "experience_title": "You'll Experience:",
-      "experience_list": [
-        "Functional Strength & Balance Training.",
-        "Coordination, Mobility & Supportive Atmosphere."
-      ],
-      "who_for_label": "Who it's for:",
-      "who_for_text": "Individuals aged 65 and above who want to stay active and maintain independence."
-    },
-    {
-      "id": "workshops",
-      "title": "Specialized Workshops & Events",
-      "description": "Throughout the year, Bonobo Gym hosts special workshops designed to deepen your technical skills and expand your knowledge on holistic health.",
-      "experience_title": "Examples:",
-      "experience_list": [
-        "Kettlebell & Barbell Technique",
-        "Martial Arts/Boxing",
-        "Nutrition & Immunity"
-      ],
-      "who_for_label": "Who it's for:",
-      "who_for_text": "Members looking to refine specific techniques or gain broader health insights."
-    }
-  ],
   "class_schedule": {
-    "title": "Our Weekly Class Schedule",
-    "subtitle": "Find a time that works for you. All classes must be booked in advance.",
-    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    "class_names": {
-      "Strength & Conditioning": "Strength & Conditioning",
-      "Strength & Conditioning_short": "S&C",
-      "Movement": "Movement",
-      "Strong Mama": "Strong Mama (CarMa Training)",
-      "Funky Monkeys": "Funky Monkeys",
-      "Youth Class": "Youth Class",
-      "Plus Power": "Plus Power"
-    }
+    "title": "Schedule & booking",
+    "subtitle": "Find your next class and book your place. This schedule updates directly from Mana."
   },
   "booking_cta": {
     "title": "Take the first step",
@@ -431,7 +276,7 @@
       },
       {
         "question": "Do I need to book in advance?",
-        "answer": "Yes, all classes must be booked in advance through our online system to ensure your spot, as our small group classes have limited capacity."
+        "answer": "Yes. Book through the schedule on this page or directly in Mana, where you can see availability and booking terms."
       },
       {
         "question": "What if I have an injury or physical limitation?",
@@ -448,139 +293,39 @@
     ]
   },
   "faq": {
-    "title": "Frequently Asked Questions",
+    "title": "Before you get started",
     "questions": [
       {
-        "question": "What is the Bonobo Trail and what happens after it ends?",
-        "answer": "The Bonobo Trail is our introductory offer: 3 classes in 14 days for 360 kr. It's the perfect way to experience our gym. If you decide to join as a full member after your trial, you'll receive a 10% discount on your first month's membership!"
+        "question": "How do I try Bonobo?",
+        "answer": "Choose “Try us” to see the current first-time offers in Mana. You can review prices, what is included, and terms before choosing."
       },
       {
-        "question": "Can I bring a friend to train with me?",
-        "answer": "Gold members can bring a friend who is not currently a member to our monthly 'Friend Friday' event."
+        "question": "Where do I manage my membership and bookings?",
+        "answer": "Choose “My account” to open your Mana account. Contact us if you need help following the change of booking system."
       },
       {
-        "question": "Can I freeze my membership?",
-        "answer": "Yes! Gold membership includes 4 weeks of freeze per year, split into two 2-week periods. Please contact us to arrange a freeze."
+        "question": "What are the credit validity and cancellation rules?",
+        "answer": "Review the terms for your chosen option in Mana. Use the links above for booking questions and current terms, or contact us if anything is unclear."
       },
       {
-        "question": "What is your cancellation policy?",
-        "answer": "Our monthly memberships can be canceled at any time with 30 days notice. Class packs, bootcamps, and annual memberships are non-refundable."
-      },
-      {
-        "question": "Are there options for kids?",
-        "answer": "Yes, we offer a Children and Youth Pass which is valid for our specific classes for younger members. Please check the class schedule for details or contact us for more information."
-      },
-      {
-        "question": "What if I have never trained before?",
-        "answer": "No problem! Our classes are designed for all fitness levels. Our expert coaches will provide modifications to ensure you get a safe and effective workout."
+        "question": "Can I join if I have never trained before?",
+        "answer": "Absolutely. Our coaches help adapt exercises to your level. Contact us if you would like help choosing your first class."
       }
     ]
   },
   "membership_page": {
     "header": {
-      "title": "Pick Your Path",
-      "subtitle": "Choose a membership option or flexible pass that meet your needs"
+      "title": "Find your way to train",
+      "subtitle": "Memberships and class credits to fit your routine. Explore current prices and buy here through Mana."
     },
-    "trail_offer": {
-      "title": "Bonobo Trail",
-      "description": "Try us out! 3 classes in 14 days for only 360 kr.",
-      "promo": "Convert to a full membership and get 10% off your first month! ",
-      "button": "Claim Offer",
-      "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=prova-pa--bonobo-3-ggr"
+    "trial": {
+      "title": "New to Bonobo?",
+      "description": "Start with our first-time offer. See the available options and choose your introduction to Bonobo in Mana."
     },
-    "pricing_cards": {
-      "silver": {
-        "title": "Silver",
-        "price": "999 kr",
-        "price_suffix": "/mo",
-        "features": [
-          "9 bookings per month",
-          "Access to all classes"
-        ],
-        "button": "Choose Silver →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-silver"
-      },
-      "gold": {
-        "title": "Gold",
-        "price": "1 199 kr",
-        "price_suffix": "/mo",
-        "features": [
-          "Unlimited bookings, all classes",
-          "Bring a friend on 'Friend Friday'",
-          "4 weeks freeze per year"
-        ],
-        "button": "Go for Gold →",
-        "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bonobo-gold",
-        "annual_note": "Or pay annually (12 089 kr) and get 1 month for free!",
-        "annual_link": "https://bonobogym.gymsystem.se/shoppa?p=arskort-gold"
-      }
-    },
-    "other_passes": {
-      "title": "Other Passes & Packs",
-      "passes": [
-        { 
-          "title": "10-Pack Clip Card", 
-          "price": "1 999 kr", 
-          "description": "Train when it suits you. The 10-pack clip card is valid for 6 months from the date of purchase. Perfect for those who want flexibility in their training schedule.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=10-visit-klippkort"
-        },
-        { 
-          "title": "Single Drop-in", 
-          "price": "250 kr", 
-          "description": "Perfect for trying out a class or for visitors. Book your spot in any of our regular classes. Great for those who want to experience our classes without a long-term commitment.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=drop-in-single-visit"
-        },
-        { 
-          "title": "Funky Monkey Pass", 
-          "price": "1 995 kr", 
-          "description": "A 10-week pass for our Funky Monkey classes (ages 3-5) focused on playful movement and foundational motor skills.", 
-          "link_text": "Read more",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=barntraning-3-5-ar-funky-monkeys"
-        },
-        { 
-          "title": "Mamma Camp",
-          "price": "2 990 kr",
-          "description": "A 10-session training camp for mothers.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=mamma-camp"
-        },
-        {
-          "title": "P.T. One to One", "price": "1 100 kr", "description": "One personal-training session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=p.t.-one-to-one"
-        },
-        {
-          "title": "PT 5 Card", "price": "5 500 kr", "description": "Five personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        },
-        { 
-          "title": "Bruce Member Add-on", 
-          "price": "140 kr",
-          "description": "For our friends using Bruce! This add-on is for when you have used up your regular quota and want to join another class. Convenient for those who want to attend extra classes without upgrading their membership.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=bruce-extra"
-        },
-        { 
-          "title": "Plus Power", 
-          "price": "950 kr",
-          "description": "A specialized monthly membership for individuals aged 65 and over, focusing on maintaining and improving vital physical skills that enhance daily life quality through functional strength, balance, and coordination training.",
-          "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa?p=65-traning"
-        },
-        {
-          "title": "PT 10", "price": "10 000 kr", "description": "10 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        },
-        {
-          "title": "PT 20 Card", "price": "20 000 kr", "description": "20 personal-training sessions.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        },
-        {
-          "title": "Sound Healing", "price": "250 kr", "description": "Sound healing session.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        },
-        {
-          "title": "Yoga/MVMT Clip Card", "price": "2 000 kr / month", "description": "10-clip Yoga/MVMT card.", "purchaseUrl": "https://bonobogym.gymsystem.se/shoppa"
-        }
-      ]
-    }
-  },
-  "redirect_modal": {
-    "title": "Redirecting to Booking System",
-    "description": "You will now be redirected to our external booking and payment system to complete your purchase.",
-    "confirm_button": "Continue",
-    "cancel_button": "Cancel"
+    "options": "Training options",
+    "memberships": "Memberships",
+    "credits": "Class credits & drop-ins",
+    "more": "PT, bootcamps & events"
   },
   "contact_page": {
     "header": {
@@ -593,5 +338,64 @@
       "description": "For any inquiries, please reach out to Mark directly.",
       "button_text": "mark@bonobogym.com"
     }
+  },
+  "mana": {
+    "live": "Live availability and options from Mana.",
+    "new_tab": "(opens in a new tab)",
+    "open_schedule": "Open schedule in Mana",
+    "open_memberships": "View memberships in Mana",
+    "open_credits": "View credits in Mana",
+    "title_schedule": "Bonobo Gym live schedule and booking in Mana",
+    "title_memberships": "Bonobo Gym memberships and prices in Mana",
+    "title_credits": "Bonobo Gym class credits and prices in Mana",
+    "loading": "Loading from Mana…",
+    "slow": "Taking a while to load? Use the link above to continue directly in Mana.",
+    "manage_bookings": "Log in & manage bookings",
+    "services": "Personal training",
+    "services_description": "Explore current personal training services, packages, and prices in Mana.",
+    "open_services": "Explore personal training",
+    "courses": "Bootcamps & events",
+    "courses_description": "Find upcoming bootcamps and events. Check dates, availability, and registration in Mana.",
+    "open_courses": "Explore bootcamps & events",
+    "faq": "Booking questions in Mana",
+    "terms": "Current terms",
+    "help": "Need help choosing? Contact us",
+    "hours": "Train with us",
+    "hours_description": "Find current class times and book your place in the schedule.",
+    "schedule_link": "View schedule & book",
+    "account": "My Mana account",
+    "empty_catalog": "See the current options directly in Mana.",
+    "per_month": "/ month",
+    "credits_count": "{{count}} credits",
+    "credits_month": "{{count}} credits per month",
+    "credits_week": "{{count}} credits per week",
+    "commitment": "{{count}} months commitment",
+    "no_commitment": "No commitment",
+    "buy": "Buy",
+    "learn_more": "Learn more",
+    "trial_terms": "For new customers. Eligibility and terms are confirmed in Mana.",
+    "filter_classes": "Filter classes",
+    "all_classes": "All classes & course sessions",
+    "schedule_window": "Next 14 days · updated from Mana",
+    "timezone": "All times: {{timezone}}",
+    "no_classes": "No classes are listed for this period. See the full schedule in Mana.",
+    "course_session": "Course session · register for the course",
+    "full": "Full · check options in Mana",
+    "spots": "{{count}} places available",
+    "check_availability": "Check availability in Mana",
+    "view_course": "View course",
+    "view_class": "View class",
+    "book": "Book",
+    "availability_note": "Places can change. Booking and final availability are confirmed in Mana.",
+    "my_account": "My account",
+    "check_schedule": "See current times and details in the schedule.",
+    "read_faq": "Read all booking questions in Mana",
+    "pt_checkout": "Buy a PT pack",
+    "credits_count_one": "{{count}} credit",
+    "credits_count_other": "{{count}} credits",
+    "spots_one": "{{count}} place available",
+    "spots_other": "{{count}} places available",
+    "sessions": "{{count}} sessions",
+    "no_courses": "Check Mana for upcoming bootcamps and events."
   }
 }

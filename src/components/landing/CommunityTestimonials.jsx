@@ -33,7 +33,7 @@ const CommunityTestimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900">{t('community_testimonials.title')}</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
             {t('community_testimonials.subtitle')}
           </p>
         </div>
@@ -53,7 +53,7 @@ const CommunityTestimonials = () => {
             </article>
           ))}
         </div>
-        <div className="mt-12 hidden md:block">
+        <div className="mx-2 mt-12 hidden md:block">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="p-4">
